@@ -5,6 +5,9 @@
 
 #include "pch.h"
 #include "MainPage.xaml.h"
+#include <iostream>
+
+using namespace std;
 
 using namespace DrivingSchool;
 
@@ -24,4 +27,26 @@ using namespace Windows::UI::Xaml::Navigation;
 MainPage::MainPage()
 {
 	InitializeComponent();
+}
+
+
+
+
+void DrivingSchool::MainPage::ResetButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	IDBox->Text = "";
+	PasswordBox->Password = "";
+}
+
+
+void DrivingSchool::MainPage::LoginButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	
+	wstring ID((IDBox->Text)->Data());
+	if (ID[0] == '1')
+	{
+
+	};
+
+
 }
