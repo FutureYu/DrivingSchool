@@ -51,6 +51,13 @@ void ::DrivingSchool::MainPage::Connect(int __connectionId, ::Platform::Object^ 
                 this->PasswordBox = safe_cast<::Windows::UI::Xaml::Controls::PasswordBox^>(__target);
             }
             break;
+        case 5:
+            {
+                this->RegisterButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->RegisterButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&MainPage::RegisterButton_Click);
+            }
+            break;
     }
     _contentLoaded = true;
 }

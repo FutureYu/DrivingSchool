@@ -6,11 +6,14 @@
 #include "pch.h"
 #include "MainPage.xaml.h"
 #include <iostream>
+#include "people.h"
+#include "Register.xaml.h"
 
 using namespace std;
-
 using namespace DrivingSchool;
 
+using namespace Windows::Storage;
+using namespace concurrency;
 using namespace Platform;
 using namespace Windows::Foundation;
 using namespace Windows::Foundation::Collections;
@@ -29,24 +32,31 @@ MainPage::MainPage()
 	InitializeComponent();
 }
 
-
-
-
+// 重置文本框内容
 void DrivingSchool::MainPage::ResetButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	IDBox->Text = "";
 	PasswordBox->Password = "";
 }
 
-
-void DrivingSchool::MainPage::LoginButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+// 登陆
+void MainPage::LoginButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
+	// 获取Id与密码，并创建对象
+	wstring ID(IDBox->Text->Data());
+	wstring Password(PasswordBox->Password->Data());
+	String^ path(L"Students.csv"); // ToDo: 修改
+	StorageFile^ studentFile;
+	wstring wcontent;
+
+
+
 	
-	wstring ID((IDBox->Text)->Data());
-	if (ID[0] == '1')
-	{
+	People::UserLogin(ID, Password);
+}
 
-	};
-
-
+// 导航至注册页面
+void DrivingSchool::MainPage::RegisterButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	Frame->Navigate(Register::typeid);
 }

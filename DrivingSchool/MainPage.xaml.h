@@ -17,9 +17,11 @@ namespace DrivingSchool
 	public:
 		MainPage();
 
+		/*void ValidateFile();*/
+
 	private:
-		
 		void ResetButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void LoginButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void RegisterButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 	};
 }

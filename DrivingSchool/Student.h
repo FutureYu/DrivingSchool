@@ -9,12 +9,11 @@ class Student :
 	public People
 {
 private:
-	wstring time;
 	int status;
 	
 public:
-	Student(wstring ID, wstring name, wstring password, wstring time, int status);
-	
+	Student(wstring ID, wstring name, wstring password, int status);
+	static void StudentRegister(Student stu);
 };
 
 

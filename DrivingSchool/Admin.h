@@ -12,4 +12,4 @@ public:
 };
 
 
-#endif // !ADMI
+#endif // !ADMIN_H
