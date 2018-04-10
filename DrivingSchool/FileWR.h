@@ -4,6 +4,7 @@
 #include "pch.h"
 #include "FileWR.h"
 #include <iostream>
+#include "People.h"
 using namespace Windows::Storage;
 using namespace concurrency;
 using namespace std;
@@ -12,11 +13,18 @@ using namespace Platform;
 // 作为工具类，提供读写文件工具
 class FileWR
 {
+
+private:
+	/*static void setString(String ^str)
+	{
+		content = str;
+	}*/
+
 public:
+	//static String ^content;
+
 	static void FileWrite(String^ path, String^ content)
 	{
-
-
 		StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
 		concurrency::create_task(storageFolder->CreateFileAsync(path, CreationCollisionOption::ReplaceExisting))
 			.then([&, content](StorageFile^ File)
@@ -41,7 +49,7 @@ public:
 			.then([&, content](StorageFile^ File)
 		{
 			return FileIO::AppendTextAsync(File, content);
-		}).then([&](task<void> previousOperation) {
+		}).then([](task<void> previousOperation) {
 			try {
 				previousOperation.get();
 			}
@@ -56,25 +64,23 @@ public:
 
 	static String^ FileRead(String^ path)
 	{
-		
 		StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
 		concurrency::create_task(storageFolder->GetFileAsync(path))
 			.then([&](StorageFile^ file)
 		{
 			return FileIO::ReadTextAsync(file);
 		}).then([&](concurrency::task<String^> previousOperation) {
-			
 			try {
 				// 读取成功
-				return previousOperation.get();
-				
-				
+				//setString(previousOperation.get());
+				People::fileContent = previousOperation.get();
 			}
 			catch (...) {
 				// 读取失败
-				
 			}
 		});
+		String^ tmp2 = People::fileContent;
+		return People::fileContent;
 	}
 };
 

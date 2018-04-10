@@ -2,11 +2,8 @@
 #include "Admin.h"
 
 
-Admin::Admin(wstring ID, wstring name, wstring password)
+Admin::Admin(wstring ID, wstring name, wstring password):People(ID,name,password)
 {
-	this->ID = ID;
-	this->name = name;
-	this->password = password;
 }
 
 

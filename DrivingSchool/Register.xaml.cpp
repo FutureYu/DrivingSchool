@@ -9,6 +9,7 @@
 #include <iostream>
 #include "student.h"
 #include "FileWR.h"
+#include <string>
 
 using namespace DrivingSchool;
 
@@ -26,28 +27,32 @@ using namespace Windows::Storage;
 using namespace concurrency;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
-
+//String^ FileWR::content = "";
 Register::Register()
 {
 	InitializeComponent();
 	// 设定ID
-	//IDBlock->Text = FileWR::FileRead("Students.csv");
-	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-	concurrency::create_task(storageFolder->GetFileAsync("Students.csv"))
-		.then([&](StorageFile^ file)
-	{
-		return FileIO::ReadTextAsync(file);
-	}).then([&](concurrency::task<String^> previousOperation) {
 
-		try {
-			// 读取成功
-			//return previousOperation.get();
-			IDBlock->Text = previousOperation.get();
-		}
-		catch (...) {
-			// 读取失败
-		}
-	});
+	String^str;
+	//str = FileWR::FileRead("Students.con");
+	IDBlock->Text = FileWR::FileRead("Students.con");
+
+	//	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+	//	concurrency::create_task(storageFolder->GetFileAsync("Students.csv"))
+	//		.then([&](StorageFile^ file)
+	//	{
+	//		return FileIO::ReadTextAsync(file);
+	//	}).then([&](concurrency::task<String^> previousOperation) {
+	//
+	//		try {
+	//			// 读取成功
+	//			IDBlock->Text = previousOperation.get();
+	//		}
+	//		catch (...) {
+	//			// 读取失败
+	//		}
+	//	});
+	//	
 }
 
 // 重置文本
@@ -67,7 +72,13 @@ void DrivingSchool::Register::ConfirmButton_Click(Platform::Object^ sender, Wind
 
 	// 注册
 	Student::StudentRegister(stu);
+
+	// 修改下一个人的编号
+	long ID = wcstol(IDBlock->Text->Data(), NULL, 10);
+	String ^tmp = ref new String(std::to_wstring(++ID).c_str());
+	FileWR::FileWrite("Students.csv", tmp);
 	IDBlock->Text = "OK";
+
 }
 
 // 返回登陆页面

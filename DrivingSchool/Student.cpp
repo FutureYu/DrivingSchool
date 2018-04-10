@@ -8,11 +8,8 @@ using namespace concurrency;
 using namespace std;
 using namespace Platform;
 
-Student::Student(wstring ID, wstring name, wstring password, int status)
+Student::Student(wstring ID, wstring name, wstring password, int status):People(ID,name,password)
 {
-	this->ID = ID;
-	this->name = name;
-	this->password = password;
 	this->status = status;
 }
 
@@ -20,15 +17,30 @@ Student::Student(wstring ID, wstring name, wstring password, int status)
 void Student::StudentRegister(Student stu)
 {
 	// 先创建路径
-	wstring wpath = stu.ID + L".csv";
-	String ^path = ref new String(wpath.c_str());
+	wstring wnamePath = stu.ID + L".nam";
+	String ^namePath = ref new String(wnamePath.c_str());
+
+	wstring wpwdPath = stu.ID + L".pwd";
+	String ^pwdPath = ref new String(wpwdPath.c_str());
+
+	wstring wexmPath = stu.ID + L".exm";
+	String ^exmPath = ref new String(wexmPath.c_str());
+
+	wstring wstaPath = stu.ID + L".sta";
+	String ^staPath = ref new String(wstaPath.c_str());
 
 	// 创建写入内容
-	wstring wcontent = stu.ID + L"," + stu.name + L"," + stu.password + L"," + L"0" + L"," + L"\r\n";
-	String ^content = ref new String(wcontent.c_str());
+	wstring wstaContent = L"0";
+	String ^nameContent = ref new String(stu.name.c_str());
+	String ^pwdContent = ref new String(stu.password.c_str());
+	String ^exmContent = ref new String();
+	String ^staContent = ref new String(wstaContent.c_str());
 
 	// 将内容写入文件
-	FileWR::FileAppend(path, content);
+	FileWR::FileWrite(namePath, nameContent);
+	FileWR::FileWrite(pwdPath, pwdContent);
+	FileWR::FileWrite(exmPath, exmContent);
+	FileWR::FileWrite(staPath, staContent);
 }
 
 
