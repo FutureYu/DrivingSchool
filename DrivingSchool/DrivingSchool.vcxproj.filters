@@ -192,6 +192,7 @@
     <Page Include="StudentPage.xaml" />
     <Page Include="ChangePwd.xaml" />
     <Page Include="ReserveExam.xaml" />
+    <Page Include="CheckScore.xaml" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DrivingSchool.rc" />

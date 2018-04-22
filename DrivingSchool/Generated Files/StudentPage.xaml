@@ -9,9 +9,9 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button x:ConnectionId='1' x:Name="PersonalInformation" Content="Personal Information" HorizontalAlignment="Left" Margin="147,255,0,0" VerticalAlignment="Top"                                  />
-        <Button x:ConnectionId='2' x:Name="ChangePwd" Content="Change Password" HorizontalAlignment="Left" Margin="147,330,0,0" VerticalAlignment="Top"                        />
+        <Button x:ConnectionId='2' x:Name="ChangePwd" Content="修改密码" HorizontalAlignment="Left" Margin="147,330,0,0" VerticalAlignment="Top"                        />
         <Button x:ConnectionId='3' x:Name="ReserveExam" Content="预约考试" HorizontalAlignment="Left" Margin="147,411,0,0" VerticalAlignment="Top"                          />
-        <Button Content="Button" HorizontalAlignment="Left" Margin="147,498,0,0" VerticalAlignment="Top"/>
+        <Button x:ConnectionId='4' x:Name="CheckScore" Content="查询成绩" HorizontalAlignment="Left" Margin="147,498,0,0" VerticalAlignment="Top"                         />
         <Button Content="Button" HorizontalAlignment="Left" Margin="147,572,0,0" VerticalAlignment="Top"/>
 
     </Grid>

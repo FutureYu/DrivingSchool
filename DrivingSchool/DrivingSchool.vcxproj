@@ -144,6 +144,9 @@
     <ClInclude Include="ChangePwd.xaml.h">
       <DependentUpon>ChangePwd.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="CheckScore.xaml.h">
+      <DependentUpon>CheckScore.xaml</DependentUpon>
+    </ClInclude>
     <ClInclude Include="FileWR.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.xaml.h">
@@ -171,6 +174,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="ChangePwd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CheckScore.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MainPage.xaml">
@@ -247,6 +253,9 @@
     </ClCompile>
     <ClCompile Include="ChangePwd.xaml.cpp">
       <DependentUpon>ChangePwd.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="CheckScore.xaml.cpp">
+      <DependentUpon>CheckScore.xaml</DependentUpon>
     </ClCompile>
     <ClCompile Include="MainPage.xaml.cpp">
       <DependentUpon>MainPage.xaml</DependentUpon>

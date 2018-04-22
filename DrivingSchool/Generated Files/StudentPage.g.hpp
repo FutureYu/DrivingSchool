@@ -48,6 +48,13 @@ void ::DrivingSchool::StudentPage::Connect(int __connectionId, ::Platform::Objec
                     (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&StudentPage::ReserveExam_Click);
             }
             break;
+        case 4:
+            {
+                this->CheckScore = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->CheckScore))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::StudentPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&StudentPage::CheckScore_Click);
+            }
+            break;
     }
     _contentLoaded = true;
 }

@@ -35,7 +35,7 @@ void Student::StudentRegister(Student stu)
 	// 创建写入内容
 	String ^nameContent = ref new String(stu.name.c_str());
 	String ^pwdContent = ref new String(stu.password.c_str());
-	String ^exmContent = ref new String((stu.ID + L"1001").c_str());
+	String ^exmContent = ref new String((stu.ID + L"1000").c_str());
 
 
 	// 将内容写入文件
@@ -44,6 +44,7 @@ void Student::StudentRegister(Student stu)
 	FileWR::FileWrite(exmPath, exmContent);
 	FileWR::FileWrite(staPath, "0");
 	FileWR::FileWrite(tchPath, "0");
+	FileWR::FileWrite(exmContent + ".exm", "");
 }
 
 

@@ -4,6 +4,7 @@
 //
 
 #include "pch.h"
+#include "CheckScore.xaml.h"
 #include "StudentPage.xaml.h"
 #include "ChangePwd.xaml.h"
 #include "ReserveExam.xaml.h"
@@ -22,16 +23,6 @@ using namespace Windows::UI::Xaml::Media;
 using namespace Windows::UI::Xaml::Navigation;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
-String ^ID;
-void StudentPage::OnNavigatedTo(NavigationEventArgs^ e)
-{
-	if (dynamic_cast<Platform::String^>(e->Parameter) != nullptr)
-	{
-		 ID = e->Parameter->ToString();
-	}
-
-	::Windows::UI::Xaml::Controls::Page::OnNavigatedTo(e);
-}
 
 StudentPage::StudentPage()
 {
@@ -48,13 +39,17 @@ void DrivingSchool::StudentPage::PersonalInformation_Click(Platform::Object^ sen
 // 修改密码
 void DrivingSchool::StudentPage::ChangePwd_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	Object^ idNavi = ID;
-	Frame->Navigate(ChangePwd::typeid,idNavi);
+	Frame->Navigate(ChangePwd::typeid);
 }
 
 // 预约考试
 void DrivingSchool::StudentPage::ReserveExam_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	Object^ idNavi = ID;
-	Frame->Navigate(ReserveExam::typeid,idNavi);
+	Frame->Navigate(ReserveExam::typeid);
+}
+
+// 查询成绩
+void DrivingSchool::StudentPage::CheckScore_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	Frame->Navigate(CheckScore::typeid);
 }

@@ -11,6 +11,7 @@ namespace Windows {
     namespace UI {
         namespace Xaml {
             namespace Controls {
+                ref class TextBlock;
                 ref class Button;
             }
         }
@@ -20,7 +21,7 @@ namespace Windows {
 namespace DrivingSchool
 {
     [::Windows::Foundation::Metadata::WebHostHidden]
-    partial ref class StudentPage : public ::Windows::UI::Xaml::Controls::Page, 
+    partial ref class CheckScore : public ::Windows::UI::Xaml::Controls::Page, 
         public ::Windows::UI::Xaml::Markup::IComponentConnector,
         public ::Windows::UI::Xaml::Markup::IComponentConnector2
     {
@@ -32,10 +33,12 @@ namespace DrivingSchool
     private:
         bool _contentLoaded;
     
-        private: ::Windows::UI::Xaml::Controls::Button^ PersonalInformation;
-        private: ::Windows::UI::Xaml::Controls::Button^ ChangePwd;
-        private: ::Windows::UI::Xaml::Controls::Button^ ReserveExam;
-        private: ::Windows::UI::Xaml::Controls::Button^ CheckScore;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ ScoreBlock;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ IDBlock;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ ExamBlock;
+        private: ::Windows::UI::Xaml::Controls::Button^ BackButton;
+        private: ::Windows::UI::Xaml::Controls::Button^ CheckExamBtn;
+        private: ::Windows::UI::Xaml::Controls::Button^ CheckScoreBtn;
     };
 }
 

@@ -28,8 +28,6 @@ Register::Register()
 	// 设定页面ID
 	// 如第一次使用，则初始化
 	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-
-	
 	concurrency::create_task(storageFolder->TryGetItemAsync("Students.num")
 	).then([&](IStorageItem^ item)
 	{
@@ -83,7 +81,7 @@ void DrivingSchool::Register::ConfirmButton_Click(Platform::Object^ sender, Wind
 	// 修改下一个人的编号
 	long ID = wcstol(IDBlock->Text->Data(), NULL, 10);
 	FileWR::FileWrite("Students.num", ref new String(std::to_wstring(++ID).c_str()));
-	MessageDialog msg("注册成功，ID为" + IDBlock->Text, "注册成功！");
+	MessageDialog msg("注册成功，ID为" + IDBlock->Text, "注册成功");
 	msg.ShowAsync();
 
 }
