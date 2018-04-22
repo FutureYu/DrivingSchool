@@ -15,19 +15,13 @@ class FileWR
 {
 
 private:
-	/*static void setString(String ^str)
-	{
-		content = str;
-	}*/
+	
 
 public:
-	//static String ^content;
-
 	static void FileWrite(String^ path, String^ content)
 	{
 		StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-		concurrency::create_task(storageFolder->CreateFileAsync(path, CreationCollisionOption::ReplaceExisting))
-			.then([&, content](StorageFile^ File)
+		concurrency::create_task(storageFolder->CreateFileAsync(path, CreationCollisionOption::ReplaceExisting)).then([&, content](StorageFile^ File)
 		{
 			return FileIO::WriteTextAsync(File, content);
 		}).then([&](task<void> previousOperation) {
@@ -45,8 +39,7 @@ public:
 	static void FileAppend(String^ path, String^ content)
 	{
 		StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-		concurrency::create_task(storageFolder->CreateFileAsync(path, CreationCollisionOption::OpenIfExists))
-			.then([&, content](StorageFile^ File)
+		concurrency::create_task(storageFolder->CreateFileAsync(path, CreationCollisionOption::OpenIfExists)).then([&, content](StorageFile^ File)
 		{
 			return FileIO::AppendTextAsync(File, content);
 		}).then([](task<void> previousOperation) {

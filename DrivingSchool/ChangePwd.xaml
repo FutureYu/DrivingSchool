@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="DrivingSchool.ChangePwd"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DrivingSchool"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="IDBlock" HorizontalAlignment="Left" Margin="97,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="PwdBox" HorizontalAlignment="Left" Margin="97,272,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ConfirmBtn" Content="Confirm" HorizontalAlignment="Left" Margin="97,417,0,0" VerticalAlignment="Top" Click="ConfirmBtn_Click"/>
+        <Button x:Name="BackButton" Style="{StaticResource NavigationBackButtonNormalStyle}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="65" Click="BackButton_Click"/>
+    </Grid>
+</Page>

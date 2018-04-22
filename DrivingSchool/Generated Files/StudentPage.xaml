@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="DrivingSchool.StudentPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DrivingSchool"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:ConnectionId='1' x:Name="PersonalInformation" Content="Personal Information" HorizontalAlignment="Left" Margin="147,255,0,0" VerticalAlignment="Top"                                  />
+        <Button x:ConnectionId='2' x:Name="ChangePwd" Content="Change Password" HorizontalAlignment="Left" Margin="147,330,0,0" VerticalAlignment="Top"                        />
+        <Button x:ConnectionId='3' x:Name="ReserveExam" Content="预约考试" HorizontalAlignment="Left" Margin="147,411,0,0" VerticalAlignment="Top"                          />
+        <Button Content="Button" HorizontalAlignment="Left" Margin="147,498,0,0" VerticalAlignment="Top"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="147,572,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>
+

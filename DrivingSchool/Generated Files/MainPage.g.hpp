@@ -58,6 +58,11 @@ void ::DrivingSchool::MainPage::Connect(int __connectionId, ::Platform::Object^ 
                     (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&MainPage::RegisterButton_Click);
             }
             break;
+        case 6:
+            {
+                this->fileContent = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
     }
     _contentLoaded = true;
 }

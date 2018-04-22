@@ -98,6 +98,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <PackageCertificateKeyFile>DrivingSchool_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <AppxBundle>Always</AppxBundle>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
@@ -138,6 +141,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Admin.h" />
+    <ClInclude Include="ChangePwd.xaml.h">
+      <DependentUpon>ChangePwd.xaml</DependentUpon>
+    </ClInclude>
     <ClInclude Include="FileWR.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.xaml.h">
@@ -150,18 +156,33 @@
     <ClInclude Include="Register.xaml.h">
       <DependentUpon>Register.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="ReserveExam.xaml.h">
+      <DependentUpon>ReserveExam.xaml</DependentUpon>
+    </ClInclude>
     <ClInclude Include="resource.h" />
     <ClInclude Include="Student.h" />
+    <ClInclude Include="StudentPage.xaml.h">
+      <DependentUpon>StudentPage.xaml</DependentUpon>
+    </ClInclude>
     <ClInclude Include="Teacher.h" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ChangePwd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Register.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReserveExam.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StudentPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
@@ -224,7 +245,9 @@
     <ClCompile Include="App.xaml.cpp">
       <DependentUpon>App.xaml</DependentUpon>
     </ClCompile>
-    <ClCompile Include="FileWR.cpp" />
+    <ClCompile Include="ChangePwd.xaml.cpp">
+      <DependentUpon>ChangePwd.xaml</DependentUpon>
+    </ClCompile>
     <ClCompile Include="MainPage.xaml.cpp">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClCompile>
@@ -240,7 +263,13 @@
     <ClCompile Include="Register.xaml.cpp">
       <DependentUpon>Register.xaml</DependentUpon>
     </ClCompile>
+    <ClCompile Include="ReserveExam.xaml.cpp">
+      <DependentUpon>ReserveExam.xaml</DependentUpon>
+    </ClCompile>
     <ClCompile Include="Student.cpp" />
+    <ClCompile Include="StudentPage.xaml.cpp">
+      <DependentUpon>StudentPage.xaml</DependentUpon>
+    </ClCompile>
     <ClCompile Include="Teacher.cpp" />
   </ItemGroup>
   <ItemGroup>

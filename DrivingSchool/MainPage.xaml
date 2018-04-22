@@ -17,6 +17,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="131,304,0,0" Text="ID" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="5.164,0.436"/>
         <TextBlock HorizontalAlignment="Left" Margin="131,411,0,0" Text="密码" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Button x:Name="RegisterButton" Content="Register" HorizontalAlignment="Left" Margin="169,487,0,0" VerticalAlignment="Top" Click="RegisterButton_Click"/>
+        <TextBlock x:Name="fileContent" Visibility="Collapsed" HorizontalAlignment="Left" Margin="822,217,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
 
     </Grid>

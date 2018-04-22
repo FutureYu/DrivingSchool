@@ -29,18 +29,21 @@ void Student::StudentRegister(Student stu)
 	wstring wstaPath = stu.ID + L".sta";
 	String ^staPath = ref new String(wstaPath.c_str());
 
+	wstring wtchPath = stu.ID + L".tch";
+	String ^tchPath = ref new String(wtchPath.c_str());
+
 	// 创建写入内容
-	wstring wstaContent = L"0";
 	String ^nameContent = ref new String(stu.name.c_str());
 	String ^pwdContent = ref new String(stu.password.c_str());
-	String ^exmContent = ref new String();
-	String ^staContent = ref new String(wstaContent.c_str());
+	String ^exmContent = ref new String((stu.ID + L"1001").c_str());
+
 
 	// 将内容写入文件
 	FileWR::FileWrite(namePath, nameContent);
 	FileWR::FileWrite(pwdPath, pwdContent);
 	FileWR::FileWrite(exmPath, exmContent);
-	FileWR::FileWrite(staPath, staContent);
+	FileWR::FileWrite(staPath, "0");
+	FileWR::FileWrite(tchPath, "0");
 }
 
 
