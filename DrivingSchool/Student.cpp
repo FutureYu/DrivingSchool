@@ -1,7 +1,5 @@
 #include "pch.h"
 #include "Student.h"
-#include <iostream>
-#include "FileWR.h"
 
 using namespace Windows::Storage;
 using namespace concurrency;
@@ -44,7 +42,6 @@ void Student::StudentRegister(Student stu)
 	FileWR::FileWrite(exmPath, exmContent);
 	FileWR::FileWrite(staPath, "0");
 	FileWR::FileWrite(tchPath, "0");
-	FileWR::FileWrite(exmContent + ".exm", "");
 }
 
 

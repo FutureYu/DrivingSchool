@@ -10,7 +10,13 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="IDBlock" HorizontalAlignment="Left" Margin="97,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <PasswordBox x:Name="PwdBox" HorizontalAlignment="Left" Margin="97,272,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="ConfirmBtn" Content="Confirm" HorizontalAlignment="Left" Margin="97,417,0,0" VerticalAlignment="Top" Click="ConfirmBtn_Click"/>
+        <PasswordBox x:Name="ConfirmPwdBox" HorizontalAlignment="Left" Margin="97,320,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ConfirmBtn" Content="确认" HorizontalAlignment="Left" Margin="97,417,0,0" VerticalAlignment="Top" Click="ConfirmBtn_Click"/>
+        <Button x:Name="ResetBtn" Content="重置" HorizontalAlignment="Left" Margin="40,417,0,0" VerticalAlignment="Top" Click="ResetBtn_Click" />
+
         <Button x:Name="BackButton" Style="{StaticResource NavigationBackButtonNormalStyle}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="65" Click="BackButton_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="47,272,0,0" Text="密码" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="35,320,0,0" Text="确认密码" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
     </Grid>
 </Page>

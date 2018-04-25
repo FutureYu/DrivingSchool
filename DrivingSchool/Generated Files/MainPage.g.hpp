@@ -60,7 +60,12 @@ void ::DrivingSchool::MainPage::Connect(int __connectionId, ::Platform::Object^ 
             break;
         case 6:
             {
-                this->fileContent = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+                this->isExistBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 7:
+            {
+                this->isPwdCorrectBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
             }
             break;
     }

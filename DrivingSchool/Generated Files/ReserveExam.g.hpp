@@ -46,21 +46,19 @@ void ::DrivingSchool::ReserveExam::Connect(int __connectionId, ::Platform::Objec
             break;
         case 4:
             {
-                this->SearchExamBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->SearchExamBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ReserveExam::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ReserveExam::SearchExam_Click);
-            }
-            break;
-        case 5:
-            {
                 this->ConfirmBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
                 (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ConfirmBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ReserveExam::*)
                     (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ReserveExam::ConfirmBtn_Click);
             }
             break;
-        case 6:
+        case 5:
             {
                 this->ExamBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 6:
+            {
+                this->ProgressNumberBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
             }
             break;
         case 7:

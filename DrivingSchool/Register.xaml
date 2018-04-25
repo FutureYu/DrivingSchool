@@ -10,14 +10,17 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBox x:Name="NameBox" HorizontalAlignment="Left" Margin="109,301,0,0" VerticalAlignment="Top"/>
         <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="109,344,0,0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="28,301,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="28,355,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="28,418,0,0" VerticalAlignment="Top" Click="ConfirmButton_Click"/>
-        <Button x:Name="ResetButton" Content="Reset" HorizontalAlignment="Left" Margin="128,418,0,0" VerticalAlignment="Top" Click="ResetButton_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="28,256,0,0" Text="Your ID will be" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock x:Name="IDBlock" HorizontalAlignment="Left" Margin="128,256,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="ConfirmPasswordBox" HorizontalAlignment="Left" Margin="109,390,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="28,301,0,0" Text="姓名" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="28,355,0,0" Text="密码" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="28,390,0,0" Text="确认密码" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="ConfirmButton" Content="确认" HorizontalAlignment="Left" Margin="28,459,0,0" VerticalAlignment="Top" Click="ConfirmButton_Click"/>
+        <Button x:Name="ResetButton" Content="重置" HorizontalAlignment="Left" Margin="128,459,0,0" VerticalAlignment="Top" Click="ResetButton_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="28,256,0,0" Text="你的ID将会是：" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="IDBlock" HorizontalAlignment="Left" Margin="128,256,0,0" Text="..." TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Button x:Name="BackButton" Style="{StaticResource NavigationBackButtonNormalStyle}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="65" Click="BackButton_Click"/>
+        <TextBlock x:Name="isExistBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="128,256,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
     </Grid>
-    
+
 </Page>

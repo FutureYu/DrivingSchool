@@ -32,7 +32,7 @@ namespace DrivingSchool
     private:
         bool _contentLoaded;
     
-        private: ::Windows::UI::Xaml::Controls::Button^ PersonalInformation;
+        private: ::Windows::UI::Xaml::Controls::Button^ ChangePersonalInformation;
         private: ::Windows::UI::Xaml::Controls::Button^ ChangePwd;
         private: ::Windows::UI::Xaml::Controls::Button^ ReserveExam;
         private: ::Windows::UI::Xaml::Controls::Button^ CheckScore;

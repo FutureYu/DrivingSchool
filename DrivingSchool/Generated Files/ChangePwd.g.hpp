@@ -39,12 +39,24 @@ void ::DrivingSchool::ChangePwd::Connect(int __connectionId, ::Platform::Object^
             break;
         case 3:
             {
+                this->ConfirmPwdBox = safe_cast<::Windows::UI::Xaml::Controls::PasswordBox^>(__target);
+            }
+            break;
+        case 4:
+            {
                 this->ConfirmBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
                 (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ConfirmBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ChangePwd::*)
                     (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ChangePwd::ConfirmBtn_Click);
             }
             break;
-        case 4:
+        case 5:
+            {
+                this->ResetBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ResetBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ChangePwd::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ChangePwd::ResetBtn_Click);
+            }
+            break;
+        case 6:
             {
                 this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
                 (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ChangePwd::*)

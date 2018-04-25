@@ -29,9 +29,9 @@ void ::DrivingSchool::StudentPage::Connect(int __connectionId, ::Platform::Objec
     {
         case 1:
             {
-                this->PersonalInformation = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->PersonalInformation))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::StudentPage::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&StudentPage::PersonalInformation_Click);
+                this->ChangePersonalInformation = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ChangePersonalInformation))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::StudentPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&StudentPage::ChangePersonalInformation_Click);
             }
             break;
         case 2:

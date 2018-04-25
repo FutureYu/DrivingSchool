@@ -25,63 +25,70 @@ ReserveExam::ReserveExam()
 {
 	InitializeComponent();
 
-	// 读取ID
+	// 读取ID，考试编号，进度编号
 	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
 	concurrency::create_task(storageFolder->GetFileAsync("ID.id"))
 		.then([&](StorageFile^ file)
 	{
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
-		try {
-			// 读取成功
-			IDBlock->Text = previousOperation.get();
-		}
-		catch (...) {
-			// 读取失败
-		}
+		IDBlock->Text = previousOperation.get();
+	}).then([&]()
+	{
+		GetExamId();
+	}).then([&]()
+	{
+		GetProgress();
 	});
-
-
 }
 
-
-
-// 确认注册
-void DrivingSchool::ReserveExam::ConfirmBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-{
-	String^ path = IDBlock->Text + ".exm";
-	long exam = wcstol(ExamBlock->Text->Data(), NULL, 10);
-	String^ newExam = ref new String(std::to_wstring(++exam).c_str());
-	FileWR::FileWrite(path,newExam );
-	FileWR::FileWrite(newExam + ".exm", "");
-	MessageDialog msg("预约成功!考试编号为" + newExam, "预约成功");
-	msg.ShowAsync();
-}
-
-// 查询学习进度
+// 查询学习进度 
 void DrivingSchool::ReserveExam::SearchBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	String^ path = IDBlock->Text + ".sta";
+	long progress = wcstol(ProgressNumberBlock->Text->Data(), NULL, 10);
+	switch (progress)
+	{
+	case 0:
+		ProgressBlock->Text = "您当前正在学习科目一，将为您预约科目一考试"; break;
+	case 1:
+		ProgressBlock->Text = "您已预约科目一考试，请积极准备考试"; break;
+	case 2:
+		ProgressBlock->Text = "您已通过科目一考试，请先预约科目二教练"; break;
+	case 3:
+		ProgressBlock->Text = "您当前正在学习科目二，将为您预约科目二考试"; break;
+	case 4:
+		ProgressBlock->Text = "您已预约科目二考试，请积极准备考试"; break;
+	case 5:
+		ProgressBlock->Text = "您已通过科目二考试，请先预约科目三教练"; break;
+	case 6:
+		ProgressBlock->Text = "您当前正在学习科目三，将为您预约科目三考试"; break;
+	case 7:
+		ProgressBlock->Text = "您已预约科目三考试，请积极准备考试"; break;
+	case 8:
+		ProgressBlock->Text = "您当前正在学习科目四，将为您预约科目四考试"; break;
+	case 9:
+		ProgressBlock->Text = "您已预约科目四考试，请积极准备考试"; break;
+	case 10:
+		ProgressBlock->Text = "恭喜您已通过考试！请耐心等待领取驾照"; break;
+	}
+}
 
+// 获取学习进度 
+void DrivingSchool::ReserveExam::GetProgress()
+{
+	String^ path = IDBlock->Text + ".sta";
 	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
 	concurrency::create_task(storageFolder->GetFileAsync(path))
 		.then([&](StorageFile^ file)
 	{
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
-		try {
-			// 读取成功
-			long progress = wcstol(previousOperation.get()->Data(), NULL, 10);
-			ProgressBlock->Text = "您当前正在学习科目" + (progress + 1).ToString() + ",将为您预约科目" + (progress + 1).ToString();
-		}
-		catch (...) {
-			// 读取失败
-		}
+		ProgressNumberBlock->Text = previousOperation.get();
 	});
 }
 
-// 查询考试编号
-void DrivingSchool::ReserveExam::SearchExam_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+// 获取考试编号
+void DrivingSchool::ReserveExam::GetExamId()
 {
 	String^ path = IDBlock->Text + ".exm";
 	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
@@ -90,20 +97,68 @@ void DrivingSchool::ReserveExam::SearchExam_Click(Platform::Object^ sender, Wind
 	{
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
-		try {
-			// 读取成功
-			long exam = wcstol(previousOperation.get()->Data(), NULL, 10);
-			ExamBlock->Text = exam.ToString();
-
-			ConfirmBtn->Visibility = Windows::UI::Xaml::Visibility::Visible;
-			SearchExamBtn->Visibility = Windows::UI::Xaml::Visibility::Collapsed;
-
-		}
-		catch (...) {
-			// 读取失败
-		}
+		ExamBlock->Text = previousOperation.get();
 	});
 }
+
+// 预约考试 异步任务链：判断可否预约，
+void DrivingSchool::ReserveExam::ConfirmBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	long progress = wcstol(ProgressNumberBlock->Text->Data(), NULL, 10);
+	switch (progress)
+	{
+	case 1:
+	{
+		MessageDialog msg("您已预约科目一考试！", "预约失败");
+		msg.ShowAsync(); return;
+	}
+	case 2:
+	{
+		MessageDialog msg("请先预约科目二教练！", "预约失败");
+		msg.ShowAsync(); return;
+	}
+	case 4:
+	{
+		MessageDialog msg("您已预约科目二考试！", "预约失败");
+		msg.ShowAsync(); return;
+	}
+	case 5:
+	{
+		MessageDialog msg("请先预约科目三教练！", "预约失败");
+		msg.ShowAsync(); return;
+	}
+	case 7:
+	{
+		MessageDialog msg("您已预约科目三考试！", "预约失败");
+		msg.ShowAsync(); return;
+	}
+	case 9:
+	{
+		MessageDialog msg("您已预约科目四考试！", "预约失败");
+		msg.ShowAsync(); return;
+	}
+	case 10:
+	{
+		MessageDialog msg("请耐心等待驾照制作完成！", "预约失败");
+		msg.ShowAsync(); return;
+	}
+	}
+	String^ path = IDBlock->Text + ".exm";
+	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+	concurrency::create_task(storageFolder->GetFileAsync(path))
+		.then([&](StorageFile^ file) {
+		long exam = wcstol(ExamBlock->Text->Data(), NULL, 10);
+		long progress = wcstol(ProgressNumberBlock->Text->Data(), NULL, 10);
+		String^ newExam = ref new String(std::to_wstring(++exam).c_str());
+		String^ newState = ref new String(std::to_wstring(++progress).c_str());
+		FileIO::WriteTextAsync(file, newExam);
+		FileWR::FileWrite(newExam + ".exm");
+		FileWR::FileWrite(IDBlock->Text + ".sta", newState);
+		MessageDialog msg("预约成功!考试编号为" + newExam, "预约成功");
+		msg.ShowAsync();
+	});
+}
+
 
 
 void DrivingSchool::ReserveExam::BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)

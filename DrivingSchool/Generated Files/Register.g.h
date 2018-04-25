@@ -37,10 +37,12 @@ namespace DrivingSchool
     
         private: ::Windows::UI::Xaml::Controls::TextBox^ NameBox;
         private: ::Windows::UI::Xaml::Controls::PasswordBox^ PasswordBox;
+        private: ::Windows::UI::Xaml::Controls::PasswordBox^ ConfirmPasswordBox;
         private: ::Windows::UI::Xaml::Controls::Button^ ConfirmButton;
         private: ::Windows::UI::Xaml::Controls::Button^ ResetButton;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ IDBlock;
         private: ::Windows::UI::Xaml::Controls::Button^ BackButton;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ isExistBlock;
     };
 }
 

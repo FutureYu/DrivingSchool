@@ -20,7 +20,8 @@ namespace DrivingSchool
 	private:
 		void ConfirmBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void SearchBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
-		void SearchExam_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void GetProgress();
+		void GetExamId();
 		void BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 	};
 }

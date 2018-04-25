@@ -5,10 +5,8 @@
 
 #include "pch.h"
 #include "MainPage.xaml.h"
-#include <iostream>
 #include "people.h"
 #include "Register.xaml.h"
-#include "FileWR.h"
 #include "Student.h"
 #include "StudentPage.xaml.h"
 #include "App.xaml.h"
@@ -31,7 +29,7 @@ using namespace Windows::UI::Xaml::Navigation;
 using namespace Windows::UI::Popups;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
-String^ People::fileContent = "";
+
 MainPage::MainPage()
 {
 	InitializeComponent();
@@ -47,49 +45,78 @@ void DrivingSchool::MainPage::ResetButton_Click(Platform::Object^ sender, Window
 // 登陆
 void MainPage::LoginButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	// 获取Id与密码，并创建对象
 	wstring wID(IDBox->Text->Data());
 	wstring wPassword(PasswordBox->Password->Data());
 	wstring wpath = wID + L".pwd";
-
-	//读取密码
 	String^ path = ref new String(wpath.c_str());
 	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-	if (fileContent->Text != "SuccessFully,click again to login")
+
+	// 异步任务链：判断用户存在->（判断密码匹配->导航至下一页面）
+	concurrency::create_task(storageFolder->TryGetItemAsync(path)
+	).then([&](IStorageItem^ item)
 	{
+		if (item == nullptr)
+		{
+			MessageDialog msg("登录失败，用户不存在!", "登录失败");
+			msg.ShowAsync();
+			isExistBlock->Text = "0";
+		}
+		else
+		{
+			isExistBlock->Text = "1";
+		}
+	}).then([&]() {
+		TryLogin();
+	});
+}
+
+void DrivingSchool::MainPage::TryLogin()
+{
+	if (isExistBlock->Text == "1")
+	{
+		wstring wID(IDBox->Text->Data());
+		wstring wPassword(PasswordBox->Password->Data());
+		wstring wpath = wID + L".pwd";
+
+		//读取密码
+		String^ path = ref new String(wpath.c_str());
+		StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+
 		concurrency::create_task(storageFolder->GetFileAsync(path))
 			.then([&](StorageFile^ file)
 		{
 			return FileIO::ReadTextAsync(file);
 		}).then([&](concurrency::task<String^> previousOperation) {
-			try {
-				// 读取成功
-				if (previousOperation.get() == PasswordBox->Password)
-				{
-					fileContent->Text = "SuccessFully,click again to login";
-					FileWR::FileWrite("ID.id", IDBox->Text);
-					MessageDialog msg("登录成功，再次点击登录键以确认", "登录成功");
-					msg.ShowAsync();
-				}
-				else
-				{
-					MessageDialog msg("登录失败，请检查密码是否正确", "登录失败");
-					msg.ShowAsync();
-				}
+			// 读取成功
+			if (previousOperation.get() == PasswordBox->Password)
+			{
+				isPwdCorrectBlock->Text = "1";
+				FileWR::FileWrite("ID.id", IDBox->Text);
 			}
-			catch (...) {
-				// 读取失败
+			else
+			{
+				isPwdCorrectBlock->Text = "0";
+				MessageDialog msg("登录失败，请检查密码是否正确", "登录失败");
+				msg.ShowAsync();
 			}
+		}).then([&]() {
+			LoginNavigate();
 		});
 	}
 	
-	if (fileContent->Text == "SuccessFully,click again to login")
+}
+
+void DrivingSchool::MainPage::LoginNavigate()
+{
+	if (isExistBlock->Text == "1" && isPwdCorrectBlock->Text == "1")
 	{
-		Object^ ID = ref new String(wID.c_str());
-		Frame->Navigate(StudentPage::typeid,ID);
+		if (wcstol(IDBox->Text->Data(), NULL, 10)<200000)
+		{
+			// 学生登录
+			Frame->Navigate(StudentPage::typeid);
+		}
+		
 	}
-	
-	
 }
 
 // 导航至注册页面

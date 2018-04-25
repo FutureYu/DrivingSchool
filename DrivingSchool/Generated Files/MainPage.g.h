@@ -40,7 +40,8 @@ namespace DrivingSchool
         private: ::Windows::UI::Xaml::Controls::TextBox^ IDBox;
         private: ::Windows::UI::Xaml::Controls::PasswordBox^ PasswordBox;
         private: ::Windows::UI::Xaml::Controls::Button^ RegisterButton;
-        private: ::Windows::UI::Xaml::Controls::TextBlock^ fileContent;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ isExistBlock;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ isPwdCorrectBlock;
     };
 }
 

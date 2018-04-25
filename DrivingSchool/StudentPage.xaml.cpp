@@ -29,9 +29,7 @@ StudentPage::StudentPage()
 	InitializeComponent();
 }
 
-
-
-void DrivingSchool::StudentPage::PersonalInformation_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+void DrivingSchool::StudentPage::ChangePersonalInformation_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 
 }
@@ -53,3 +51,5 @@ void DrivingSchool::StudentPage::CheckScore_Click(Platform::Object^ sender, Wind
 {
 	Frame->Navigate(CheckScore::typeid);
 }
+
+

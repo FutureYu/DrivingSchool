@@ -18,6 +18,9 @@ namespace DrivingSchool
 	public:
 		Register();
 	private:
+		void WriteFile();
+		void GetId();
+		void ReNavigate();
 		void ResetButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void ConfirmButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
