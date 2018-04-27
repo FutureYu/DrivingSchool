@@ -24,6 +24,7 @@
     <ClCompile Include="StudentPage.xaml.cpp" />
     <ClCompile Include="ChangePwd.xaml.cpp" />
     <ClCompile Include="ReserveExam.xaml.cpp" />
+    <ClCompile Include="CheckScore.xaml.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -39,6 +40,7 @@
     <ClInclude Include="StudentPage.xaml.h" />
     <ClInclude Include="ChangePwd.xaml.h" />
     <ClInclude Include="ReserveExam.xaml.h" />
+    <ClInclude Include="CheckScore.xaml.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\LockScreenLogo.scale-200.png">
@@ -189,10 +191,13 @@
   <ItemGroup>
     <Page Include="MainPage.xaml" />
     <Page Include="Register.xaml" />
-    <Page Include="StudentPage.xaml" />
     <Page Include="ChangePwd.xaml" />
     <Page Include="ReserveExam.xaml" />
     <Page Include="CheckScore.xaml" />
+    <Page Include="StudentPage.xaml" />
+    <Page Include="ReserveTeacher.xaml" />
+    <Page Include="AdminPage.xaml" />
+    <Page Include="UplodeScore.xaml" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DrivingSchool.rc" />

@@ -18,6 +18,8 @@ namespace DrivingSchool
 	public:
 		CheckScore();
 	private:
+		void GetExamId();
+		void GetProgress();
 		void BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void CheckScoreBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void CheckExamBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);

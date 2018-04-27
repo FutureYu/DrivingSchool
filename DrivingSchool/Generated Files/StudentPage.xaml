@@ -8,11 +8,10 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:ConnectionId='1' x:Name="ChangePersonalInformation" Content="修改个人信息" HorizontalAlignment="Left" Margin="57,138,0,0" VerticalAlignment="Top"                                        />
-        <Button x:ConnectionId='2' x:Name="ChangePwd" Content="修改密码" HorizontalAlignment="Left" Margin="57,201,0,0" VerticalAlignment="Top"                        />
-        <Button x:ConnectionId='3' x:Name="ReserveExam" Content="预约考试" HorizontalAlignment="Left" Margin="57,264,0,0" VerticalAlignment="Top"                          />
-        <Button x:ConnectionId='4' x:Name="CheckScore" Content="查询成绩" HorizontalAlignment="Left" Margin="57,332,0,0" VerticalAlignment="Top"                         />
-        <Button Content="Button" HorizontalAlignment="Left" Margin="57,396,0,0" VerticalAlignment="Top"/>
+        <Button x:ConnectionId='1' x:Name="ChangePwd" Content="修改密码" HorizontalAlignment="Left" Margin="147,130,0,0" VerticalAlignment="Top"                        />
+        <Button x:ConnectionId='2' x:Name="CheckScore" Content="查询分数" HorizontalAlignment="Left" Margin="147,248,0,0" VerticalAlignment="Top"                         />
+        <Button x:ConnectionId='3' x:Name="ReserveExam" Content="预约考试" HorizontalAlignment="Left" Margin="164,364,0,0" VerticalAlignment="Top"                          />
+        <Button x:ConnectionId='4' x:Name="ReserveTeacher" Content="预约教练" HorizontalAlignment="Left" Margin="181,483,0,0" VerticalAlignment="Top"                             />
 
     </Grid>
 </Page>

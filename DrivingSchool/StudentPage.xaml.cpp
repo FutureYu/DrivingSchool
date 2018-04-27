@@ -4,10 +4,13 @@
 //
 
 #include "pch.h"
-#include "CheckScore.xaml.h"
 #include "StudentPage.xaml.h"
 #include "ChangePwd.xaml.h"
+#include "CheckScore.xaml.h"
 #include "ReserveExam.xaml.h"
+#include "ReserveTeacher.xaml.h"
+
+
 
 using namespace DrivingSchool;
 
@@ -29,27 +32,28 @@ StudentPage::StudentPage()
 	InitializeComponent();
 }
 
-void DrivingSchool::StudentPage::ChangePersonalInformation_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-{
 
-}
-
-// 修改密码
 void DrivingSchool::StudentPage::ChangePwd_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	Frame->Navigate(ChangePwd::typeid);
 }
 
-// 预约考试
-void DrivingSchool::StudentPage::ReserveExam_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-{
-	Frame->Navigate(ReserveExam::typeid);
-}
 
-// 查询成绩
 void DrivingSchool::StudentPage::CheckScore_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	Frame->Navigate(CheckScore::typeid);
 }
 
 
+void DrivingSchool::StudentPage::ReserveExam_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	Frame->Navigate(ReserveExam::typeid);
+
+}
+
+
+void DrivingSchool::StudentPage::ReserveTeacher_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	Frame->Navigate(ReserveTeacher::typeid);
+
+}

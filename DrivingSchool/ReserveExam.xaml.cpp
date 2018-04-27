@@ -156,6 +156,7 @@ void DrivingSchool::ReserveExam::ConfirmBtn_Click(Platform::Object^ sender, Wind
 		FileWR::FileWrite(IDBlock->Text + ".sta", newState);
 		MessageDialog msg("预约成功!考试编号为" + newExam, "预约成功");
 		msg.ShowAsync();
+		ConfirmBtn->IsEnabled = false;
 	});
 }
 

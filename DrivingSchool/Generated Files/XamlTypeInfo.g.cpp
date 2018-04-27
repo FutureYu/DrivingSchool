@@ -9,21 +9,27 @@
 #include "pch.h"
 #include "XamlTypeInfo.g.h"
 
+#include "AdminPage.xaml.h"
 #include "ChangePwd.xaml.h"
 #include "CheckScore.xaml.h"
 #include "App.xaml.h"
 #include "MainPage.xaml.h"
 #include "Register.xaml.h"
 #include "ReserveExam.xaml.h"
+#include "ReserveTeacher.xaml.h"
 #include "StudentPage.xaml.h"
+#include "UplodeScore.xaml.h"
 #include "XamlBindingInfo.g.hpp"
+#include "AdminPage.g.hpp"
 #include "ChangePwd.g.hpp"
 #include "CheckScore.g.hpp"
 #include "App.g.hpp"
 #include "MainPage.g.hpp"
 #include "Register.g.hpp"
 #include "ReserveExam.g.hpp"
+#include "ReserveTeacher.g.hpp"
 #include "StudentPage.g.hpp"
+#include "UplodeScore.g.hpp"
 
 template<typename T>
 ::Platform::Object^ ActivateType()
@@ -72,46 +78,64 @@ TypeInfo TypeInfos[] =
     //   0
     L"DrivingSchool.MainPage", L"",
     &ActivateType<::DrivingSchool::MainPage>, nullptr, nullptr, nullptr,
-    6, // Windows.UI.Xaml.Controls.Page
+    9, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //   1
     L"DrivingSchool.Register", L"",
     &ActivateType<::DrivingSchool::Register>, nullptr, nullptr, nullptr,
-    6, // Windows.UI.Xaml.Controls.Page
+    9, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //   2
-    L"DrivingSchool.ChangePwd", L"",
-    &ActivateType<::DrivingSchool::ChangePwd>, nullptr, nullptr, nullptr,
-    6, // Windows.UI.Xaml.Controls.Page
+    L"DrivingSchool.AdminPage", L"",
+    &ActivateType<::DrivingSchool::AdminPage>, nullptr, nullptr, nullptr,
+    9, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //   3
-    L"DrivingSchool.CheckScore", L"",
-    &ActivateType<::DrivingSchool::CheckScore>, nullptr, nullptr, nullptr,
-    6, // Windows.UI.Xaml.Controls.Page
+    L"DrivingSchool.ChangePwd", L"",
+    &ActivateType<::DrivingSchool::ChangePwd>, nullptr, nullptr, nullptr,
+    9, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //   4
-    L"DrivingSchool.ReserveExam", L"",
-    &ActivateType<::DrivingSchool::ReserveExam>, nullptr, nullptr, nullptr,
-    6, // Windows.UI.Xaml.Controls.Page
+    L"DrivingSchool.CheckScore", L"",
+    &ActivateType<::DrivingSchool::CheckScore>, nullptr, nullptr, nullptr,
+    9, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //   5
-    L"DrivingSchool.StudentPage", L"",
-    &ActivateType<::DrivingSchool::StudentPage>, nullptr, nullptr, nullptr,
-    6, // Windows.UI.Xaml.Controls.Page
+    L"DrivingSchool.ReserveExam", L"",
+    &ActivateType<::DrivingSchool::ReserveExam>, nullptr, nullptr, nullptr,
+    9, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //   6
+    L"DrivingSchool.StudentPage", L"",
+    &ActivateType<::DrivingSchool::StudentPage>, nullptr, nullptr, nullptr,
+    9, // Windows.UI.Xaml.Controls.Page
+    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    true,  false, false, false,
+    //   7
+    L"DrivingSchool.UplodeScore", L"",
+    &ActivateType<::DrivingSchool::UplodeScore>, nullptr, nullptr, nullptr,
+    9, // Windows.UI.Xaml.Controls.Page
+    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    true,  false, false, false,
+    //   8
+    L"DrivingSchool.ReserveTeacher", L"",
+    &ActivateType<::DrivingSchool::ReserveTeacher>, nullptr, nullptr, nullptr,
+    9, // Windows.UI.Xaml.Controls.Page
+    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    true,  false, false, false,
+    //   9
     L"Windows.UI.Xaml.Controls.Page", L"",
     nullptr, nullptr, nullptr, nullptr,
     -1,
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
     false, true,  false, false,
-    //   7
+    //  10
     L"Windows.UI.Xaml.Controls.UserControl", L"",
     nullptr, nullptr, nullptr, nullptr,
     -1,
@@ -150,20 +174,20 @@ UINT TypeInfoLookup[] = {
       0,   //  21
       0,   //  22
       2,   //  23
-      3,   //  24
-      4,   //  25
-      6,   //  26
-      6,   //  27
-      6,   //  28
-      6,   //  29
-      7,   //  30
-      7,   //  31
-      7,   //  32
-      7,   //  33
-      7,   //  34
-      7,   //  35
-      7,   //  36
-      8,   //  37
+      4,   //  24
+      5,   //  25
+      8,   //  26
+      8,   //  27
+      8,   //  28
+      9,   //  29
+     10,   //  30
+     10,   //  31
+     10,   //  32
+     10,   //  33
+     10,   //  34
+     10,   //  35
+     10,   //  36
+     11,   //  37
 };
 
 TypeInfo* GetTypeInfo(::Platform::String^ typeName)

@@ -10,6 +10,9 @@
 #include "Student.h"
 #include "StudentPage.xaml.h"
 #include "App.xaml.h"
+#include "AdminPage.xaml.h"
+
+
 
 using namespace std;
 using namespace DrivingSchool;
@@ -33,6 +36,7 @@ using namespace Windows::UI::Popups;
 MainPage::MainPage()
 {
 	InitializeComponent();
+	FileWR::FileWrite("900001.pwd", "admin");
 }
 
 // 重置文本框内容
@@ -115,6 +119,11 @@ void DrivingSchool::MainPage::LoginNavigate()
 			// 学生登录
 			Frame->Navigate(StudentPage::typeid);
 		}
+		else if (wcstol(IDBox->Text->Data(), NULL, 10) > 900000)
+		{
+			// 管理员登录
+			Frame->Navigate(AdminPage::typeid);
+		}
 		
 	}
 }
@@ -123,4 +132,11 @@ void DrivingSchool::MainPage::LoginNavigate()
 void DrivingSchool::MainPage::RegisterButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	Frame->Navigate(Register::typeid);
+}
+
+
+
+void DrivingSchool::MainPage::IDBox_KeyDown(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
+{
+
 }

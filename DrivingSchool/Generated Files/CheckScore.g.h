@@ -36,8 +36,8 @@ namespace DrivingSchool
         private: ::Windows::UI::Xaml::Controls::TextBlock^ ScoreBlock;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ IDBlock;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ ExamBlock;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ ProgressNumberBlock;
         private: ::Windows::UI::Xaml::Controls::Button^ BackButton;
-        private: ::Windows::UI::Xaml::Controls::Button^ CheckExamBtn;
         private: ::Windows::UI::Xaml::Controls::Button^ CheckScoreBtn;
     };
 }

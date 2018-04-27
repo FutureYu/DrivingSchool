@@ -44,16 +44,14 @@ void ::DrivingSchool::CheckScore::Connect(int __connectionId, ::Platform::Object
             break;
         case 4:
             {
-                this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::CheckScore::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&CheckScore::BackButton_Click);
+                this->ProgressNumberBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
             }
             break;
         case 5:
             {
-                this->CheckExamBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->CheckExamBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::CheckScore::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&CheckScore::CheckExamBtn_Click);
+                this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::CheckScore::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&CheckScore::BackButton_Click);
             }
             break;
         case 6:

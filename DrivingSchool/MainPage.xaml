@@ -9,14 +9,13 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock HorizontalAlignment="Left" Margin="273,83,0,0" Text="驾校管理系统" TextWrapping="Wrap" VerticalAlignment="Top" />
-        <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="500,304,0,0" VerticalAlignment="Top" Click="LoginButton_Click" Height="139" Width="89"/>
-        <Button x:Name="ResetButton" Content="Reset" HorizontalAlignment="Left" Margin="394,487,0,0" VerticalAlignment="Top" Click="ResetButton_Click" Width="72"/>
         <TextBox x:Name="IDBox" HorizontalAlignment="Left" Margin="169,298,0,0" Text="" InputScope="Number" VerticalAlignment="Top" Width="297" AutomationProperties.HelpText="请输入ID"/>
-
-        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="169,411,0,0" VerticalAlignment="Top" Width="297"/>
+        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="169,411,0,0" VerticalAlignment="Top" Width="297"   />
+        <Button x:Name="LoginButton" Content="登陆" HorizontalAlignment="Left" Margin="500,304,0,0" VerticalAlignment="Top" Click="LoginButton_Click" Height="139" Width="89"/>
+        <Button x:Name="RegisterButton" Content="注册" HorizontalAlignment="Left" Margin="169,487,0,0" VerticalAlignment="Top" Click="RegisterButton_Click"/>
+        <Button x:Name="ResetButton" Content="重置" HorizontalAlignment="Left" Margin="394,487,0,0" VerticalAlignment="Top" Click="ResetButton_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="131,304,0,0" Text="ID" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="5.164,0.436"/>
         <TextBlock HorizontalAlignment="Left" Margin="131,411,0,0" Text="密码" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button x:Name="RegisterButton" Content="Register" HorizontalAlignment="Left" Margin="169,487,0,0" VerticalAlignment="Top" Click="RegisterButton_Click"/>
         <TextBlock x:Name="isExistBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="822,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock x:Name="isPwdCorrectBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="822,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
