@@ -9,7 +9,9 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Button x:Name="UplodeScore" Content="上传成绩" HorizontalAlignment="Left" Margin="91,200,0,0" VerticalAlignment="Top" Click="UplodeScore_Click"/>
-        <Button x:Name="AddTeacher" Content="添加教练" HorizontalAlignment="Left" Margin="91,250,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="AddTeacherTwo" Content="添加二科教练" HorizontalAlignment="Left" Margin="91,250,0,0" VerticalAlignment="Top" Click="AddTeacherTwo_Click"/>
+        <Button x:Name="AddTeacherThree" Content="添加三科教练" HorizontalAlignment="Left" Margin="250,250,0,0" VerticalAlignment="Top" Click="AddTeacherThree_Click"/>
+
         <Button x:Name="EditTeacher" Content="修改教练" HorizontalAlignment="Left" Margin="91,300,0,0" VerticalAlignment="Top"/>
         <Button x:Name="DeleteTeacher" Content="删除教练" HorizontalAlignment="Left" Margin="91,350,0,0" VerticalAlignment="Top"/>
     </Grid>

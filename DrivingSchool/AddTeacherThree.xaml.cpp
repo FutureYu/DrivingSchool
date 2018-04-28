@@ -1,12 +1,10 @@
 ﻿//
-// Register.xaml.cpp
-// Register 类的实现
+// AddTeacherThree.xaml.cpp
+// AddTeacherThree 类的实现
 //
 
 #include "pch.h"
-#include "Register.xaml.h"
-#include "Mainpage.xaml.h"
-#include "StudentPage.xaml.h"
+#include "AddTeacherThree.xaml.h"
 
 using namespace DrivingSchool;
 
@@ -23,14 +21,14 @@ using namespace Windows::UI::Xaml::Navigation;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
-Register::Register()
+AddTeacherThree::AddTeacherThree()
 {
 	InitializeComponent();
 	// 设定页面ID
 	// 如第一次使用，则初始化
 	// 异步任务链：判断文件存在->（写入文件->读入文件）
 	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-	concurrency::create_task(storageFolder->TryGetItemAsync("Students.num")
+	concurrency::create_task(storageFolder->TryGetItemAsync("TeachersThree.num")
 	).then([&](IStorageItem^ item)
 	{
 		isExistBlock->Text = "0";
@@ -46,22 +44,22 @@ Register::Register()
 }
 
 // 写入一个名单文件并重新读入
-void DrivingSchool::Register::WriteFile()
+void DrivingSchool::AddTeacherThree::WriteFile()
 {
 	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-	concurrency::create_task(storageFolder->CreateFileAsync("Students.num", CreationCollisionOption::ReplaceExisting)).then([&](StorageFile^ File)
+	concurrency::create_task(storageFolder->CreateFileAsync("TeachersThree.num", CreationCollisionOption::ReplaceExisting)).then([&](StorageFile^ File)
 	{
-		return FileIO::WriteTextAsync(File, "100001");
+		return FileIO::WriteTextAsync(File, "300001");
 	}).then([&]() {
 		GetId();
 	});
 }
 
 // 读入名单文件
-void DrivingSchool::Register::GetId()
+void DrivingSchool::AddTeacherThree::GetId()
 {
 	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-	concurrency::create_task(storageFolder->GetFileAsync("Students.num"))
+	concurrency::create_task(storageFolder->GetFileAsync("TeachersThree.num"))
 		.then([&](StorageFile^ file)
 	{
 		return FileIO::ReadTextAsync(file);
@@ -74,7 +72,7 @@ void DrivingSchool::Register::GetId()
 
 
 // 重置文本
-void DrivingSchool::Register::ResetButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+void DrivingSchool::AddTeacherThree::ResetButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	NameBox->Text = "";
 	PasswordBox->Password = "";
@@ -82,8 +80,8 @@ void DrivingSchool::Register::ResetButton_Click(Platform::Object^ sender, Window
 }
 
 // 确认注册
-void DrivingSchool::Register::ConfirmButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-{	
+void DrivingSchool::AddTeacherThree::ConfirmButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
 	// 判断两次密码一致
 	wstring wpassword = PasswordBox->Password->Data();
 	wstring wconfirmPassword = ConfirmPasswordBox->Password->Data();
@@ -96,29 +94,24 @@ void DrivingSchool::Register::ConfirmButton_Click(Platform::Object^ sender, Wind
 		return;
 	}
 
-	// 实例化一个 Student 对象
+	// 实例化一个 Teacher 对象
 	wstring wname = NameBox->Text->Data();
 	wstring wID = IDBlock->Text->Data();
-	Student stu(wID, wname, wpassword, 0);
-	
+	Teacher tch(wID, wname, wpassword, 0);
+
 
 	// 注册
-	stu.StudentRegister();
+	tch.TeacherRegister();
 
 	// 修改下一个人的编号
 	long ID = wcstol(IDBlock->Text->Data(), NULL, 10);
-	FileWR::FileWrite("Students.num", ref new String(std::to_wstring(++ID).c_str()));
+	FileWR::FileWrite("TeachersThree.num", ref new String(std::to_wstring(++ID).c_str()));
 	MessageDialog msg("注册成功，ID为" + IDBlock->Text, "注册成功");
 	msg.ShowAsync();
-	Frame->Navigate(MainPage::typeid);
 }
 
 // 返回登陆页面
-void DrivingSchool::Register::BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+void DrivingSchool::AddTeacherThree::BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	Frame->GoBack();
 }
-
-
-
-

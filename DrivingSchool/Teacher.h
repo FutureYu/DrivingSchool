@@ -5,11 +5,12 @@ class Teacher :
 {
 private:
 	int score;
-	wstring currentStudent[8];
+	
 	
 
 public:
-	Teacher(wstring ID, wstring name, wstring password, int score, wstring currentStudent[8]);
+	Teacher(wstring ID, wstring name, wstring password, int score);
+	void TeacherRegister();
 	
 };
 

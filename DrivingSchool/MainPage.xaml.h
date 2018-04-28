@@ -25,6 +25,5 @@ namespace DrivingSchool
 		void TryLogin();
 		void LoginNavigate();
 		void RegisterButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
-		void IDBox_KeyDown(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e);
 	};
 }

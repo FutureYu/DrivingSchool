@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include "student.h"
+#include "Teacher.h"
 #include "FileWR.h"
 #include <string>
 

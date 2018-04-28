@@ -6,6 +6,8 @@
 #include "pch.h"
 #include "AdminPage.xaml.h"
 #include "UplodeScore.xaml.h"
+#include "AddTeacherTwo.xaml.h"
+#include "AddTeacherThree.xaml.h"
 
 using namespace DrivingSchool;
 
@@ -31,4 +33,16 @@ AdminPage::AdminPage()
 void DrivingSchool::AdminPage::UplodeScore_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	Frame->Navigate(UplodeScore::typeid);
+}
+
+
+void DrivingSchool::AdminPage::AddTeacherTwo_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	Frame->Navigate(AddTeacherTwo::typeid);
+}
+
+
+void DrivingSchool::AdminPage::AddTeacherThree_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	Frame->Navigate(AddTeacherThree::typeid);
 }

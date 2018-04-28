@@ -13,7 +13,7 @@ private:
 	
 public:
 	Student(wstring ID, wstring name, wstring password, int status);
-	static void StudentRegister(Student stu);
+	void StudentRegister();
 };
 
 

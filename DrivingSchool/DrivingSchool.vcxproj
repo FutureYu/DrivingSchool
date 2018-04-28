@@ -140,6 +140,12 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AddTeacherThree.xaml.h">
+      <DependentUpon>AddTeacherThree.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="AddTeacherTwo.xaml.h">
+      <DependentUpon>AddTeacherTwo.xaml</DependentUpon>
+    </ClInclude>
     <ClInclude Include="Admin.h" />
     <ClInclude Include="AdminPage.xaml.h">
       <DependentUpon>AdminPage.xaml</DependentUpon>
@@ -174,6 +180,9 @@
       <DependentUpon>StudentPage.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="Teacher.h" />
+    <ClInclude Include="TeacherPage.xaml.h">
+      <DependentUpon>TeacherPage.xaml</DependentUpon>
+    </ClInclude>
     <ClInclude Include="UplodeScore.xaml.h">
       <DependentUpon>UplodeScore.xaml</DependentUpon>
     </ClInclude>
@@ -182,6 +191,12 @@
     <ApplicationDefinition Include="App.xaml">
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AddTeacherThree.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AddTeacherTwo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="AdminPage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -204,6 +219,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="StudentPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TeacherPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UplodeScore.xaml">
@@ -265,6 +283,12 @@
     <Image Include="Assets\Wide310x150Logo.scale-400.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddTeacherThree.xaml.cpp">
+      <DependentUpon>AddTeacherThree.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="AddTeacherTwo.xaml.cpp">
+      <DependentUpon>AddTeacherTwo.xaml</DependentUpon>
+    </ClCompile>
     <ClCompile Include="Admin.cpp" />
     <ClCompile Include="AdminPage.xaml.cpp">
       <DependentUpon>AdminPage.xaml</DependentUpon>
@@ -304,6 +328,9 @@
       <DependentUpon>StudentPage.xaml</DependentUpon>
     </ClCompile>
     <ClCompile Include="Teacher.cpp" />
+    <ClCompile Include="TeacherPage.xaml.cpp">
+      <DependentUpon>TeacherPage.xaml</DependentUpon>
+    </ClCompile>
     <ClCompile Include="UplodeScore.xaml.cpp">
       <DependentUpon>UplodeScore.xaml</DependentUpon>
     </ClCompile>

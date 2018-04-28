@@ -36,15 +36,24 @@ void ::DrivingSchool::AdminPage::Connect(int __connectionId, ::Platform::Object^
             break;
         case 2:
             {
-                this->AddTeacher = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                this->AddTeacherTwo = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->AddTeacherTwo))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AdminPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AdminPage::AddTeacherTwo_Click);
             }
             break;
         case 3:
             {
-                this->EditTeacher = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                this->AddTeacherThree = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->AddTeacherThree))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AdminPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AdminPage::AddTeacherThree_Click);
             }
             break;
         case 4:
+            {
+                this->EditTeacher = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            }
+            break;
+        case 5:
             {
                 this->DeleteTeacher = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
             }

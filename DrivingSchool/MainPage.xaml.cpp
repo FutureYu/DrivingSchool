@@ -11,6 +11,7 @@
 #include "StudentPage.xaml.h"
 #include "App.xaml.h"
 #include "AdminPage.xaml.h"
+#include "TeacherPage.xaml.h"
 
 
 
@@ -36,7 +37,7 @@ using namespace Windows::UI::Popups;
 MainPage::MainPage()
 {
 	InitializeComponent();
-	FileWR::FileWrite("900001.pwd", "admin");
+	FileWR::FileWrite("admin.pwd", "admin");
 }
 
 // 重置文本框内容
@@ -107,24 +108,30 @@ void DrivingSchool::MainPage::TryLogin()
 			LoginNavigate();
 		});
 	}
-	
+
 }
 
 void DrivingSchool::MainPage::LoginNavigate()
 {
 	if (isExistBlock->Text == "1" && isPwdCorrectBlock->Text == "1")
 	{
-		if (wcstol(IDBox->Text->Data(), NULL, 10)<200000)
-		{
-			// 学生登录
-			Frame->Navigate(StudentPage::typeid);
-		}
-		else if (wcstol(IDBox->Text->Data(), NULL, 10) > 900000)
+		if (IDBox->Text == "admin")
 		{
 			// 管理员登录
 			Frame->Navigate(AdminPage::typeid);
 		}
-		
+		else if (wcstol(IDBox->Text->Data(), NULL, 10) > 200000 || wcstol(IDBox->Text->Data(), NULL, 10) < 400000)
+		{
+			// 老师登录
+			Frame->Navigate(TeacherPage::typeid);			
+		}
+
+		else
+		{
+			// 学生登录
+			Frame->Navigate(StudentPage::typeid);
+		}
+
 	}
 }
 
@@ -134,9 +141,3 @@ void DrivingSchool::MainPage::RegisterButton_Click(Platform::Object^ sender, Win
 	Frame->Navigate(Register::typeid);
 }
 
-
-
-void DrivingSchool::MainPage::IDBox_KeyDown(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
-{
-
-}

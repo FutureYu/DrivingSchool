@@ -11,7 +11,10 @@ namespace Windows {
     namespace UI {
         namespace Xaml {
             namespace Controls {
+                ref class TextBox;
+                ref class PasswordBox;
                 ref class Button;
+                ref class TextBlock;
             }
         }
     }
@@ -20,7 +23,7 @@ namespace Windows {
 namespace DrivingSchool
 {
     [::Windows::Foundation::Metadata::WebHostHidden]
-    partial ref class AdminPage : public ::Windows::UI::Xaml::Controls::Page, 
+    partial ref class AddTeacherTwo : public ::Windows::UI::Xaml::Controls::Page, 
         public ::Windows::UI::Xaml::Markup::IComponentConnector,
         public ::Windows::UI::Xaml::Markup::IComponentConnector2
     {
@@ -32,11 +35,14 @@ namespace DrivingSchool
     private:
         bool _contentLoaded;
     
-        private: ::Windows::UI::Xaml::Controls::Button^ UplodeScore;
-        private: ::Windows::UI::Xaml::Controls::Button^ AddTeacherTwo;
-        private: ::Windows::UI::Xaml::Controls::Button^ AddTeacherThree;
-        private: ::Windows::UI::Xaml::Controls::Button^ EditTeacher;
-        private: ::Windows::UI::Xaml::Controls::Button^ DeleteTeacher;
+        private: ::Windows::UI::Xaml::Controls::TextBox^ NameBox;
+        private: ::Windows::UI::Xaml::Controls::PasswordBox^ PasswordBox;
+        private: ::Windows::UI::Xaml::Controls::PasswordBox^ ConfirmPasswordBox;
+        private: ::Windows::UI::Xaml::Controls::Button^ ConfirmButton;
+        private: ::Windows::UI::Xaml::Controls::Button^ ResetButton;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ IDBlock;
+        private: ::Windows::UI::Xaml::Controls::Button^ BackButton;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ isExistBlock;
     };
 }
 
