@@ -8,6 +8,8 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="ViewStudentBtn" Content="查看学生" HorizontalAlignment="Left" Margin="225,222,0,0" VerticalAlignment="Top" Click="ViewStudentBtn_Click"/>
+        <Button x:Name="ViewMark" Content="查看评分" HorizontalAlignment="Left" Margin="225,333,0,0" VerticalAlignment="Top" Click="ViewMark_Click"/>
 
     </Grid>
 </Page>

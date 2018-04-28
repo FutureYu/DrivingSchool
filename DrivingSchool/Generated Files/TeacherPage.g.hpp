@@ -25,8 +25,23 @@ void ::DrivingSchool::TeacherPage::InitializeComponent()
 
 void ::DrivingSchool::TeacherPage::Connect(int __connectionId, ::Platform::Object^ __target)
 {
-    __connectionId;         // unreferenced 
-    __target;               // unreferenced
+    switch (__connectionId)
+    {
+        case 1:
+            {
+                this->ViewStudentBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ViewStudentBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::TeacherPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&TeacherPage::ViewStudentBtn_Click);
+            }
+            break;
+        case 2:
+            {
+                this->ViewMark = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ViewMark))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::TeacherPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&TeacherPage::ViewMark_Click);
+            }
+            break;
+    }
     _contentLoaded = true;
 }
 

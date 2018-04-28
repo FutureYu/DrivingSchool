@@ -37,6 +37,9 @@ void Teacher::TeacherRegister()
 	wstring wstuFivePath = this->ID + L"5.stu";
 	String ^stuFivePath = ref new String(wstuFivePath.c_str());
 
+	wstring whisPath = this->ID + L".his";
+	String ^hisPath = ref new String(whisPath.c_str());
+
 	// 创建写入内容
 	String ^nameContent = ref new String(this->name.c_str());
 	String ^pwdContent = ref new String(this->password.c_str());
@@ -52,5 +55,7 @@ void Teacher::TeacherRegister()
 	FileWR::FileWrite(stuThreePath);
 	FileWR::FileWrite(stuFourPath);
 	FileWR::FileWrite(stuFivePath);
+	FileWR::FileWrite(hisPath, "0");
+
 }
 

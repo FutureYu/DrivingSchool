@@ -8,14 +8,32 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock HorizontalAlignment="Left" Margin="273,83,0,0" Text="驾校管理系统" TextWrapping="Wrap" VerticalAlignment="Top" />
-        <TextBox x:Name="IDBox" HorizontalAlignment="Left" Margin="169,298,0,0" Text="" InputScope="Number" VerticalAlignment="Top" Width="297" AutomationProperties.HelpText="请输入ID"/>
-        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="169,411,0,0" VerticalAlignment="Top" Width="297"   />
-        <Button x:Name="LoginButton" Content="登陆" HorizontalAlignment="Left" Margin="500,304,0,0" VerticalAlignment="Top" Click="LoginButton_Click" Height="139" Width="89"/>
-        <Button x:Name="RegisterButton" Content="注册" HorizontalAlignment="Left" Margin="169,487,0,0" VerticalAlignment="Top" Click="RegisterButton_Click"/>
-        <Button x:Name="ResetButton" Content="重置" HorizontalAlignment="Left" Margin="394,487,0,0" VerticalAlignment="Top" Click="ResetButton_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="131,304,0,0" Text="ID" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="5.164,0.436"/>
-        <TextBlock HorizontalAlignment="Left" Margin="131,411,0,0" Text="密码" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.ColumnSpan="6" HorizontalAlignment="Left" Text="用户登录" Margin="10,10,0,0" FontSize="40" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" x:Name="IDBox" HorizontalAlignment="Left" Text="" Width="200" VerticalAlignment="Top" MaxLength="6" />
+        <PasswordBox Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" x:Name="PasswordBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200"   />
+        <Button Grid.Column="4" Grid.Row="2" Grid.RowSpan="2" x:Name="LoginButton" Margin="20,0,0,0" Content="登陆" HorizontalAlignment="Left" VerticalAlignment="Top" Click="LoginButton_Click" Height="120" Width="90"/>
+        <Button Grid.Column="2" Grid.Row="4" x:Name="RegisterButton" Content="注册" HorizontalAlignment="Left" VerticalAlignment="Top" Click="RegisterButton_Click"/>
+        <Button Grid.Column="3" Grid.Row="4" x:Name="ResetButton" Content="重置" HorizontalAlignment="Right" VerticalAlignment="Top" Click="ResetButton_Click"/>
+        <TextBlock Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Text="ID：" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="5.164,0.436"/>
+        <TextBlock Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" Text="密码：" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock x:Name="isExistBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="822,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock x:Name="isPwdCorrectBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="822,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 

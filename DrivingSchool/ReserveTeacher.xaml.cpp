@@ -5,6 +5,7 @@
 
 #include "pch.h"
 #include "ReserveTeacher.xaml.h"
+#include "TeacherDetail.xaml.h"
 
 using namespace DrivingSchool;
 

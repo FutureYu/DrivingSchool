@@ -30,6 +30,7 @@
     <ClCompile Include="UplodeScore.xaml.cpp" />
     <ClCompile Include="AddTeacherThree.xaml.cpp" />
     <ClCompile Include="AddTeacherTwo.xaml.cpp" />
+    <ClCompile Include="TeacherPage.xaml.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -51,6 +52,7 @@
     <ClInclude Include="UplodeScore.xaml.h" />
     <ClInclude Include="AddTeacherThree.xaml.h" />
     <ClInclude Include="AddTeacherTwo.xaml.h" />
+    <ClInclude Include="TeacherPage.xaml.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\LockScreenLogo.scale-200.png">
@@ -211,6 +213,10 @@
     <Page Include="AddTeacherTwo.xaml" />
     <Page Include="AddTeacherThree.xaml" />
     <Page Include="TeacherPage.xaml" />
+    <Page Include="MarkTeacher.xaml" />
+    <Page Include="ViewStudents.xaml" />
+    <Page Include="ViewMark.xaml" />
+    <Page Include="TeacherDetail.xaml" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DrivingSchool.rc" />

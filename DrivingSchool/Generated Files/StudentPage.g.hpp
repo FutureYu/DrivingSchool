@@ -55,6 +55,13 @@ void ::DrivingSchool::StudentPage::Connect(int __connectionId, ::Platform::Objec
                     (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&StudentPage::ReserveTeacher_Click);
             }
             break;
+        case 5:
+            {
+                this->MarkTeacher = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->MarkTeacher))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::StudentPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&StudentPage::MarkTeacher_Click);
+            }
+            break;
     }
     _contentLoaded = true;
 }

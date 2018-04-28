@@ -9,6 +9,8 @@
 #include "CheckScore.xaml.h"
 #include "ReserveExam.xaml.h"
 #include "ReserveTeacher.xaml.h"
+#include "MarkTeacher.xaml.h"
+
 
 
 
@@ -55,5 +57,12 @@ void DrivingSchool::StudentPage::ReserveExam_Click(Platform::Object^ sender, Win
 void DrivingSchool::StudentPage::ReserveTeacher_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	Frame->Navigate(ReserveTeacher::typeid);
+
+}
+
+
+void DrivingSchool::StudentPage::MarkTeacher_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	Frame->Navigate(MarkTeacher::typeid);
 
 }

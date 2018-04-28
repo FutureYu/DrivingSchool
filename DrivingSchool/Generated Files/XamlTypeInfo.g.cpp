@@ -14,28 +14,36 @@
 #include "AdminPage.xaml.h"
 #include "ChangePwd.xaml.h"
 #include "CheckScore.xaml.h"
+#include "MarkTeacher.xaml.h"
 #include "App.xaml.h"
 #include "MainPage.xaml.h"
 #include "Register.xaml.h"
 #include "ReserveExam.xaml.h"
 #include "ReserveTeacher.xaml.h"
 #include "StudentPage.xaml.h"
+#include "TeacherDetail.xaml.h"
 #include "TeacherPage.xaml.h"
 #include "UplodeScore.xaml.h"
+#include "ViewMark.xaml.h"
+#include "ViewStudents.xaml.h"
 #include "XamlBindingInfo.g.hpp"
 #include "AddTeacherThree.g.hpp"
 #include "AddTeacherTwo.g.hpp"
 #include "AdminPage.g.hpp"
 #include "ChangePwd.g.hpp"
 #include "CheckScore.g.hpp"
+#include "MarkTeacher.g.hpp"
 #include "App.g.hpp"
 #include "MainPage.g.hpp"
 #include "Register.g.hpp"
 #include "ReserveExam.g.hpp"
 #include "ReserveTeacher.g.hpp"
 #include "StudentPage.g.hpp"
+#include "TeacherDetail.g.hpp"
 #include "TeacherPage.g.hpp"
 #include "UplodeScore.g.hpp"
+#include "ViewMark.g.hpp"
+#include "ViewStudents.g.hpp"
 
 template<typename T>
 ::Platform::Object^ ActivateType()
@@ -84,82 +92,106 @@ TypeInfo TypeInfos[] =
     //   0
     L"DrivingSchool.MainPage", L"",
     &ActivateType<::DrivingSchool::MainPage>, nullptr, nullptr, nullptr,
-    12, // Windows.UI.Xaml.Controls.Page
+    16, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //   1
     L"DrivingSchool.Register", L"",
     &ActivateType<::DrivingSchool::Register>, nullptr, nullptr, nullptr,
-    12, // Windows.UI.Xaml.Controls.Page
+    16, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //   2
-    L"DrivingSchool.AdminPage", L"",
-    &ActivateType<::DrivingSchool::AdminPage>, nullptr, nullptr, nullptr,
-    12, // Windows.UI.Xaml.Controls.Page
+    L"DrivingSchool.ViewMark", L"",
+    &ActivateType<::DrivingSchool::ViewMark>, nullptr, nullptr, nullptr,
+    16, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //   3
-    L"DrivingSchool.ChangePwd", L"",
-    &ActivateType<::DrivingSchool::ChangePwd>, nullptr, nullptr, nullptr,
-    12, // Windows.UI.Xaml.Controls.Page
+    L"DrivingSchool.AdminPage", L"",
+    &ActivateType<::DrivingSchool::AdminPage>, nullptr, nullptr, nullptr,
+    16, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //   4
-    L"DrivingSchool.CheckScore", L"",
-    &ActivateType<::DrivingSchool::CheckScore>, nullptr, nullptr, nullptr,
-    12, // Windows.UI.Xaml.Controls.Page
+    L"DrivingSchool.ChangePwd", L"",
+    &ActivateType<::DrivingSchool::ChangePwd>, nullptr, nullptr, nullptr,
+    16, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //   5
-    L"DrivingSchool.ReserveExam", L"",
-    &ActivateType<::DrivingSchool::ReserveExam>, nullptr, nullptr, nullptr,
-    12, // Windows.UI.Xaml.Controls.Page
+    L"DrivingSchool.CheckScore", L"",
+    &ActivateType<::DrivingSchool::CheckScore>, nullptr, nullptr, nullptr,
+    16, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //   6
-    L"DrivingSchool.StudentPage", L"",
-    &ActivateType<::DrivingSchool::StudentPage>, nullptr, nullptr, nullptr,
-    12, // Windows.UI.Xaml.Controls.Page
+    L"DrivingSchool.MarkTeacher", L"",
+    &ActivateType<::DrivingSchool::MarkTeacher>, nullptr, nullptr, nullptr,
+    16, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //   7
-    L"DrivingSchool.TeacherPage", L"",
-    &ActivateType<::DrivingSchool::TeacherPage>, nullptr, nullptr, nullptr,
-    12, // Windows.UI.Xaml.Controls.Page
+    L"DrivingSchool.ReserveExam", L"",
+    &ActivateType<::DrivingSchool::ReserveExam>, nullptr, nullptr, nullptr,
+    16, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //   8
-    L"DrivingSchool.UplodeScore", L"",
-    &ActivateType<::DrivingSchool::UplodeScore>, nullptr, nullptr, nullptr,
-    12, // Windows.UI.Xaml.Controls.Page
+    L"DrivingSchool.StudentPage", L"",
+    &ActivateType<::DrivingSchool::StudentPage>, nullptr, nullptr, nullptr,
+    16, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //   9
-    L"DrivingSchool.AddTeacherTwo", L"",
-    &ActivateType<::DrivingSchool::AddTeacherTwo>, nullptr, nullptr, nullptr,
-    12, // Windows.UI.Xaml.Controls.Page
+    L"DrivingSchool.TeacherPage", L"",
+    &ActivateType<::DrivingSchool::TeacherPage>, nullptr, nullptr, nullptr,
+    16, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //  10
-    L"DrivingSchool.ReserveTeacher", L"",
-    &ActivateType<::DrivingSchool::ReserveTeacher>, nullptr, nullptr, nullptr,
-    12, // Windows.UI.Xaml.Controls.Page
+    L"DrivingSchool.UplodeScore", L"",
+    &ActivateType<::DrivingSchool::UplodeScore>, nullptr, nullptr, nullptr,
+    16, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //  11
-    L"DrivingSchool.AddTeacherThree", L"",
-    &ActivateType<::DrivingSchool::AddTeacherThree>, nullptr, nullptr, nullptr,
-    12, // Windows.UI.Xaml.Controls.Page
+    L"DrivingSchool.ViewStudents", L"",
+    &ActivateType<::DrivingSchool::ViewStudents>, nullptr, nullptr, nullptr,
+    16, // Windows.UI.Xaml.Controls.Page
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
     true,  false, false, false,
     //  12
+    L"DrivingSchool.AddTeacherTwo", L"",
+    &ActivateType<::DrivingSchool::AddTeacherTwo>, nullptr, nullptr, nullptr,
+    16, // Windows.UI.Xaml.Controls.Page
+    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    true,  false, false, false,
+    //  13
+    L"DrivingSchool.TeacherDetail", L"",
+    &ActivateType<::DrivingSchool::TeacherDetail>, nullptr, nullptr, nullptr,
+    16, // Windows.UI.Xaml.Controls.Page
+    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    true,  false, false, false,
+    //  14
+    L"DrivingSchool.ReserveTeacher", L"",
+    &ActivateType<::DrivingSchool::ReserveTeacher>, nullptr, nullptr, nullptr,
+    16, // Windows.UI.Xaml.Controls.Page
+    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    true,  false, false, false,
+    //  15
+    L"DrivingSchool.AddTeacherThree", L"",
+    &ActivateType<::DrivingSchool::AddTeacherThree>, nullptr, nullptr, nullptr,
+    16, // Windows.UI.Xaml.Controls.Page
+    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    true,  false, false, false,
+    //  16
     L"Windows.UI.Xaml.Controls.Page", L"",
     nullptr, nullptr, nullptr, nullptr,
     -1,
     0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
     false, true,  false, false,
-    //  13
+    //  17
     L"Windows.UI.Xaml.Controls.UserControl", L"",
     nullptr, nullptr, nullptr, nullptr,
     -1,
@@ -197,21 +229,21 @@ UINT TypeInfoLookup[] = {
       0,   //  20
       0,   //  21
       0,   //  22
-      2,   //  23
-      4,   //  24
-      5,   //  25
-      9,   //  26
-      9,   //  27
-     10,   //  28
-     11,   //  29
-     13,   //  30
-     13,   //  31
-     13,   //  32
-     13,   //  33
-     13,   //  34
-     13,   //  35
-     13,   //  36
-     14,   //  37
+      3,   //  23
+      5,   //  24
+      6,   //  25
+     11,   //  26
+     12,   //  27
+     14,   //  28
+     15,   //  29
+     17,   //  30
+     17,   //  31
+     17,   //  32
+     17,   //  33
+     17,   //  34
+     17,   //  35
+     17,   //  36
+     18,   //  37
 };
 
 TypeInfo* GetTypeInfo(::Platform::String^ typeName)

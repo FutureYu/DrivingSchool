@@ -7,20 +7,11 @@
 //------------------------------------------------------------------------------
 
 
-namespace Windows {
-    namespace UI {
-        namespace Xaml {
-            namespace Controls {
-                ref class Button;
-            }
-        }
-    }
-}
 
 namespace DrivingSchool
 {
     [::Windows::Foundation::Metadata::WebHostHidden]
-    partial ref class StudentPage : public ::Windows::UI::Xaml::Controls::Page, 
+    partial ref class TeacherDetail : public ::Windows::UI::Xaml::Controls::Page, 
         public ::Windows::UI::Xaml::Markup::IComponentConnector,
         public ::Windows::UI::Xaml::Markup::IComponentConnector2
     {
@@ -32,11 +23,6 @@ namespace DrivingSchool
     private:
         bool _contentLoaded;
     
-        private: ::Windows::UI::Xaml::Controls::Button^ ChangePwd;
-        private: ::Windows::UI::Xaml::Controls::Button^ CheckScore;
-        private: ::Windows::UI::Xaml::Controls::Button^ ReserveExam;
-        private: ::Windows::UI::Xaml::Controls::Button^ ReserveTeacher;
-        private: ::Windows::UI::Xaml::Controls::Button^ MarkTeacher;
     };
 }
 

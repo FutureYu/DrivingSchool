@@ -157,6 +157,9 @@
       <DependentUpon>CheckScore.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="FileWR.h" />
+    <ClInclude Include="MarkTeacher.xaml.h">
+      <DependentUpon>MarkTeacher.xaml</DependentUpon>
+    </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="App.xaml.h">
       <DependentUpon>App.xaml</DependentUpon>
@@ -180,11 +183,20 @@
       <DependentUpon>StudentPage.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="Teacher.h" />
+    <ClInclude Include="TeacherDetail.xaml.h">
+      <DependentUpon>TeacherDetail.xaml</DependentUpon>
+    </ClInclude>
     <ClInclude Include="TeacherPage.xaml.h">
       <DependentUpon>TeacherPage.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="UplodeScore.xaml.h">
       <DependentUpon>UplodeScore.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ViewMark.xaml.h">
+      <DependentUpon>ViewMark.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ViewStudents.xaml.h">
+      <DependentUpon>ViewStudents.xaml</DependentUpon>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -209,6 +221,9 @@
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="MarkTeacher.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Register.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -221,10 +236,19 @@
     <Page Include="StudentPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="TeacherDetail.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="TeacherPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UplodeScore.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewMark.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewStudents.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
@@ -305,6 +329,9 @@
     <ClCompile Include="MainPage.xaml.cpp">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClCompile>
+    <ClCompile Include="MarkTeacher.xaml.cpp">
+      <DependentUpon>MarkTeacher.xaml</DependentUpon>
+    </ClCompile>
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -328,11 +355,20 @@
       <DependentUpon>StudentPage.xaml</DependentUpon>
     </ClCompile>
     <ClCompile Include="Teacher.cpp" />
+    <ClCompile Include="TeacherDetail.xaml.cpp">
+      <DependentUpon>TeacherDetail.xaml</DependentUpon>
+    </ClCompile>
     <ClCompile Include="TeacherPage.xaml.cpp">
       <DependentUpon>TeacherPage.xaml</DependentUpon>
     </ClCompile>
     <ClCompile Include="UplodeScore.xaml.cpp">
       <DependentUpon>UplodeScore.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ViewMark.xaml.cpp">
+      <DependentUpon>ViewMark.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ViewStudents.xaml.cpp">
+      <DependentUpon>ViewStudents.xaml</DependentUpon>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -7,6 +7,15 @@
 //------------------------------------------------------------------------------
 
 
+namespace Windows {
+    namespace UI {
+        namespace Xaml {
+            namespace Controls {
+                ref class Button;
+            }
+        }
+    }
+}
 
 namespace DrivingSchool
 {
@@ -23,6 +32,8 @@ namespace DrivingSchool
     private:
         bool _contentLoaded;
     
+        private: ::Windows::UI::Xaml::Controls::Button^ ViewStudentBtn;
+        private: ::Windows::UI::Xaml::Controls::Button^ ViewMark;
     };
 }
 

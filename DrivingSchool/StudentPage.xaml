@@ -12,6 +12,7 @@
         <Button x:Name="CheckScore" Content="查询分数" HorizontalAlignment="Left" Margin="147,248,0,0" VerticalAlignment="Top" Click="CheckScore_Click"/>
         <Button x:Name="ReserveExam" Content="预约考试" HorizontalAlignment="Left" Margin="164,364,0,0" VerticalAlignment="Top" Click="ReserveExam_Click"/>
         <Button x:Name="ReserveTeacher" Content="预约教练" HorizontalAlignment="Left" Margin="181,483,0,0" VerticalAlignment="Top" Click="ReserveTeacher_Click"/>
+        <Button x:Name="MarkTeacher" Content="评价教练" HorizontalAlignment="Left" Margin="181,550,0,0" VerticalAlignment="Top" Click="MarkTeacher_Click"/>
 
     </Grid>
 </Page>

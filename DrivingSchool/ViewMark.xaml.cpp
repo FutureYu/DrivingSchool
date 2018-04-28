@@ -1,12 +1,10 @@
 ﻿//
-// TeacherPage.xaml.cpp
-// TeacherPage 类的实现
+// ViewMark.xaml.cpp
+// ViewMark 类的实现
 //
 
 #include "pch.h"
-#include "TeacherPage.xaml.h"
 #include "ViewMark.xaml.h"
-#include "ViewStudents.xaml.h"
 
 using namespace DrivingSchool;
 
@@ -23,20 +21,7 @@ using namespace Windows::UI::Xaml::Navigation;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
-TeacherPage::TeacherPage()
+ViewMark::ViewMark()
 {
 	InitializeComponent();
-}
-
-
-void DrivingSchool::TeacherPage::ViewStudentBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-{
-	Frame->Navigate(ViewMark::typeid);
-}
-
-
-void DrivingSchool::TeacherPage::ViewMark_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-{
-	Frame->Navigate(ViewStudents::typeid);
-
 }
