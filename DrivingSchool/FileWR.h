@@ -53,14 +53,7 @@ public:
 		{
 			return FileIO::ReadTextAsync(file);
 		}).then([&](concurrency::task<String^> previousOperation) {
-			try {
-				// 读取成功
-				//setString(previousOperation.get());
-				People::fileContent = previousOperation.get();
-			}
-			catch (...) {
-				// 读取失败
-			}
+			previousOperation.get();
 		});
 		String^ tmp2 = People::fileContent;
 		return People::fileContent;

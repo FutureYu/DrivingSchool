@@ -10,6 +10,7 @@
 #include "ReserveExam.xaml.h"
 #include "ReserveTeacher.xaml.h"
 #include "MarkTeacher.xaml.h"
+#include <Windows.h>
 
 
 
@@ -32,6 +33,32 @@ using namespace Windows::UI::Xaml::Navigation;
 StudentPage::StudentPage()
 {
 	InitializeComponent();
+	SYSTEMTIME time;
+	GetLocalTime(&time);
+	String^ greeting;
+	if (time.wHour >= 5 && time.wHour < 9)
+	{
+		greeting = "早上好！";
+	}
+	else if (time.wHour >= 9 && time.wHour < 12)
+	{
+		greeting = "上午好！";
+	}
+	else if (time.wHour >= 12 && time.wHour < 14)
+	{
+		greeting = "中午好！";
+	}
+	else if (time.wHour >= 14 && time.wHour < 18)
+	{
+		greeting = "下午好！";
+	}
+	else
+	{
+		greeting = "晚上好！";
+	}
+
+
+	GreetingBlock->Text = greeting + "\n请选择下一步操作：";
 }
 
 

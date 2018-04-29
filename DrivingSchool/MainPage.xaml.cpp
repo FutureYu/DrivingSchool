@@ -96,7 +96,6 @@ void DrivingSchool::MainPage::TryLogin()
 			if (previousOperation.get() == PasswordBox->Password)
 			{
 				isPwdCorrectBlock->Text = "1";
-				FileWR::FileWrite("ID.id", IDBox->Text);
 			}
 			else
 			{
@@ -120,7 +119,7 @@ void DrivingSchool::MainPage::LoginNavigate()
 			// 管理员登录
 			Frame->Navigate(AdminPage::typeid);
 		}
-		else if (wcstol(IDBox->Text->Data(), NULL, 10) > 200000 || wcstol(IDBox->Text->Data(), NULL, 10) < 400000)
+		else if (wcstol(IDBox->Text->Data(), NULL, 10) > 200000 && wcstol(IDBox->Text->Data(), NULL, 10) < 400000)
 		{
 			// 老师登录
 			Frame->Navigate(TeacherPage::typeid);			

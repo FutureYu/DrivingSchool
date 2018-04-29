@@ -9,24 +9,24 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        <TextBlock Grid.ColumnSpan="6" HorizontalAlignment="Left" Text="用户登录" Margin="10,10,0,0" FontSize="40" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="BackButton" Style="{StaticResource NavigationBackButtonNormalStyle}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="65" IsEnabled="False"/>
+        <TextBlock Grid.ColumnSpan="6" Grid.Column="1" HorizontalAlignment="Left" Text="用户登录" Margin="0,0,0,0" FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="ExtraBold"/>
         <TextBox Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" x:Name="IDBox" HorizontalAlignment="Left" Text="" Width="200" VerticalAlignment="Top" MaxLength="6" />
         <PasswordBox Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" x:Name="PasswordBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200"   />
         <Button Grid.Column="4" Grid.Row="2" Grid.RowSpan="2" x:Name="LoginButton" Margin="20,0,0,0" Content="登陆" HorizontalAlignment="Left" VerticalAlignment="Top" Click="LoginButton_Click" Height="120" Width="90"/>
