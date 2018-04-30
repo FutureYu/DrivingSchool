@@ -25,8 +25,38 @@ void ::DrivingSchool::ReserveTeacher::InitializeComponent()
 
 void ::DrivingSchool::ReserveTeacher::Connect(int __connectionId, ::Platform::Object^ __target)
 {
-    __connectionId;         // unreferenced 
-    __target;               // unreferenced
+    switch (__connectionId)
+    {
+        case 1:
+            {
+                this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 2:
+            {
+                this->TeacherBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 3:
+            {
+                this->ConfirmBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ConfirmBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ReserveTeacher::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ReserveTeacher::ConfirmBtn_Click);
+            }
+            break;
+        case 4:
+            {
+                this->ResetBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ResetBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ReserveTeacher::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ReserveTeacher::ResetBtn_Click);
+            }
+            break;
+        case 5:
+            {
+                this->TeacherIDBox = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+            }
+            break;
+    }
     _contentLoaded = true;
 }
 

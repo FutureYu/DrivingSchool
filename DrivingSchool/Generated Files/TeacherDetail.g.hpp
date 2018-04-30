@@ -25,8 +25,79 @@ void ::DrivingSchool::TeacherDetail::InitializeComponent()
 
 void ::DrivingSchool::TeacherDetail::Connect(int __connectionId, ::Platform::Object^ __target)
 {
-    __connectionId;         // unreferenced 
-    __target;               // unreferenced
+    switch (__connectionId)
+    {
+        case 1:
+            {
+                this->TimeOneBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->TimeOneBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::TeacherDetail::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&TeacherDetail::TimeOneBtn_Click);
+            }
+            break;
+        case 2:
+            {
+                this->TimeTwoBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->TimeTwoBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::TeacherDetail::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&TeacherDetail::TimeTwoBtn_Click);
+            }
+            break;
+        case 3:
+            {
+                this->TimeThreeBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->TimeThreeBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::TeacherDetail::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&TeacherDetail::TimeThreeBtn_Click);
+            }
+            break;
+        case 4:
+            {
+                this->TimeFourBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->TimeFourBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::TeacherDetail::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&TeacherDetail::TimeFourBtn_Click);
+            }
+            break;
+        case 5:
+            {
+                this->TimeFiveBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->TimeFiveBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::TeacherDetail::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&TeacherDetail::TimeFiveBtn_Click);
+            }
+            break;
+        case 6:
+            {
+                this->NameBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 7:
+            {
+                this->MarkBar = safe_cast<::Windows::UI::Xaml::Controls::ProgressBar^>(__target);
+            }
+            break;
+        case 8:
+            {
+                this->TchIDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 9:
+            {
+                this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 10:
+            {
+                this->ProgressBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 11:
+            {
+                this->HistoryBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 12:
+            {
+                this->TchProgressBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+    }
     _contentLoaded = true;
 }
 

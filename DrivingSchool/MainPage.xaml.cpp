@@ -104,12 +104,22 @@ void DrivingSchool::MainPage::TryLogin()
 				msg.ShowAsync();
 			}
 		}).then([&]() {
-			FileWR::FileWrite("ID.id", IDBox->Text);
-			LoginNavigate();
+			WriteId();
 		});
 	}
-
 }
+
+void DrivingSchool::MainPage::WriteId()
+{
+	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+	concurrency::create_task(storageFolder->CreateFileAsync("ID.id", CreationCollisionOption::ReplaceExisting)).then([&](StorageFile^ File)
+	{
+		return FileIO::WriteTextAsync(File, IDBox->Text);
+	}).then([&]() {
+		LoginNavigate();
+	});
+}
+
 
 void DrivingSchool::MainPage::LoginNavigate()
 {

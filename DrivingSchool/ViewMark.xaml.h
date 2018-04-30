@@ -17,5 +17,9 @@ namespace DrivingSchool
 	{
 	public:
 		ViewMark();
+	private:
+		void GetName();
+		void GetMark();
+		void GetHistory();
 	};
 }

@@ -18,6 +18,7 @@ namespace DrivingSchool
 	public:
 		StudentPage();
 	private:
+		void GetName();
 		void ChangePwd_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void CheckScore_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void ReserveExam_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);

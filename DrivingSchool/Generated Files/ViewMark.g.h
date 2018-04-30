@@ -7,6 +7,16 @@
 //------------------------------------------------------------------------------
 
 
+namespace Windows {
+    namespace UI {
+        namespace Xaml {
+            namespace Controls {
+                ref class TextBlock;
+                ref class ProgressBar;
+            }
+        }
+    }
+}
 
 namespace DrivingSchool
 {
@@ -23,6 +33,9 @@ namespace DrivingSchool
     private:
         bool _contentLoaded;
     
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ HistoryBlock;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ IDBlock;
+        private: ::Windows::UI::Xaml::Controls::ProgressBar^ MarkBar;
     };
 }
 

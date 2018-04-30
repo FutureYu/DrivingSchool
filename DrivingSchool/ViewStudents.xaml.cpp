@@ -24,4 +24,34 @@ using namespace Windows::UI::Xaml::Navigation;
 ViewStudents::ViewStudents()
 {
 	InitializeComponent();
+	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+	concurrency::create_task(storageFolder->GetFileAsync("ID.id"))
+		.then([&](StorageFile^ file)
+	{
+		return FileIO::ReadTextAsync(file);
+	}).then([&](concurrency::task<String^> previousOperation) {
+		IDBlock->Text = previousOperation.get();
+	}).then([&]()
+	{
+		GetName();
+	});
+}
+
+void DrivingSchool::ViewStudents::GetName()
+{
+	for (long i = 1; i < 6; i++)
+	{
+		String^ path = IDBlock->Text + ref new String(std::to_wstring(i).c_str()) + ".stu";
+		StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+		concurrency::create_task(storageFolder->GetFileAsync(path))
+			.then([&, i](StorageFile^ file)
+		{
+			return FileIO::ReadTextAsync(file);
+		}).then([&, i](concurrency::task<String^> previousOperation) {
+			if (previousOperation.get() != "")
+			{
+				StudentBlock->Text += previousOperation.get() + "\n";
+			}
+		});
+	}
 }

@@ -31,12 +31,12 @@ TeacherPage::TeacherPage()
 
 void DrivingSchool::TeacherPage::ViewStudentBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	Frame->Navigate(ViewMark::typeid);
+	Frame->Navigate(ViewStudents::typeid);
 }
 
 
 void DrivingSchool::TeacherPage::ViewMark_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	Frame->Navigate(ViewStudents::typeid);
+	Frame->Navigate(ViewMark::typeid);
 
 }

@@ -8,6 +8,16 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:ConnectionId='1' x:Name="IDBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="806,583,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+
+
+
+
+        <TextBlock x:ConnectionId='2' x:Name="TeacherBlock" HorizontalAlignment="Left" Margin="220,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:ConnectionId='3' x:Name="ConfirmBtn" Content="确认" HorizontalAlignment="Left" Margin="89,293,0,0" VerticalAlignment="Top"                         />
+        <Button x:ConnectionId='4' x:Name="ResetBtn" Content="重置" HorizontalAlignment="Left" Margin="170,293,0,0" VerticalAlignment="Top"                       />
+        <TextBox x:ConnectionId='5' x:Name="TeacherIDBox" HorizontalAlignment="Left" Margin="84,213,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

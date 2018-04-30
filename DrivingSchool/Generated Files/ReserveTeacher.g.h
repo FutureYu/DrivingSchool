@@ -7,6 +7,17 @@
 //------------------------------------------------------------------------------
 
 
+namespace Windows {
+    namespace UI {
+        namespace Xaml {
+            namespace Controls {
+                ref class TextBlock;
+                ref class Button;
+                ref class TextBox;
+            }
+        }
+    }
+}
 
 namespace DrivingSchool
 {
@@ -23,6 +34,11 @@ namespace DrivingSchool
     private:
         bool _contentLoaded;
     
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ IDBlock;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ TeacherBlock;
+        private: ::Windows::UI::Xaml::Controls::Button^ ConfirmBtn;
+        private: ::Windows::UI::Xaml::Controls::Button^ ResetBtn;
+        private: ::Windows::UI::Xaml::Controls::TextBox^ TeacherIDBox;
     };
 }
 

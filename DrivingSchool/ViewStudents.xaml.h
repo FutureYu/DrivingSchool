@@ -17,5 +17,7 @@ namespace DrivingSchool
 	{
 	public:
 		ViewStudents();
+	private:
+		void GetName();
 	};
 }

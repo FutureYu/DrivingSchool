@@ -38,58 +38,75 @@ StudentPage::StudentPage()
 	String^ greeting;
 	if (time.wHour >= 5 && time.wHour < 9)
 	{
-		greeting = "早上好！";
+	greeting = "早上好！";
 	}
 	else if (time.wHour >= 9 && time.wHour < 12)
 	{
-		greeting = "上午好！";
+	greeting = "上午好！";
 	}
 	else if (time.wHour >= 12 && time.wHour < 14)
 	{
-		greeting = "中午好！";
+	greeting = "中午好！";
 	}
 	else if (time.wHour >= 14 && time.wHour < 18)
 	{
-		greeting = "下午好！";
+	greeting = "下午好！";
 	}
 	else
 	{
-		greeting = "晚上好！";
+	greeting = "晚上好！";
 	}
-
-
-	GreetingBlock->Text = greeting + "\n请选择下一步操作：";
+	GreetingBlock->Text = greeting;
+	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+	concurrency::create_task(storageFolder->GetFileAsync("ID.id"))
+		.then([&](StorageFile^ file)
+	{
+		return FileIO::ReadTextAsync(file);
+	}).then([&](concurrency::task<String^> previousOperation) {
+		IDBlock->Text = previousOperation.get();
+	}).then([&]()
+	{
+		GetName();
+	});
+	
+	
+	String^ content = GreetingBlock->Text;
 }
 
+void DrivingSchool::StudentPage::GetName()
+{
+	String^ path = IDBlock->Text + ".nam";
+	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+	concurrency::create_task(storageFolder->GetFileAsync(path))
+		.then([&](StorageFile^ file)
+	{
+		return FileIO::ReadTextAsync(file);
+	}).then([&](concurrency::task<String^> previousOperation) {
+		GreetingBlock->Text += previousOperation.get() + "\n我能为你做什么？";
+	});
+}
 
 void DrivingSchool::StudentPage::ChangePwd_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	Frame->Navigate(ChangePwd::typeid);
 }
 
-
 void DrivingSchool::StudentPage::CheckScore_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	Frame->Navigate(CheckScore::typeid);
 }
 
-
 void DrivingSchool::StudentPage::ReserveExam_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	Frame->Navigate(ReserveExam::typeid);
-
 }
-
 
 void DrivingSchool::StudentPage::ReserveTeacher_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	Frame->Navigate(ReserveTeacher::typeid);
-
 }
-
 
 void DrivingSchool::StudentPage::MarkTeacher_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	Frame->Navigate(MarkTeacher::typeid);
-
 }

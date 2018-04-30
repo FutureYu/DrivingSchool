@@ -40,6 +40,8 @@ namespace DrivingSchool
         private: ::Windows::UI::Xaml::Controls::Button^ ReserveExam;
         private: ::Windows::UI::Xaml::Controls::Button^ ReserveTeacher;
         private: ::Windows::UI::Xaml::Controls::Button^ MarkTeacher;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ IDBlock;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ NameBlock;
     };
 }
 

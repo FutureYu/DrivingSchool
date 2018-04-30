@@ -25,8 +25,19 @@ void ::DrivingSchool::ViewStudents::InitializeComponent()
 
 void ::DrivingSchool::ViewStudents::Connect(int __connectionId, ::Platform::Object^ __target)
 {
-    __connectionId;         // unreferenced 
-    __target;               // unreferenced
+    switch (__connectionId)
+    {
+        case 1:
+            {
+                this->StudentBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 2:
+            {
+                this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+    }
     _contentLoaded = true;
 }
 

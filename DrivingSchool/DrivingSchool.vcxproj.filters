@@ -31,6 +31,10 @@
     <ClCompile Include="AddTeacherThree.xaml.cpp" />
     <ClCompile Include="AddTeacherTwo.xaml.cpp" />
     <ClCompile Include="TeacherPage.xaml.cpp" />
+    <ClCompile Include="MarkTeacher.xaml.cpp" />
+    <ClCompile Include="TeacherDetail.xaml.cpp" />
+    <ClCompile Include="ViewMark.xaml.cpp" />
+    <ClCompile Include="ViewStudents.xaml.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -53,6 +57,10 @@
     <ClInclude Include="AddTeacherThree.xaml.h" />
     <ClInclude Include="AddTeacherTwo.xaml.h" />
     <ClInclude Include="TeacherPage.xaml.h" />
+    <ClInclude Include="MarkTeacher.xaml.h" />
+    <ClInclude Include="TeacherDetail.xaml.h" />
+    <ClInclude Include="ViewMark.xaml.h" />
+    <ClInclude Include="ViewStudents.xaml.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\LockScreenLogo.scale-200.png">

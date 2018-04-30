@@ -8,6 +8,18 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:ConnectionId='1' x:Name="TimeOneBtn" Content="时段一" HorizontalAlignment="Left" Margin="641,276,0,0" VerticalAlignment="Top"                         />
+        <Button x:ConnectionId='2' x:Name="TimeTwoBtn" Content="时段二" HorizontalAlignment="Left" Margin="641,345,0,0" VerticalAlignment="Top"                         />
+        <Button x:ConnectionId='3' x:Name="TimeThreeBtn" Content="时段三" HorizontalAlignment="Left" Margin="641,417,0,0" VerticalAlignment="Top"                           />
+        <Button x:ConnectionId='4' x:Name="TimeFourBtn" Content="时段四" HorizontalAlignment="Left" Margin="641,490,0,0" VerticalAlignment="Top"                          />
+        <Button x:ConnectionId='5' x:Name="TimeFiveBtn" Content="时段五" HorizontalAlignment="Left" Margin="641,572,0,0" VerticalAlignment="Top"                          />
+        <TextBlock x:ConnectionId='6' x:Name="NameBlock" HorizontalAlignment="Left" Margin="411,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <ProgressBar x:ConnectionId='7' x:Name="MarkBar" HorizontalAlignment="Left" Height="28" Margin="399,389,0,0" VerticalAlignment="Top" Width="98"/>
+        <TextBlock x:ConnectionId='8' x:Name="TchIDBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="22,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:ConnectionId='9' x:Name="IDBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="22,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:ConnectionId='10' x:Name="ProgressBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="22,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:ConnectionId='11' x:Name="HistoryBlock" HorizontalAlignment="Left" Margin="434,442,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:ConnectionId='12' x:Name="TchProgressBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="22,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

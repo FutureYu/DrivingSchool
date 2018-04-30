@@ -107,6 +107,7 @@ void DrivingSchool::AddTeacherTwo::ConfirmButton_Click(Platform::Object^ sender,
 	long ID = wcstol(IDBlock->Text->Data(), NULL, 10);
 	FileWR::FileWrite("TeachersTwo.num", ref new String(std::to_wstring(++ID).c_str()));
 	MessageDialog msg("注册成功，ID为" + IDBlock->Text, "注册成功");
+	Frame->GoBack();
 	msg.ShowAsync();
 }
 

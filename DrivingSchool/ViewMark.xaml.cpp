@@ -24,4 +24,46 @@ using namespace Windows::UI::Xaml::Navigation;
 ViewMark::ViewMark()
 {
 	InitializeComponent();
+	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+	concurrency::create_task(storageFolder->GetFileAsync("ID.id"))
+		.then([&](StorageFile^ file)
+	{
+		return FileIO::ReadTextAsync(file);
+	}).then([&](concurrency::task<String^> previousOperation) {
+		IDBlock->Text = previousOperation.get();
+	}).then([&]()
+	{
+		GetMark();
+	}).then([&]()
+	{
+		GetHistory();
+	});
+}
+
+// 获取分数
+void DrivingSchool::ViewMark::GetMark()
+{
+	String^ path = IDBlock->Text + ".sco";
+	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+	concurrency::create_task(storageFolder->GetFileAsync(path))
+		.then([&](StorageFile^ file)
+	{
+		return FileIO::ReadTextAsync(file);
+	}).then([&](concurrency::task<String^> previousOperation) {
+		MarkBar->Value = wcstol(previousOperation.get()->Data(), NULL, 10);
+	});
+}
+
+// 获取评分人数
+void DrivingSchool::ViewMark::GetHistory()
+{
+	String^ path = IDBlock->Text + ".his";
+	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+	concurrency::create_task(storageFolder->GetFileAsync(path))
+		.then([&](StorageFile^ file)
+	{
+		return FileIO::ReadTextAsync(file);
+	}).then([&](concurrency::task<String^> previousOperation) {
+		HistoryBlock->Text = "已有" + previousOperation.get() + "做出评价";
+	});
 }

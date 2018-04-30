@@ -72,6 +72,16 @@ void ::DrivingSchool::StudentPage::Connect(int __connectionId, ::Platform::Objec
                     (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&StudentPage::MarkTeacher_Click);
             }
             break;
+        case 8:
+            {
+                this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 9:
+            {
+                this->NameBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
     }
     _contentLoaded = true;
 }

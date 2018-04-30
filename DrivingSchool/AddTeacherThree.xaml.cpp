@@ -108,6 +108,7 @@ void DrivingSchool::AddTeacherThree::ConfirmButton_Click(Platform::Object^ sende
 	FileWR::FileWrite("TeachersThree.num", ref new String(std::to_wstring(++ID).c_str()));
 	MessageDialog msg("注册成功，ID为" + IDBlock->Text, "注册成功");
 	msg.ShowAsync();
+	Frame->GoBack();
 }
 
 // 返回登陆页面
