@@ -104,6 +104,7 @@ void DrivingSchool::MainPage::TryLogin()
 				msg.ShowAsync();
 			}
 		}).then([&]() {
+			FileWR::FileWrite("ID.id", IDBox->Text);
 			LoginNavigate();
 		});
 	}

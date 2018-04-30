@@ -17,5 +17,13 @@ namespace DrivingSchool
 	{
 	public:
 		MarkTeacher();
+	private:
+		void GetTeacher();
+		void ResetBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void ConfirmBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void SearchBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void GetScore();
+		void GetHistory();
+		void GetProgress();
 	};
 }

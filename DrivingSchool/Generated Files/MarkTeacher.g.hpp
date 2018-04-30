@@ -25,8 +25,53 @@ void ::DrivingSchool::MarkTeacher::InitializeComponent()
 
 void ::DrivingSchool::MarkTeacher::Connect(int __connectionId, ::Platform::Object^ __target)
 {
-    __connectionId;         // unreferenced 
-    __target;               // unreferenced
+    switch (__connectionId)
+    {
+        case 1:
+            {
+                this->ScoreBox = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+            }
+            break;
+        case 2:
+            {
+                this->ConfirmBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ConfirmBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::MarkTeacher::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&MarkTeacher::ConfirmBtn_Click);
+            }
+            break;
+        case 3:
+            {
+                this->ResetBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ResetBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::MarkTeacher::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&MarkTeacher::ResetBtn_Click);
+            }
+            break;
+        case 4:
+            {
+                this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 5:
+            {
+                this->TeacherBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 6:
+            {
+                this->HistoryBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 7:
+            {
+                this->AvgScoreBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+        case 8:
+            {
+                this->ProgressNumberBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
+    }
     _contentLoaded = true;
 }
 

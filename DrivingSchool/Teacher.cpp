@@ -25,7 +25,7 @@ void Teacher::TeacherRegister()
 	wstring wstuOnePath = this->ID + L"1.stu";
 	String ^stuOnePath = ref new String(wstuOnePath.c_str());
 
-	wstring wstuTwoPath = this->ID + L".2stu";
+	wstring wstuTwoPath = this->ID + L"2.stu";
 	String ^stuTwoPath = ref new String(wstuTwoPath.c_str());
 
 	wstring wstuThreePath = this->ID + L"3.stu";

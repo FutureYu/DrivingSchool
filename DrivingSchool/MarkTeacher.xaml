@@ -8,6 +8,36 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox x:Name="ScoreBox" InputScope="Number" HorizontalAlignment="Left" Margin="123,222,0,0" VerticalAlignment="Top"/>
+
+        <Button x:Name="ConfirmBtn" Content="确认" IsEnabled="True" HorizontalAlignment="Left" Margin="91,300,0,0" VerticalAlignment="Top" Click="ConfirmBtn_Click"/>
+        <Button x:Name="ResetBtn" Content="重置" HorizontalAlignment="Left" Margin="91,350,0,0" VerticalAlignment="Top" Click="ResetBtn_Click"/>
+        <TextBlock x:Name="IDBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="216,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TeacherBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="20,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="HistoryBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="823,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="AvgScoreBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="774,672,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ProgressNumberBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="774,672,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+
+      
+
+       
+    </Grid>
+    <!--       
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox x:Name="ScoreBox" InputScope="Number" HorizontalAlignment="Left" Margin="123,222,0,0" Text="TextBox" VerticalAlignment="Top"/>
+       
+        <Button x:Name="SearchBtn" Content="查询" Margin="50,277,0,651" Click="SearchBtn_Click"></Button>
+        <Button x:Name="ConfirmBtn" Content="确认" IsEnabled="False" Margin="143,297,0,631" Click="ConfirmBtn_Click"></Button>
+        <Button x:Name="ResetBtn" Content="重置" Margin="229,287,0,641" Click="ResetBtn_Click"></Button>
+
+        <TextBlock x:Name="IDBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="216,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TeacherBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="518,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="HistoryBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="823,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="AvgScoreBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="774,672,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
     </Grid>
+    
+    -->
 </Page>
