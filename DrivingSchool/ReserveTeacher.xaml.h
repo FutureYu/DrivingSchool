@@ -23,7 +23,9 @@ namespace DrivingSchool
 		void GetTeachersThree();
 		void GetTeacher(long maxTeacher);
 		void ConfirmBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void UpdateTchid();
 		void NavigateToTeacherDetail();
 		void ResetBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 	};
 }

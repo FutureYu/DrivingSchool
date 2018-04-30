@@ -24,6 +24,7 @@ using namespace Windows::UI::Xaml::Navigation;
 TeacherDetail::TeacherDetail()
 {
 	InitializeComponent();
+
 	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
 	concurrency::create_task(storageFolder->GetFileAsync("TchID.id"))
 		.then([&](StorageFile^ file)
@@ -64,6 +65,7 @@ void DrivingSchool::TeacherDetail::GetName()
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
 		NameBlock->Text = previousOperation.get();
+		PersonPic->DisplayName = previousOperation.get();
 	});
 }
 
@@ -77,7 +79,7 @@ void DrivingSchool::TeacherDetail::GetMark()
 	{
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
-		MarkBar->Value = wcstol(previousOperation.get()->Data(), NULL, 10);
+		RatingCtrl->Value = (wcstol(previousOperation.get()->Data(), NULL, 10)/10);
 	});
 }
 
@@ -91,7 +93,7 @@ void DrivingSchool::TeacherDetail::GetHistory()
 	{
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
-		HistoryBlock->Text = "已有" + previousOperation.get() + "做出评价";
+		HistoryBlock->Text = "已有" + previousOperation.get() + "人做出评价";
 	});
 }
 
@@ -138,7 +140,7 @@ void DrivingSchool::TeacherDetail::GetID()
 	});
 }
 
-// 获取评分人数
+// 获取空余时段
 void DrivingSchool::TeacherDetail::GetAvailable()
 {
 	for (long i = 1; i < 6; i++)
@@ -173,7 +175,11 @@ void DrivingSchool::TeacherDetail::TimeOneBtn_Click(Platform::Object^ sender, Wi
 	FileWR::FileWrite(TchIDBlock->Text + ".sta", ref new String(std::to_wstring((wcstol(TchProgressBlock->Text->Data(), NULL, 10) + 1)).c_str()));
 	MessageDialog msg("预约成功，教练编号为" + TchIDBlock->Text, "预约成功");
 	msg.ShowAsync();
-	Frame->GoBack();
+	TimeOneBtn->IsEnabled = false;
+	TimeTwoBtn->IsEnabled = false;
+	TimeThreeBtn->IsEnabled = false;
+	TimeFourBtn->IsEnabled = false;
+	TimeFiveBtn->IsEnabled = false;
 }
 
 
@@ -185,7 +191,11 @@ void DrivingSchool::TeacherDetail::TimeTwoBtn_Click(Platform::Object^ sender, Wi
 	FileWR::FileWrite(TchIDBlock->Text + ".sta", ref new String(std::to_wstring((wcstol(TchProgressBlock->Text->Data(), NULL, 10) + 1)).c_str()));
 	MessageDialog msg("预约成功，教练编号为" + TchIDBlock->Text, "预约成功");
 	msg.ShowAsync();
-	Frame->GoBack();
+	TimeOneBtn->IsEnabled = false;
+	TimeTwoBtn->IsEnabled = false;
+	TimeThreeBtn->IsEnabled = false;
+	TimeFourBtn->IsEnabled = false;
+	TimeFiveBtn->IsEnabled = false;
 }
 
 
@@ -197,7 +207,11 @@ void DrivingSchool::TeacherDetail::TimeThreeBtn_Click(Platform::Object^ sender, 
 	FileWR::FileWrite(TchIDBlock->Text + ".sta", ref new String(std::to_wstring((wcstol(TchProgressBlock->Text->Data(), NULL, 10) + 1)).c_str()));
 	MessageDialog msg("预约成功，教练编号为" + TchIDBlock->Text, "预约成功");
 	msg.ShowAsync();
-	Frame->GoBack();
+	TimeOneBtn->IsEnabled = false;
+	TimeTwoBtn->IsEnabled = false;
+	TimeThreeBtn->IsEnabled = false;
+	TimeFourBtn->IsEnabled = false;
+	TimeFiveBtn->IsEnabled = false;
 }
 
 
@@ -209,8 +223,11 @@ void DrivingSchool::TeacherDetail::TimeFourBtn_Click(Platform::Object^ sender, W
 	FileWR::FileWrite(TchIDBlock->Text + ".sta", ref new String(std::to_wstring((wcstol(TchProgressBlock->Text->Data(), NULL, 10) + 1)).c_str()));
 	MessageDialog msg("预约成功，教练编号为" + TchIDBlock->Text, "预约成功");
 	msg.ShowAsync();
-	Frame->GoBack();
-
+	TimeOneBtn->IsEnabled = false;
+	TimeTwoBtn->IsEnabled = false;
+	TimeThreeBtn->IsEnabled = false;
+	TimeFourBtn->IsEnabled = false;
+	TimeFiveBtn->IsEnabled = false;
 }
 
 
@@ -222,5 +239,15 @@ void DrivingSchool::TeacherDetail::TimeFiveBtn_Click(Platform::Object^ sender, W
 	FileWR::FileWrite(TchIDBlock->Text + ".sta", ref new String(std::to_wstring((wcstol(TchProgressBlock->Text->Data(), NULL, 10) + 1)).c_str()));
 	MessageDialog msg("预约成功，教练编号为" + TchIDBlock->Text, "预约成功");
 	msg.ShowAsync();
+	TimeOneBtn->IsEnabled = false;
+	TimeTwoBtn->IsEnabled = false;
+	TimeThreeBtn->IsEnabled = false;
+	TimeFourBtn->IsEnabled = false;
+	TimeFiveBtn->IsEnabled = false;
+}
+
+
+void DrivingSchool::TeacherDetail::BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
 	Frame->GoBack();
 }

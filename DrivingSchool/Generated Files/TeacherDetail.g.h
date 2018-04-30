@@ -12,8 +12,9 @@ namespace Windows {
         namespace Xaml {
             namespace Controls {
                 ref class Button;
+                ref class PersonPicture;
                 ref class TextBlock;
-                ref class ProgressBar;
+                ref class RatingControl;
             }
         }
     }
@@ -39,17 +40,19 @@ namespace DrivingSchool
         bool _contentLoaded;
     
     
+        private: ::Windows::UI::Xaml::Controls::Button^ BackButton;
+        private: ::Windows::UI::Xaml::Controls::PersonPicture^ PersonPic;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ NameBlock;
+        private: ::Windows::UI::Xaml::Controls::RatingControl^ RatingCtrl;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ HistoryBlock;
         private: ::Windows::UI::Xaml::Controls::Button^ TimeOneBtn;
         private: ::Windows::UI::Xaml::Controls::Button^ TimeTwoBtn;
         private: ::Windows::UI::Xaml::Controls::Button^ TimeThreeBtn;
         private: ::Windows::UI::Xaml::Controls::Button^ TimeFourBtn;
         private: ::Windows::UI::Xaml::Controls::Button^ TimeFiveBtn;
-        private: ::Windows::UI::Xaml::Controls::TextBlock^ NameBlock;
-        private: ::Windows::UI::Xaml::Controls::ProgressBar^ MarkBar;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ TchIDBlock;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ IDBlock;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ ProgressBlock;
-        private: ::Windows::UI::Xaml::Controls::TextBlock^ HistoryBlock;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ TchProgressBlock;
     };
 }

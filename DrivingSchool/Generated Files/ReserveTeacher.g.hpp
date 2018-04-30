@@ -32,7 +32,9 @@ void ::DrivingSchool::ReserveTeacher::Connect(int __connectionId, ::Platform::Ob
     {
     case 1:
         {
-            this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ReserveTeacher::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ReserveTeacher::BackButton_Click);
         }
         break;
     case 2:
@@ -42,21 +44,26 @@ void ::DrivingSchool::ReserveTeacher::Connect(int __connectionId, ::Platform::Ob
         break;
     case 3:
         {
+            this->TeacherIDBox = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+        }
+        break;
+    case 4:
+        {
             this->ConfirmBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
             (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ConfirmBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ReserveTeacher::*)
                 (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ReserveTeacher::ConfirmBtn_Click);
         }
         break;
-    case 4:
+    case 5:
         {
             this->ResetBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
             (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ResetBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ReserveTeacher::*)
                 (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ReserveTeacher::ResetBtn_Click);
         }
         break;
-    case 5:
+    case 6:
         {
-            this->TeacherIDBox = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+            this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
         }
         break;
     }

@@ -63,8 +63,8 @@ void DrivingSchool::ReserveTeacher::GetProgress()
 		}
 		else
 		{
-			MessageDialog msg("预约失败，您当前不能预约！" + IDBlock->Text, "预约失败");
-			msg.ShowAsync();
+			TeacherBlock->Text = "预约失败，您当前不能预约！";
+			ConfirmBtn->IsEnabled = false;
 			return;
 		}
 	});
@@ -116,13 +116,30 @@ void DrivingSchool::ReserveTeacher::GetTeacher(long maxTeacher)
 			long stuNumber = wcstol(previousOperation.get()->Data(), NULL, 10);
 			if (stuNumber < 5)
 			{
-				TeacherBlock->Text += (ref new String(std::to_wstring(i).c_str()) + "\n");
+				TeacherBlock->Text += ("\n" + ref new String(std::to_wstring(i).c_str()));
 			}
 		});
 	}
 }
 
 void DrivingSchool::ReserveTeacher::ConfirmBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+	concurrency::create_task(storageFolder->TryGetItemAsync(TeacherIDBox->Text + ".nam")
+	).then([&](IStorageItem^ item)
+	{
+		if (item == nullptr)
+		{
+			MessageDialog msg("预约失败，该教练不存在", "预约失败");
+			msg.ShowAsync();
+			return;
+		}
+	}).then([&]() {
+		UpdateTchid();
+	});
+}
+
+void DrivingSchool::ReserveTeacher::UpdateTchid()
 {
 	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
 	concurrency::create_task(storageFolder->CreateFileAsync("TchID.id", CreationCollisionOption::ReplaceExisting)).then([&](StorageFile^ File)
@@ -134,6 +151,7 @@ void DrivingSchool::ReserveTeacher::ConfirmBtn_Click(Platform::Object^ sender, W
 	});
 }
 
+
 void DrivingSchool::ReserveTeacher::NavigateToTeacherDetail()
 {
 	Frame->Navigate(TeacherDetail::typeid);
@@ -142,4 +160,10 @@ void DrivingSchool::ReserveTeacher::NavigateToTeacherDetail()
 void DrivingSchool::ReserveTeacher::ResetBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	TeacherIDBox->Text = "";
+}
+
+
+void DrivingSchool::ReserveTeacher::BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	Frame->GoBack();
 }
