@@ -11,8 +11,8 @@ namespace Windows {
     namespace UI {
         namespace Xaml {
             namespace Controls {
-                ref class TextBox;
                 ref class Button;
+                ref class RatingControl;
                 ref class TextBlock;
             }
         }
@@ -32,11 +32,17 @@ namespace DrivingSchool
         virtual ::Windows::UI::Xaml::Markup::IComponentConnector^ GetBindingConnector(int connectionId, ::Platform::Object^ target);
     
     private:
+        void UnloadObject(::Windows::UI::Xaml::DependencyObject^ dependencyObject);
+        void DisconnectUnloadedObject(int connectionId);
+    
+    private:
         bool _contentLoaded;
     
-        private: ::Windows::UI::Xaml::Controls::TextBox^ ScoreBox;
+    
+        private: ::Windows::UI::Xaml::Controls::Button^ BackButton;
+        private: ::Windows::UI::Xaml::Controls::RatingControl^ RatingControl;
         private: ::Windows::UI::Xaml::Controls::Button^ ConfirmBtn;
-        private: ::Windows::UI::Xaml::Controls::Button^ ResetBtn;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ TipBlock;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ IDBlock;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ TeacherBlock;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ HistoryBlock;

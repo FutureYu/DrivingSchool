@@ -225,6 +225,7 @@
     <Page Include="ViewStudents.xaml" />
     <Page Include="ViewMark.xaml" />
     <Page Include="TeacherDetail.xaml" />
+    <Page Include="SearchState.xaml" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DrivingSchool.rc" />

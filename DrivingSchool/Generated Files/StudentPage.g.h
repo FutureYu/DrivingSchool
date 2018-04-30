@@ -31,12 +31,18 @@ namespace DrivingSchool
         virtual ::Windows::UI::Xaml::Markup::IComponentConnector^ GetBindingConnector(int connectionId, ::Platform::Object^ target);
     
     private:
+        void UnloadObject(::Windows::UI::Xaml::DependencyObject^ dependencyObject);
+        void DisconnectUnloadedObject(int connectionId);
+    
+    private:
         bool _contentLoaded;
+    
     
         private: ::Windows::UI::Xaml::Controls::Button^ BackButton;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ GreetingBlock;
         private: ::Windows::UI::Xaml::Controls::Button^ ChangePwd;
         private: ::Windows::UI::Xaml::Controls::Button^ CheckScore;
+        private: ::Windows::UI::Xaml::Controls::Button^ SearchBtn;
         private: ::Windows::UI::Xaml::Controls::Button^ ReserveExam;
         private: ::Windows::UI::Xaml::Controls::Button^ ReserveTeacher;
         private: ::Windows::UI::Xaml::Controls::Button^ MarkTeacher;

@@ -49,6 +49,7 @@ void DrivingSchool::MarkTeacher::GetTeacher()
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
 		TeacherBlock->Text = previousOperation.get();
+		TipBlock->Text = "请评价您的编号为" + previousOperation.get() + "的教练！";
 	}).then([&]() {
 		GetHistory();
 	});
@@ -56,22 +57,9 @@ void DrivingSchool::MarkTeacher::GetTeacher()
 
 void DrivingSchool::MarkTeacher::ConfirmBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	long state = wcstol(ProgressNumberBlock->Text->Data(), NULL, 10);
 	long history = wcstol(HistoryBlock->Text->Data(), NULL, 10);
 	long avgScore = wcstol(AvgScoreBlock->Text->Data(), NULL, 10);
-	long score = wcstol(ScoreBox->Text->Data(), NULL, 10);
-	if (state != 5 && state != 9)
-	{
-		MessageDialog msg("评价失败，您可能未预约教练或未完成考试！", "评价失败");
-		msg.ShowAsync(); return;
-	}
-	if (score > 100 || score < 0)
-	{
-		MessageDialog msg("分数范围错误！", "评价失败");
-		msg.ShowAsync();
-		ScoreBox->Text = "";
-		return;
-	}
+	long score = (RatingControl->Value)*10;
 	long newScore = (avgScore * history + score) / (history + 1);
 	FileWR::FileWrite(TeacherBlock->Text + ".sco", ref new String(std::to_wstring(newScore).c_str()));
 	FileWR::FileWrite(TeacherBlock->Text + ".his", ref new String(std::to_wstring(++history).c_str()));
@@ -82,10 +70,6 @@ void DrivingSchool::MarkTeacher::ConfirmBtn_Click(Platform::Object^ sender, Wind
 }
 
 
-void DrivingSchool::MarkTeacher::ResetBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-{
-	ScoreBox->Text = "";
-}
 
 // 获取教练编号
 void DrivingSchool::MarkTeacher::GetScore()
@@ -108,9 +92,9 @@ void DrivingSchool::MarkTeacher::GetHistory()
 {
 	if (TeacherBlock->Text == "0")
 	{
-		MessageDialog msg("请先预约教练！", "评价失败");
+		TipBlock->Text = "评价失败！请先预约教练！";
 		ConfirmBtn->IsEnabled = false;
-		msg.ShowAsync(); return;
+		return;
 	}
 	else
 	{
@@ -139,5 +123,17 @@ void DrivingSchool::MarkTeacher::GetProgress()
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
 		ProgressNumberBlock->Text = previousOperation.get();
+		long state = wcstol(previousOperation.get()->Data(), NULL, 10);
+		if (state != 5 && state != 9)
+		{
+			TipBlock->Text = "评价失败，您可能未预约教练或未完成考试！";
+			ConfirmBtn->IsEnabled = false;
+			return;
+		}
 	});
+}
+
+void DrivingSchool::MarkTeacher::BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	Frame->GoBack();
 }

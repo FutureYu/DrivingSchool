@@ -32,7 +32,12 @@ namespace DrivingSchool
         virtual ::Windows::UI::Xaml::Markup::IComponentConnector^ GetBindingConnector(int connectionId, ::Platform::Object^ target);
     
     private:
+        void UnloadObject(::Windows::UI::Xaml::DependencyObject^ dependencyObject);
+        void DisconnectUnloadedObject(int connectionId);
+    
+    private:
         bool _contentLoaded;
+    
     
         private: ::Windows::UI::Xaml::Controls::TextBox^ IDBox;
         private: ::Windows::UI::Xaml::Controls::TextBox^ ScoreBox;

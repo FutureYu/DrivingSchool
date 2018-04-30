@@ -6,6 +6,9 @@
 //------------------------------------------------------------------------------
 #include "pch.h"
 
+#pragma warning(push)
+#pragma warning(disable: 4100) // unreferenced formal parameter
+
 #if defined _DEBUG && !defined DISABLE_XAML_GENERATED_BINDING_DEBUG_OUTPUT
 extern "C" __declspec(dllimport) int __stdcall IsDebuggerPresent();
 #endif
@@ -27,20 +30,20 @@ void ::DrivingSchool::TeacherPage::Connect(int __connectionId, ::Platform::Objec
 {
     switch (__connectionId)
     {
-        case 1:
-            {
-                this->ViewStudentBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ViewStudentBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::TeacherPage::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&TeacherPage::ViewStudentBtn_Click);
-            }
-            break;
-        case 2:
-            {
-                this->ViewMark = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ViewMark))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::TeacherPage::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&TeacherPage::ViewMark_Click);
-            }
-            break;
+    case 1:
+        {
+            this->ViewStudentBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ViewStudentBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::TeacherPage::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&TeacherPage::ViewStudentBtn_Click);
+        }
+        break;
+    case 2:
+        {
+            this->ViewMark = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ViewMark))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::TeacherPage::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&TeacherPage::ViewMark_Click);
+        }
+        break;
     }
     _contentLoaded = true;
 }
@@ -51,5 +54,7 @@ void ::DrivingSchool::TeacherPage::Connect(int __connectionId, ::Platform::Objec
     __target;               // unreferenced
     return nullptr;
 }
+
+#pragma warning(pop)
 
 

@@ -6,6 +6,9 @@
 //------------------------------------------------------------------------------
 #include "pch.h"
 
+#pragma warning(push)
+#pragma warning(disable: 4100) // unreferenced formal parameter
+
 #if defined _DEBUG && !defined DISABLE_XAML_GENERATED_BINDING_DEBUG_OUTPUT
 extern "C" __declspec(dllimport) int __stdcall IsDebuggerPresent();
 #endif
@@ -27,35 +30,35 @@ void ::DrivingSchool::ReserveTeacher::Connect(int __connectionId, ::Platform::Ob
 {
     switch (__connectionId)
     {
-        case 1:
-            {
-                this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 2:
-            {
-                this->TeacherBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 3:
-            {
-                this->ConfirmBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ConfirmBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ReserveTeacher::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ReserveTeacher::ConfirmBtn_Click);
-            }
-            break;
-        case 4:
-            {
-                this->ResetBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ResetBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ReserveTeacher::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ReserveTeacher::ResetBtn_Click);
-            }
-            break;
-        case 5:
-            {
-                this->TeacherIDBox = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
-            }
-            break;
+    case 1:
+        {
+            this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 2:
+        {
+            this->TeacherBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 3:
+        {
+            this->ConfirmBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ConfirmBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ReserveTeacher::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ReserveTeacher::ConfirmBtn_Click);
+        }
+        break;
+    case 4:
+        {
+            this->ResetBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ResetBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ReserveTeacher::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ReserveTeacher::ResetBtn_Click);
+        }
+        break;
+    case 5:
+        {
+            this->TeacherIDBox = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+        }
+        break;
     }
     _contentLoaded = true;
 }
@@ -66,5 +69,7 @@ void ::DrivingSchool::ReserveTeacher::Connect(int __connectionId, ::Platform::Ob
     __target;               // unreferenced
     return nullptr;
 }
+
+#pragma warning(pop)
 
 

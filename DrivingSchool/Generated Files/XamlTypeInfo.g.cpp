@@ -20,6 +20,7 @@
 #include "Register.xaml.h"
 #include "ReserveExam.xaml.h"
 #include "ReserveTeacher.xaml.h"
+#include "SearchState.xaml.h"
 #include "StudentPage.xaml.h"
 #include "TeacherDetail.xaml.h"
 #include "TeacherPage.xaml.h"
@@ -38,6 +39,7 @@
 #include "Register.g.hpp"
 #include "ReserveExam.g.hpp"
 #include "ReserveTeacher.g.hpp"
+#include "SearchState.g.hpp"
 #include "StudentPage.g.hpp"
 #include "TeacherDetail.g.hpp"
 #include "TeacherPage.g.hpp"
@@ -69,6 +71,16 @@ template<typename T>
     return ref new ::Platform::Box<T>((T)userType->CreateEnumUIntFromString(input));
 }
 
+enum TypeInfo_Flags
+{
+    TypeInfo_Flags_None                 = 0x00,
+    TypeInfo_Flags_IsLocalType          = 0x01,
+    TypeInfo_Flags_IsSystemType         = 0x02,
+    TypeInfo_Flags_IsReturnTypeStub     = 0x04,
+    TypeInfo_Flags_IsBindable           = 0x08,
+    TypeInfo_Flags_IsMarkupExtension    = 0x10, 
+};
+
 struct TypeInfo
 {
     PCWSTR  typeName;
@@ -80,132 +92,136 @@ struct TypeInfo
     int     baseTypeIndex;
     int     firstMemberIndex;
     int     firstEnumValueIndex;
+    int     createFromStringIndex;
     ::Windows::UI::Xaml::Interop::TypeKind kindofType;
-    bool    isLocalType;
-    bool    isSystemType;
-    bool    isReturnTypeStub;
-    bool    isBindable;
+    unsigned int flags;
 };
 
-TypeInfo TypeInfos[] = 
+const TypeInfo TypeInfos[] = 
 {
     //   0
     L"DrivingSchool.MainPage", L"",
     &ActivateType<::DrivingSchool::MainPage>, nullptr, nullptr, nullptr,
-    16, // Windows.UI.Xaml.Controls.Page
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    true,  false, false, false,
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
     //   1
     L"DrivingSchool.Register", L"",
     &ActivateType<::DrivingSchool::Register>, nullptr, nullptr, nullptr,
-    16, // Windows.UI.Xaml.Controls.Page
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    true,  false, false, false,
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
     //   2
     L"DrivingSchool.ViewMark", L"",
     &ActivateType<::DrivingSchool::ViewMark>, nullptr, nullptr, nullptr,
-    16, // Windows.UI.Xaml.Controls.Page
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    true,  false, false, false,
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
     //   3
     L"DrivingSchool.AdminPage", L"",
     &ActivateType<::DrivingSchool::AdminPage>, nullptr, nullptr, nullptr,
-    16, // Windows.UI.Xaml.Controls.Page
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    true,  false, false, false,
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
     //   4
     L"DrivingSchool.ChangePwd", L"",
     &ActivateType<::DrivingSchool::ChangePwd>, nullptr, nullptr, nullptr,
-    16, // Windows.UI.Xaml.Controls.Page
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    true,  false, false, false,
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
     //   5
     L"DrivingSchool.CheckScore", L"",
     &ActivateType<::DrivingSchool::CheckScore>, nullptr, nullptr, nullptr,
-    16, // Windows.UI.Xaml.Controls.Page
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    true,  false, false, false,
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
     //   6
     L"DrivingSchool.MarkTeacher", L"",
     &ActivateType<::DrivingSchool::MarkTeacher>, nullptr, nullptr, nullptr,
-    16, // Windows.UI.Xaml.Controls.Page
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    true,  false, false, false,
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
     //   7
     L"DrivingSchool.ReserveExam", L"",
     &ActivateType<::DrivingSchool::ReserveExam>, nullptr, nullptr, nullptr,
-    16, // Windows.UI.Xaml.Controls.Page
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    true,  false, false, false,
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
     //   8
+    L"DrivingSchool.SearchState", L"",
+    &ActivateType<::DrivingSchool::SearchState>, nullptr, nullptr, nullptr,
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
+    //   9
     L"DrivingSchool.StudentPage", L"",
     &ActivateType<::DrivingSchool::StudentPage>, nullptr, nullptr, nullptr,
-    16, // Windows.UI.Xaml.Controls.Page
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    true,  false, false, false,
-    //   9
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
+    //  10
     L"DrivingSchool.TeacherPage", L"",
     &ActivateType<::DrivingSchool::TeacherPage>, nullptr, nullptr, nullptr,
-    16, // Windows.UI.Xaml.Controls.Page
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    true,  false, false, false,
-    //  10
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
+    //  11
     L"DrivingSchool.UplodeScore", L"",
     &ActivateType<::DrivingSchool::UplodeScore>, nullptr, nullptr, nullptr,
-    16, // Windows.UI.Xaml.Controls.Page
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    true,  false, false, false,
-    //  11
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
+    //  12
     L"DrivingSchool.ViewStudents", L"",
     &ActivateType<::DrivingSchool::ViewStudents>, nullptr, nullptr, nullptr,
-    16, // Windows.UI.Xaml.Controls.Page
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    true,  false, false, false,
-    //  12
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
+    //  13
     L"DrivingSchool.AddTeacherTwo", L"",
     &ActivateType<::DrivingSchool::AddTeacherTwo>, nullptr, nullptr, nullptr,
-    16, // Windows.UI.Xaml.Controls.Page
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    true,  false, false, false,
-    //  13
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
+    //  14
     L"DrivingSchool.TeacherDetail", L"",
     &ActivateType<::DrivingSchool::TeacherDetail>, nullptr, nullptr, nullptr,
-    16, // Windows.UI.Xaml.Controls.Page
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    true,  false, false, false,
-    //  14
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
+    //  15
     L"DrivingSchool.ReserveTeacher", L"",
     &ActivateType<::DrivingSchool::ReserveTeacher>, nullptr, nullptr, nullptr,
-    16, // Windows.UI.Xaml.Controls.Page
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    true,  false, false, false,
-    //  15
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
+    //  16
     L"DrivingSchool.AddTeacherThree", L"",
     &ActivateType<::DrivingSchool::AddTeacherThree>, nullptr, nullptr, nullptr,
-    16, // Windows.UI.Xaml.Controls.Page
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    true,  false, false, false,
-    //  16
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
+    //  17
     L"Windows.UI.Xaml.Controls.Page", L"",
     nullptr, nullptr, nullptr, nullptr,
     -1,
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
-    false, true,  false, false,
-    //  17
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
+    TypeInfo_Flags_IsSystemType | TypeInfo_Flags_None,
+    //  18
     L"Windows.UI.Xaml.Controls.UserControl", L"",
     nullptr, nullptr, nullptr, nullptr,
     -1,
-    0, 0, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
-    false, true,  false, false,
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
+    TypeInfo_Flags_IsSystemType | TypeInfo_Flags_None,
     //  Last type here is for padding
     L"", L"",
     nullptr, nullptr, nullptr, nullptr,
     -1, 
-    0, 0,::Windows::UI::Xaml::Interop::TypeKind::Custom,
-    false, false, false, false,
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_None,
 };
 
-UINT TypeInfoLookup[] = { 
+const UINT TypeInfoLookup[] = { 
       0,   //   0
       0,   //   1
       0,   //   2
@@ -232,23 +248,23 @@ UINT TypeInfoLookup[] = {
       3,   //  23
       5,   //  24
       6,   //  25
-     11,   //  26
-     12,   //  27
-     14,   //  28
-     15,   //  29
-     17,   //  30
-     17,   //  31
-     17,   //  32
-     17,   //  33
-     17,   //  34
-     17,   //  35
-     17,   //  36
-     18,   //  37
+     12,   //  26
+     13,   //  27
+     15,   //  28
+     16,   //  29
+     18,   //  30
+     18,   //  31
+     18,   //  32
+     18,   //  33
+     18,   //  34
+     18,   //  35
+     18,   //  36
+     19,   //  37
 };
 
-TypeInfo* GetTypeInfo(::Platform::String^ typeName)
+const TypeInfo* GetTypeInfo(::Platform::String^ typeName)
 {
-    int typeNameLength = typeName->Length();
+    auto typeNameLength = typeName->Length();
     if (typeNameLength < _countof(TypeInfoLookup) - 1)
     {
         for (UINT i = TypeInfoLookup[typeNameLength]; i < TypeInfoLookup[typeNameLength+1]; i++)
@@ -274,13 +290,13 @@ TypeInfo* GetTypeInfo(::Platform::String^ typeName)
 
 ::Windows::UI::Xaml::Markup::IXamlType^ ::XamlTypeInfo::InfoProvider::XamlTypeInfoProvider::CreateXamlType(::Platform::String^ typeName)
 {
-    TypeInfo* pTypeInfo = GetTypeInfo(typeName);
-    TypeInfo* pNextTypeInfo = pTypeInfo + 1;
+    const TypeInfo* pTypeInfo = GetTypeInfo(typeName);
+    const TypeInfo* pNextTypeInfo = pTypeInfo + 1;
     if (pTypeInfo == nullptr || pNextTypeInfo == nullptr)
     {
         return nullptr;
     }
-    else if (pTypeInfo->isSystemType)
+    else if (pTypeInfo->flags & TypeInfo_Flags_IsSystemType)
     {
         return ref new ::XamlTypeInfo::InfoProvider::XamlSystemBaseType(typeName);
     }
@@ -296,9 +312,11 @@ TypeInfo* GetTypeInfo(::Platform::String^ typeName)
         userType->DictionaryAdd = pTypeInfo->dictionaryAdd;
         userType->FromStringConverter = pTypeInfo->fromStringConverter;
         userType->ContentPropertyName = ::Platform::StringReference(pTypeInfo->contentPropertyName);
-        userType->IsLocalType = pTypeInfo->isLocalType;
-        userType->IsReturnTypeStub = pTypeInfo->isReturnTypeStub;
-        userType->IsBindable = pTypeInfo->isBindable;
+        userType->IsLocalType = pTypeInfo->flags & TypeInfo_Flags_IsLocalType;
+        userType->IsReturnTypeStub = pTypeInfo->flags & TypeInfo_Flags_IsReturnTypeStub;
+        userType->IsBindable = pTypeInfo->flags & TypeInfo_Flags_IsBindable;
+        userType->IsMarkupExtension = pTypeInfo->flags & TypeInfo_Flags_IsMarkupExtension;
+        userType->CreateFromStringMethod = nullptr;
         return userType;
     }
 }

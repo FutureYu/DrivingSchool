@@ -6,6 +6,9 @@
 //------------------------------------------------------------------------------
 #include "pch.h"
 
+#pragma warning(push)
+#pragma warning(disable: 4100) // unreferenced formal parameter
+
 #if defined _DEBUG && !defined DISABLE_XAML_GENERATED_BINDING_DEBUG_OUTPUT
 extern "C" __declspec(dllimport) int __stdcall IsDebuggerPresent();
 #endif
@@ -27,50 +30,55 @@ void ::DrivingSchool::MarkTeacher::Connect(int __connectionId, ::Platform::Objec
 {
     switch (__connectionId)
     {
-        case 1:
-            {
-                this->ScoreBox = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
-            }
-            break;
-        case 2:
-            {
-                this->ConfirmBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ConfirmBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::MarkTeacher::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&MarkTeacher::ConfirmBtn_Click);
-            }
-            break;
-        case 3:
-            {
-                this->ResetBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ResetBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::MarkTeacher::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&MarkTeacher::ResetBtn_Click);
-            }
-            break;
-        case 4:
-            {
-                this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 5:
-            {
-                this->TeacherBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 6:
-            {
-                this->HistoryBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 7:
-            {
-                this->AvgScoreBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 8:
-            {
-                this->ProgressNumberBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
+    case 1:
+        {
+            this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::MarkTeacher::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&MarkTeacher::BackButton_Click);
+        }
+        break;
+    case 2:
+        {
+            this->RatingControl = safe_cast<::Windows::UI::Xaml::Controls::RatingControl^>(__target);
+        }
+        break;
+    case 3:
+        {
+            this->ConfirmBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ConfirmBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::MarkTeacher::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&MarkTeacher::ConfirmBtn_Click);
+        }
+        break;
+    case 4:
+        {
+            this->TipBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 5:
+        {
+            this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 6:
+        {
+            this->TeacherBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 7:
+        {
+            this->HistoryBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 8:
+        {
+            this->AvgScoreBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 9:
+        {
+            this->ProgressNumberBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
     }
     _contentLoaded = true;
 }
@@ -81,5 +89,7 @@ void ::DrivingSchool::MarkTeacher::Connect(int __connectionId, ::Platform::Objec
     __target;               // unreferenced
     return nullptr;
 }
+
+#pragma warning(pop)
 
 

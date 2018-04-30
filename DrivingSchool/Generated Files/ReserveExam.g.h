@@ -11,8 +11,8 @@ namespace Windows {
     namespace UI {
         namespace Xaml {
             namespace Controls {
-                ref class TextBlock;
                 ref class Button;
+                ref class TextBlock;
             }
         }
     }
@@ -31,15 +31,19 @@ namespace DrivingSchool
         virtual ::Windows::UI::Xaml::Markup::IComponentConnector^ GetBindingConnector(int connectionId, ::Platform::Object^ target);
     
     private:
+        void UnloadObject(::Windows::UI::Xaml::DependencyObject^ dependencyObject);
+        void DisconnectUnloadedObject(int connectionId);
+    
+    private:
         bool _contentLoaded;
     
-        private: ::Windows::UI::Xaml::Controls::TextBlock^ IDBlock;
+    
+        private: ::Windows::UI::Xaml::Controls::Button^ BackButton;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ ProgressBlock;
-        private: ::Windows::UI::Xaml::Controls::Button^ SearchBtn;
         private: ::Windows::UI::Xaml::Controls::Button^ ConfirmBtn;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ IDBlock;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ ExamBlock;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ ProgressNumberBlock;
-        private: ::Windows::UI::Xaml::Controls::Button^ BackButton;
     };
 }
 

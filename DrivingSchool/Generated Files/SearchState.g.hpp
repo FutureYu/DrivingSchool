@@ -13,38 +13,50 @@
 extern "C" __declspec(dllimport) int __stdcall IsDebuggerPresent();
 #endif
 
-#include "ViewStudents.xaml.h"
+#include "SearchState.xaml.h"
 
-void ::DrivingSchool::ViewStudents::InitializeComponent()
+void ::DrivingSchool::SearchState::InitializeComponent()
 {
     if (_contentLoaded)
     {
         return;
     }
     _contentLoaded = true;
-    ::Windows::Foundation::Uri^ resourceLocator = ref new ::Windows::Foundation::Uri(L"ms-appx:///ViewStudents.xaml");
+    ::Windows::Foundation::Uri^ resourceLocator = ref new ::Windows::Foundation::Uri(L"ms-appx:///SearchState.xaml");
     ::Windows::UI::Xaml::Application::LoadComponent(this, resourceLocator, ::Windows::UI::Xaml::Controls::Primitives::ComponentResourceLocation::Application);
 }
 
-void ::DrivingSchool::ViewStudents::Connect(int __connectionId, ::Platform::Object^ __target)
+void ::DrivingSchool::SearchState::Connect(int __connectionId, ::Platform::Object^ __target)
 {
     switch (__connectionId)
     {
     case 1:
         {
-            this->StudentBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::SearchState::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&SearchState::BackButton_Click);
         }
         break;
     case 2:
         {
+            this->ProgressBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 3:
+        {
             this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 4:
+        {
+            this->ProgressNumberBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
         }
         break;
     }
     _contentLoaded = true;
 }
 
-::Windows::UI::Xaml::Markup::IComponentConnector^ ::DrivingSchool::ViewStudents::GetBindingConnector(int __connectionId, ::Platform::Object^ __target)
+::Windows::UI::Xaml::Markup::IComponentConnector^ ::DrivingSchool::SearchState::GetBindingConnector(int __connectionId, ::Platform::Object^ __target)
 {
     __connectionId;         // unreferenced
     __target;               // unreferenced

@@ -6,6 +6,9 @@
 //------------------------------------------------------------------------------
 #include "pch.h"
 
+#pragma warning(push)
+#pragma warning(disable: 4100) // unreferenced formal parameter
+
 #if defined _DEBUG && !defined DISABLE_XAML_GENERATED_BINDING_DEBUG_OUTPUT
 extern "C" __declspec(dllimport) int __stdcall IsDebuggerPresent();
 #endif
@@ -27,52 +30,52 @@ void ::DrivingSchool::UplodeScore::Connect(int __connectionId, ::Platform::Objec
 {
     switch (__connectionId)
     {
-        case 1:
-            {
-                this->IDBox = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
-            }
-            break;
-        case 2:
-            {
-                this->ScoreBox = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
-            }
-            break;
-        case 3:
-            {
-                this->ConfirmBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ConfirmBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::UplodeScore::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&UplodeScore::ConfirmBtn_Click);
-            }
-            break;
-        case 4:
-            {
-                this->ResetBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ResetBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::UplodeScore::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&UplodeScore::ResetBtn_Click);
-            }
-            break;
-        case 5:
-            {
-                this->isExistBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 6:
-            {
-                this->ExamIDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 7:
-            {
-                this->StateBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 8:
-            {
-                this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::UplodeScore::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&UplodeScore::BackButton_Click);
-            }
-            break;
+    case 1:
+        {
+            this->IDBox = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+        }
+        break;
+    case 2:
+        {
+            this->ScoreBox = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+        }
+        break;
+    case 3:
+        {
+            this->ConfirmBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ConfirmBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::UplodeScore::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&UplodeScore::ConfirmBtn_Click);
+        }
+        break;
+    case 4:
+        {
+            this->ResetBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ResetBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::UplodeScore::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&UplodeScore::ResetBtn_Click);
+        }
+        break;
+    case 5:
+        {
+            this->isExistBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 6:
+        {
+            this->ExamIDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 7:
+        {
+            this->StateBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 8:
+        {
+            this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::UplodeScore::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&UplodeScore::BackButton_Click);
+        }
+        break;
     }
     _contentLoaded = true;
 }
@@ -83,5 +86,7 @@ void ::DrivingSchool::UplodeScore::Connect(int __connectionId, ::Platform::Objec
     __target;               // unreferenced
     return nullptr;
 }
+
+#pragma warning(pop)
 
 

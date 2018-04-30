@@ -6,6 +6,9 @@
 //------------------------------------------------------------------------------
 #include "pch.h"
 
+#pragma warning(push)
+#pragma warning(disable: 4100) // unreferenced formal parameter
+
 #if defined _DEBUG && !defined DISABLE_XAML_GENERATED_BINDING_DEBUG_OUTPUT
 extern "C" __declspec(dllimport) int __stdcall IsDebuggerPresent();
 #endif
@@ -27,21 +30,21 @@ void ::DrivingSchool::ViewMark::Connect(int __connectionId, ::Platform::Object^ 
 {
     switch (__connectionId)
     {
-        case 1:
-            {
-                this->HistoryBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 2:
-            {
-                this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 3:
-            {
-                this->MarkBar = safe_cast<::Windows::UI::Xaml::Controls::ProgressBar^>(__target);
-            }
-            break;
+    case 1:
+        {
+            this->HistoryBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 2:
+        {
+            this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 3:
+        {
+            this->MarkBar = safe_cast<::Windows::UI::Xaml::Controls::ProgressBar^>(__target);
+        }
+        break;
     }
     _contentLoaded = true;
 }
@@ -52,5 +55,7 @@ void ::DrivingSchool::ViewMark::Connect(int __connectionId, ::Platform::Object^ 
     __target;               // unreferenced
     return nullptr;
 }
+
+#pragma warning(pop)
 
 

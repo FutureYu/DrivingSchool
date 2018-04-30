@@ -6,6 +6,9 @@
 //------------------------------------------------------------------------------
 #include "pch.h"
 
+#pragma warning(push)
+#pragma warning(disable: 4100) // unreferenced formal parameter
+
 #if defined _DEBUG && !defined DISABLE_XAML_GENERATED_BINDING_DEBUG_OUTPUT
 extern "C" __declspec(dllimport) int __stdcall IsDebuggerPresent();
 #endif
@@ -27,40 +30,28 @@ void ::DrivingSchool::CheckScore::Connect(int __connectionId, ::Platform::Object
 {
     switch (__connectionId)
     {
-        case 1:
-            {
-                this->ScoreBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 2:
-            {
-                this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 3:
-            {
-                this->ExamBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 4:
-            {
-                this->ProgressNumberBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 5:
-            {
-                this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::CheckScore::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&CheckScore::BackButton_Click);
-            }
-            break;
-        case 6:
-            {
-                this->CheckScoreBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->CheckScoreBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::CheckScore::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&CheckScore::CheckScoreBtn_Click);
-            }
-            break;
+    case 1:
+        {
+            this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::CheckScore::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&CheckScore::BackButton_Click);
+        }
+        break;
+    case 2:
+        {
+            this->ScoreBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 3:
+        {
+            this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 4:
+        {
+            this->ExamBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
     }
     _contentLoaded = true;
 }
@@ -71,5 +62,7 @@ void ::DrivingSchool::CheckScore::Connect(int __connectionId, ::Platform::Object
     __target;               // unreferenced
     return nullptr;
 }
+
+#pragma warning(pop)
 
 

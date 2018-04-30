@@ -6,6 +6,9 @@
 //------------------------------------------------------------------------------
 #include "pch.h"
 
+#pragma warning(push)
+#pragma warning(disable: 4100) // unreferenced formal parameter
+
 #if defined _DEBUG && !defined DISABLE_XAML_GENERATED_BINDING_DEBUG_OUTPUT
 extern "C" __declspec(dllimport) int __stdcall IsDebuggerPresent();
 #endif
@@ -27,52 +30,52 @@ void ::DrivingSchool::AddTeacherThree::Connect(int __connectionId, ::Platform::O
 {
     switch (__connectionId)
     {
-        case 1:
-            {
-                this->NameBox = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
-            }
-            break;
-        case 2:
-            {
-                this->PasswordBox = safe_cast<::Windows::UI::Xaml::Controls::PasswordBox^>(__target);
-            }
-            break;
-        case 3:
-            {
-                this->ConfirmPasswordBox = safe_cast<::Windows::UI::Xaml::Controls::PasswordBox^>(__target);
-            }
-            break;
-        case 4:
-            {
-                this->ConfirmButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ConfirmButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AddTeacherThree::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AddTeacherThree::ConfirmButton_Click);
-            }
-            break;
-        case 5:
-            {
-                this->ResetButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ResetButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AddTeacherThree::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AddTeacherThree::ResetButton_Click);
-            }
-            break;
-        case 6:
-            {
-                this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 7:
-            {
-                this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AddTeacherThree::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AddTeacherThree::BackButton_Click);
-            }
-            break;
-        case 8:
-            {
-                this->isExistBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
+    case 1:
+        {
+            this->NameBox = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+        }
+        break;
+    case 2:
+        {
+            this->PasswordBox = safe_cast<::Windows::UI::Xaml::Controls::PasswordBox^>(__target);
+        }
+        break;
+    case 3:
+        {
+            this->ConfirmPasswordBox = safe_cast<::Windows::UI::Xaml::Controls::PasswordBox^>(__target);
+        }
+        break;
+    case 4:
+        {
+            this->ConfirmButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ConfirmButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AddTeacherThree::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AddTeacherThree::ConfirmButton_Click);
+        }
+        break;
+    case 5:
+        {
+            this->ResetButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ResetButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AddTeacherThree::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AddTeacherThree::ResetButton_Click);
+        }
+        break;
+    case 6:
+        {
+            this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 7:
+        {
+            this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AddTeacherThree::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AddTeacherThree::BackButton_Click);
+        }
+        break;
+    case 8:
+        {
+            this->isExistBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
     }
     _contentLoaded = true;
 }
@@ -83,5 +86,7 @@ void ::DrivingSchool::AddTeacherThree::Connect(int __connectionId, ::Platform::O
     __target;               // unreferenced
     return nullptr;
 }
+
+#pragma warning(pop)
 
 

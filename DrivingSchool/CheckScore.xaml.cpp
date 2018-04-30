@@ -49,16 +49,13 @@ void DrivingSchool::CheckScore::GetExamId()
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
 		ExamBlock->Text = previousOperation.get();
+	}).then([&]() {
+		GetScore();
 	});
 }
 
-void DrivingSchool::CheckScore::BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-{
-	Frame->GoBack();
-}
-
-// 查询考试编号
-void DrivingSchool::CheckScore::CheckScoreBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+// 查询考试成绩
+void DrivingSchool::CheckScore::GetScore()
 {
 	String^ path = ExamBlock->Text + ".exm";
 	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
@@ -77,4 +74,9 @@ void DrivingSchool::CheckScore::CheckScoreBtn_Click(Platform::Object^ sender, Wi
 			ScoreBlock->Text = previousOperation.get();
 		}
 	});
+}
+
+void DrivingSchool::CheckScore::BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	Frame->GoBack();
 }

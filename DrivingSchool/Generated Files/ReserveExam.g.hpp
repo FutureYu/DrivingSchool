@@ -6,6 +6,9 @@
 //------------------------------------------------------------------------------
 #include "pch.h"
 
+#pragma warning(push)
+#pragma warning(disable: 4100) // unreferenced formal parameter
+
 #if defined _DEBUG && !defined DISABLE_XAML_GENERATED_BINDING_DEBUG_OUTPUT
 extern "C" __declspec(dllimport) int __stdcall IsDebuggerPresent();
 #endif
@@ -27,47 +30,40 @@ void ::DrivingSchool::ReserveExam::Connect(int __connectionId, ::Platform::Objec
 {
     switch (__connectionId)
     {
-        case 1:
-            {
-                this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 2:
-            {
-                this->ProgressBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 3:
-            {
-                this->SearchBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->SearchBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ReserveExam::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ReserveExam::SearchBtn_Click);
-            }
-            break;
-        case 4:
-            {
-                this->ConfirmBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ConfirmBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ReserveExam::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ReserveExam::ConfirmBtn_Click);
-            }
-            break;
-        case 5:
-            {
-                this->ExamBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 6:
-            {
-                this->ProgressNumberBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-            }
-            break;
-        case 7:
-            {
-                this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ReserveExam::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ReserveExam::BackButton_Click);
-            }
-            break;
+    case 1:
+        {
+            this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ReserveExam::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ReserveExam::BackButton_Click);
+        }
+        break;
+    case 2:
+        {
+            this->ProgressBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 3:
+        {
+            this->ConfirmBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ConfirmBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ReserveExam::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ReserveExam::ConfirmBtn_Click);
+        }
+        break;
+    case 4:
+        {
+            this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 5:
+        {
+            this->ExamBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 6:
+        {
+            this->ProgressNumberBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
     }
     _contentLoaded = true;
 }
@@ -78,5 +74,7 @@ void ::DrivingSchool::ReserveExam::Connect(int __connectionId, ::Platform::Objec
     __target;               // unreferenced
     return nullptr;
 }
+
+#pragma warning(pop)
 
 

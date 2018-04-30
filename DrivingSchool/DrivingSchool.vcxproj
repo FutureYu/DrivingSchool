@@ -8,7 +8,7 @@
     <AppContainerApplication>true</AppContainerApplication>
     <ApplicationType>Windows Store</ApplicationType>
     <WindowsTargetPlatformVersion Condition=" '$(WindowsTargetPlatformVersion)' == '' ">10.0.16299.0</WindowsTargetPlatformVersion>
-    <WindowsTargetPlatformMinVersion>10.0.10586.0</WindowsTargetPlatformMinVersion>
+    <WindowsTargetPlatformMinVersion>10.0.16299.0</WindowsTargetPlatformMinVersion>
     <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -178,6 +178,9 @@
       <DependentUpon>ReserveTeacher.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SearchState.xaml.h">
+      <DependentUpon>SearchState.xaml</DependentUpon>
+    </ClInclude>
     <ClInclude Include="Student.h" />
     <ClInclude Include="StudentPage.xaml.h">
       <DependentUpon>StudentPage.xaml</DependentUpon>
@@ -231,6 +234,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ReserveTeacher.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SearchState.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Include="StudentPage.xaml">
@@ -349,6 +355,9 @@
     </ClCompile>
     <ClCompile Include="ReserveTeacher.xaml.cpp">
       <DependentUpon>ReserveTeacher.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="SearchState.xaml.cpp">
+      <DependentUpon>SearchState.xaml</DependentUpon>
     </ClCompile>
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="StudentPage.xaml.cpp">

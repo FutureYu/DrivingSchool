@@ -10,6 +10,7 @@
 #include "ReserveExam.xaml.h"
 #include "ReserveTeacher.xaml.h"
 #include "MarkTeacher.xaml.h"
+#include "SearchState.xaml.h"
 #include <Windows.h>
 
 
@@ -68,8 +69,6 @@ StudentPage::StudentPage()
 	{
 		GetName();
 	});
-	
-	
 	String^ content = GreetingBlock->Text;
 }
 
@@ -109,4 +108,10 @@ void DrivingSchool::StudentPage::ReserveTeacher_Click(Platform::Object^ sender, 
 void DrivingSchool::StudentPage::MarkTeacher_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	Frame->Navigate(MarkTeacher::typeid);
+}
+
+
+void DrivingSchool::StudentPage::SearchBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	Frame->Navigate(SearchState::typeid);
 }

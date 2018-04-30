@@ -1,11 +1,11 @@
 ﻿//
-// MarkTeacher.xaml.h
-// MarkTeacher 类的声明
+// SearchState.xaml.h
+// SearchState 类的声明
 //
 
 #pragma once
 
-#include "MarkTeacher.g.h"
+#include "SearchState.g.h"
 
 namespace DrivingSchool
 {
@@ -13,15 +13,11 @@ namespace DrivingSchool
 	/// 可用于自身或导航至 Frame 内部的空白页。
 	/// </summary>
 	[Windows::Foundation::Metadata::WebHostHidden]
-	public ref class MarkTeacher sealed
+	public ref class SearchState sealed
 	{
 	public:
-		MarkTeacher();
+		SearchState();
 	private:
-		void GetTeacher();
-		void ConfirmBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
-		void GetScore();
-		void GetHistory();
 		void GetProgress();
 		void BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 	};

@@ -6,6 +6,9 @@
 //------------------------------------------------------------------------------
 #include "pch.h"
 
+#pragma warning(push)
+#pragma warning(disable: 4100) // unreferenced formal parameter
+
 #if defined _DEBUG && !defined DISABLE_XAML_GENERATED_BINDING_DEBUG_OUTPUT
 extern "C" __declspec(dllimport) int __stdcall IsDebuggerPresent();
 #endif
@@ -27,37 +30,37 @@ void ::DrivingSchool::AdminPage::Connect(int __connectionId, ::Platform::Object^
 {
     switch (__connectionId)
     {
-        case 1:
-            {
-                this->UplodeScore = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->UplodeScore))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AdminPage::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AdminPage::UplodeScore_Click);
-            }
-            break;
-        case 2:
-            {
-                this->AddTeacherTwo = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->AddTeacherTwo))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AdminPage::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AdminPage::AddTeacherTwo_Click);
-            }
-            break;
-        case 3:
-            {
-                this->AddTeacherThree = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-                (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->AddTeacherThree))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AdminPage::*)
-                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AdminPage::AddTeacherThree_Click);
-            }
-            break;
-        case 4:
-            {
-                this->EditTeacher = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-            }
-            break;
-        case 5:
-            {
-                this->DeleteTeacher = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-            }
-            break;
+    case 1:
+        {
+            this->UplodeScore = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->UplodeScore))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AdminPage::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AdminPage::UplodeScore_Click);
+        }
+        break;
+    case 2:
+        {
+            this->AddTeacherTwo = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->AddTeacherTwo))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AdminPage::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AdminPage::AddTeacherTwo_Click);
+        }
+        break;
+    case 3:
+        {
+            this->AddTeacherThree = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->AddTeacherThree))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AdminPage::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AdminPage::AddTeacherThree_Click);
+        }
+        break;
+    case 4:
+        {
+            this->EditTeacher = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+        }
+        break;
+    case 5:
+        {
+            this->DeleteTeacher = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+        }
+        break;
     }
     _contentLoaded = true;
 }
@@ -68,5 +71,7 @@ void ::DrivingSchool::AdminPage::Connect(int __connectionId, ::Platform::Object^
     __target;               // unreferenced
     return nullptr;
 }
+
+#pragma warning(pop)
 
 

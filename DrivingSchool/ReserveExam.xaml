@@ -8,12 +8,28 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="IDBlock" HorizontalAlignment="Left" Margin="112,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock x:Name="ProgressBlock" HorizontalAlignment="Left" Margin="112,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button x:Name="SearchBtn" Content="查询学习进度" HorizontalAlignment="Left" Margin="112,337,0,0" VerticalAlignment="Top" Click="SearchBtn_Click"/>
-        <Button x:Name="ConfirmBtn" Content="预约考试" HorizontalAlignment="Left" Margin="112,396,0,0" VerticalAlignment="Top" Click="ConfirmBtn_Click"/>
-        <TextBlock x:Name="ExamBlock" HorizontalAlignment="Left" Margin="112,142,0,0" Visibility="Collapsed" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock x:Name="ProgressNumberBlock" HorizontalAlignment="Left" Margin="112,142,0,0" Visibility="Collapsed" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Left" Text="预约考试" Margin="0,0,0,0" FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="ExtraBold"/>
         <Button x:Name="BackButton" Style="{StaticResource NavigationBackButtonNormalStyle}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="65" Click="BackButton_Click"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" x:Name="ProgressBlock" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button Grid.Row="2" Grid.Column="2" x:Name="ConfirmBtn" Content="预约考试" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Click="ConfirmBtn_Click"/>
+
+
+        <TextBlock x:Name="IDBlock" HorizontalAlignment="Left" Margin="0,0,0,0" Visibility="Collapsed" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ExamBlock" HorizontalAlignment="Left" Margin="0,0,0,0" Visibility="Collapsed" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ProgressNumberBlock" HorizontalAlignment="Left" Margin="0,0,0,0" Visibility="Collapsed" TextWrapping="Wrap" VerticalAlignment="Top"/>
     </Grid>
 </Page>
