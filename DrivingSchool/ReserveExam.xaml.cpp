@@ -52,6 +52,7 @@ void DrivingSchool::ReserveExam::GetProgress()
 	{
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
+		ProgressNumberBlock->Text = previousOperation.get();
 		long progress = wcstol(previousOperation.get()->Data(), NULL, 10);
 		switch (progress)
 		{
@@ -109,7 +110,7 @@ void DrivingSchool::ReserveExam::GetExamId()
 	});
 }
 
-// 预约考试 异步任务链：判断可否预约，
+// 预约考试 异步任务链：判断可否预约
 void DrivingSchool::ReserveExam::ConfirmBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	String^ path = IDBlock->Text + ".exm";

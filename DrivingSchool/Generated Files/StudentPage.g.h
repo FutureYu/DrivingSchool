@@ -12,6 +12,7 @@ namespace Windows {
         namespace Xaml {
             namespace Controls {
                 ref class Button;
+                ref class PersonPicture;
                 ref class TextBlock;
             }
         }
@@ -39,6 +40,7 @@ namespace DrivingSchool
     
     
         private: ::Windows::UI::Xaml::Controls::Button^ BackButton;
+        private: ::Windows::UI::Xaml::Controls::PersonPicture^ PersonPic;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ GreetingBlock;
         private: ::Windows::UI::Xaml::Controls::Button^ ChangePwd;
         private: ::Windows::UI::Xaml::Controls::Button^ CheckScore;
@@ -47,7 +49,6 @@ namespace DrivingSchool
         private: ::Windows::UI::Xaml::Controls::Button^ ReserveTeacher;
         private: ::Windows::UI::Xaml::Controls::Button^ MarkTeacher;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ IDBlock;
-        private: ::Windows::UI::Xaml::Controls::TextBlock^ NameBlock;
     };
 }
 

@@ -11,10 +11,6 @@
 #include "ReserveTeacher.xaml.h"
 #include "MarkTeacher.xaml.h"
 #include "SearchState.xaml.h"
-#include <Windows.h>
-
-
-
 
 using namespace DrivingSchool;
 
@@ -39,23 +35,23 @@ StudentPage::StudentPage()
 	String^ greeting;
 	if (time.wHour >= 5 && time.wHour < 9)
 	{
-	greeting = "早上好！";
+	greeting = "早上好，";
 	}
 	else if (time.wHour >= 9 && time.wHour < 12)
 	{
-	greeting = "上午好！";
+	greeting = "上午好，";
 	}
 	else if (time.wHour >= 12 && time.wHour < 14)
 	{
-	greeting = "中午好！";
+	greeting = "中午好，";
 	}
 	else if (time.wHour >= 14 && time.wHour < 18)
 	{
-	greeting = "下午好！";
+	greeting = "下午好，";
 	}
 	else
 	{
-	greeting = "晚上好！";
+	greeting = "晚上好，";
 	}
 	GreetingBlock->Text = greeting;
 	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
@@ -81,7 +77,8 @@ void DrivingSchool::StudentPage::GetName()
 	{
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
-		GreetingBlock->Text += previousOperation.get() + "\n我能为你做什么？";
+		PersonPic->DisplayName = previousOperation.get();
+		GreetingBlock->Text += previousOperation.get() + "！\n我能为你做什么？";
 	});
 }
 

@@ -5,6 +5,7 @@
 
 #include "pch.h"
 #include "TeacherDetail.xaml.h"
+#include "StudentPage.xaml.h"
 
 using namespace DrivingSchool;
 
@@ -49,7 +50,7 @@ TeacherDetail::TeacherDetail()
 		GetAvailable();
 	}).then([&]()
 	{
-		GetProgress(); 
+		GetProgress();
 	});
 }
 
@@ -79,7 +80,7 @@ void DrivingSchool::TeacherDetail::GetMark()
 	{
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
-		RatingCtrl->Value = (wcstol(previousOperation.get()->Data(), NULL, 10)/10);
+		RatingCtrl->Value = (wcstol(previousOperation.get()->Data(), NULL, 10) / 10);
 	});
 }
 
@@ -169,7 +170,7 @@ void DrivingSchool::TeacherDetail::GetAvailable()
 
 void DrivingSchool::TeacherDetail::TimeOneBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	FileWR::FileWrite(IDBlock->Text + ".tch", TchIDBlock->Text);
+	FileWR::FileWrite(IDBlock->Text + ".tch", TchIDBlock->Text + "1");
 	FileWR::FileWrite(IDBlock->Text + ".sta", ref new String(std::to_wstring((wcstol(ProgressBlock->Text->Data(), NULL, 10) + 1)).c_str()));
 	FileWR::FileWrite(TchIDBlock->Text + "1.stu", IDBlock->Text);
 	FileWR::FileWrite(TchIDBlock->Text + ".sta", ref new String(std::to_wstring((wcstol(TchProgressBlock->Text->Data(), NULL, 10) + 1)).c_str()));
@@ -185,7 +186,7 @@ void DrivingSchool::TeacherDetail::TimeOneBtn_Click(Platform::Object^ sender, Wi
 
 void DrivingSchool::TeacherDetail::TimeTwoBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	FileWR::FileWrite(IDBlock->Text + ".tch", TchIDBlock->Text);
+	FileWR::FileWrite(IDBlock->Text + ".tch", TchIDBlock->Text + "2");
 	FileWR::FileWrite(IDBlock->Text + ".sta", ref new String(std::to_wstring((wcstol(ProgressBlock->Text->Data(), NULL, 10) + 1)).c_str()));
 	FileWR::FileWrite(TchIDBlock->Text + "2.stu", IDBlock->Text);
 	FileWR::FileWrite(TchIDBlock->Text + ".sta", ref new String(std::to_wstring((wcstol(TchProgressBlock->Text->Data(), NULL, 10) + 1)).c_str()));
@@ -201,7 +202,7 @@ void DrivingSchool::TeacherDetail::TimeTwoBtn_Click(Platform::Object^ sender, Wi
 
 void DrivingSchool::TeacherDetail::TimeThreeBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	FileWR::FileWrite(IDBlock->Text + ".tch", TchIDBlock->Text);
+	FileWR::FileWrite(IDBlock->Text + ".tch", TchIDBlock->Text + "3");
 	FileWR::FileWrite(IDBlock->Text + ".sta", ref new String(std::to_wstring((wcstol(ProgressBlock->Text->Data(), NULL, 10) + 1)).c_str()));
 	FileWR::FileWrite(TchIDBlock->Text + "3.stu", IDBlock->Text);
 	FileWR::FileWrite(TchIDBlock->Text + ".sta", ref new String(std::to_wstring((wcstol(TchProgressBlock->Text->Data(), NULL, 10) + 1)).c_str()));
@@ -217,7 +218,7 @@ void DrivingSchool::TeacherDetail::TimeThreeBtn_Click(Platform::Object^ sender, 
 
 void DrivingSchool::TeacherDetail::TimeFourBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	FileWR::FileWrite(IDBlock->Text + ".tch", TchIDBlock->Text);
+	FileWR::FileWrite(IDBlock->Text + ".tch", TchIDBlock->Text + "4");
 	FileWR::FileWrite(IDBlock->Text + ".sta", ref new String(std::to_wstring((wcstol(ProgressBlock->Text->Data(), NULL, 10) + 1)).c_str()));
 	FileWR::FileWrite(TchIDBlock->Text + "4.stu", IDBlock->Text);
 	FileWR::FileWrite(TchIDBlock->Text + ".sta", ref new String(std::to_wstring((wcstol(TchProgressBlock->Text->Data(), NULL, 10) + 1)).c_str()));
@@ -233,7 +234,7 @@ void DrivingSchool::TeacherDetail::TimeFourBtn_Click(Platform::Object^ sender, W
 
 void DrivingSchool::TeacherDetail::TimeFiveBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	FileWR::FileWrite(IDBlock->Text + ".tch", TchIDBlock->Text);
+	FileWR::FileWrite(IDBlock->Text + ".tch", TchIDBlock->Text + "5");
 	FileWR::FileWrite(IDBlock->Text + ".sta", ref new String(std::to_wstring((wcstol(ProgressBlock->Text->Data(), NULL, 10) + 1)).c_str()));
 	FileWR::FileWrite(TchIDBlock->Text + "5.stu", IDBlock->Text);
 	FileWR::FileWrite(TchIDBlock->Text + ".sta", ref new String(std::to_wstring((wcstol(TchProgressBlock->Text->Data(), NULL, 10) + 1)).c_str()));
@@ -249,5 +250,5 @@ void DrivingSchool::TeacherDetail::TimeFiveBtn_Click(Platform::Object^ sender, W
 
 void DrivingSchool::TeacherDetail::BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	Frame->GoBack();
+	Frame->Navigate(StudentPage::typeid);
 }

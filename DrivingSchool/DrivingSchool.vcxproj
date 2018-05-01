@@ -98,7 +98,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <PackageCertificateKeyFile>DrivingSchool_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
     <AppxBundle>Always</AppxBundle>
   </PropertyGroup>
@@ -146,12 +146,14 @@
     <ClInclude Include="AddTeacherTwo.xaml.h">
       <DependentUpon>AddTeacherTwo.xaml</DependentUpon>
     </ClInclude>
-    <ClInclude Include="Admin.h" />
     <ClInclude Include="AdminPage.xaml.h">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="ChangePwd.xaml.h">
       <DependentUpon>ChangePwd.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="ChangeTeacherPwd.xaml.h">
+      <DependentUpon>ChangeTeacherPwd.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="CheckScore.xaml.h">
       <DependentUpon>CheckScore.xaml</DependentUpon>
@@ -216,6 +218,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ChangePwd.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChangeTeacherPwd.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Include="CheckScore.xaml">
@@ -319,7 +324,6 @@
     <ClCompile Include="AddTeacherTwo.xaml.cpp">
       <DependentUpon>AddTeacherTwo.xaml</DependentUpon>
     </ClCompile>
-    <ClCompile Include="Admin.cpp" />
     <ClCompile Include="AdminPage.xaml.cpp">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </ClCompile>
@@ -328,6 +332,9 @@
     </ClCompile>
     <ClCompile Include="ChangePwd.xaml.cpp">
       <DependentUpon>ChangePwd.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="ChangeTeacherPwd.xaml.cpp">
+      <DependentUpon>ChangeTeacherPwd.xaml</DependentUpon>
     </ClCompile>
     <ClCompile Include="CheckScore.xaml.cpp">
       <DependentUpon>CheckScore.xaml</DependentUpon>

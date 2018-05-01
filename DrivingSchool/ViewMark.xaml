@@ -8,8 +8,29 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="HistoryBlock" HorizontalAlignment="Left" Margin="434,442,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock x:Name="IDBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="10,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <ProgressBar x:Name="MarkBar" HorizontalAlignment="Left" Height="28" Margin="399,389,0,0" VerticalAlignment="Top" Width="98"/>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Left" Text="教练评分" Margin="0,0,0,0" FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="ExtraBold"/>
+        <Button x:Name="BackButton" Style="{StaticResource NavigationBackButtonNormalStyle}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="65" Click="BackButton_Click"/>
+        <PersonPicture Grid.Row="1" Grid.RowSpan="3" Grid.Column="1" VerticalAlignment="Bottom" Margin="0,0,0,0" HorizontalAlignment="Center" x:Name="PersonPic"/>
+        <TextBlock Grid.Row="4" Grid.Column="1" x:Name="NameBlock" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <RatingControl Grid.Row="5" Grid.Column="1" Margin="0,10,0,0" x:Name="RatingCtrl" VerticalAlignment="Top" IsClearEnabled="False" IsReadOnly="True"/>
+        <TextBlock Grid.Row="6" Grid.Column="1" x:Name="HistoryBlock" FontWeight="Light" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+        <TextBlock x:Name="IDBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
     </Grid>
 </Page>

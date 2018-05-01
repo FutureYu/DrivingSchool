@@ -37,59 +37,59 @@ void ::DrivingSchool::StudentPage::Connect(int __connectionId, ::Platform::Objec
         break;
     case 2:
         {
-            this->GreetingBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            this->PersonPic = safe_cast<::Windows::UI::Xaml::Controls::PersonPicture^>(__target);
         }
         break;
     case 3:
+        {
+            this->GreetingBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 4:
         {
             this->ChangePwd = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
             (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ChangePwd))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::StudentPage::*)
                 (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&StudentPage::ChangePwd_Click);
         }
         break;
-    case 4:
+    case 5:
         {
             this->CheckScore = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
             (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->CheckScore))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::StudentPage::*)
                 (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&StudentPage::CheckScore_Click);
         }
         break;
-    case 5:
+    case 6:
         {
             this->SearchBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
             (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->SearchBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::StudentPage::*)
                 (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&StudentPage::SearchBtn_Click);
         }
         break;
-    case 6:
+    case 7:
         {
             this->ReserveExam = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
             (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ReserveExam))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::StudentPage::*)
                 (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&StudentPage::ReserveExam_Click);
         }
         break;
-    case 7:
+    case 8:
         {
             this->ReserveTeacher = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
             (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ReserveTeacher))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::StudentPage::*)
                 (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&StudentPage::ReserveTeacher_Click);
         }
         break;
-    case 8:
+    case 9:
         {
             this->MarkTeacher = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
             (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->MarkTeacher))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::StudentPage::*)
                 (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&StudentPage::MarkTeacher_Click);
         }
         break;
-    case 9:
-        {
-            this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-        }
-        break;
     case 10:
         {
-            this->NameBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
         }
         break;
     }

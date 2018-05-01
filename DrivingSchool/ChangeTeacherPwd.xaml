@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="DrivingSchool.ChangePwd"
+    x:Class="DrivingSchool.ChangeTeacherPwd"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:DrivingSchool"
@@ -11,6 +11,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -26,14 +27,14 @@
 
         <Button x:Name="BackButton" Style="{StaticResource NavigationBackButtonNormalStyle}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="65" Click="BackButton_Click"/>
         <TextBlock Grid.ColumnSpan="6" Grid.Column="1" HorizontalAlignment="Left" Text="修改密码" Margin="0,0,0,0" FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="ExtraBold"/>
-        <TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,0,0" Text="密码：" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <PasswordBox Grid.Row="2" Grid.Column="2" x:Name="PwdBox" HorizontalAlignment="Left" Width="200" Margin="0,0,0,0" VerticalAlignment="Top"/>
-        <TextBlock Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,0,0" Text="确认密码：" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <PasswordBox Grid.Row="3" Grid.Column="2" x:Name="ConfirmPwdBox" HorizontalAlignment="Left" Width="200" Margin="0,10,0,0" VerticalAlignment="Top"/>
-        <Button Grid.Row="4" Grid.Column="2" x:Name="ConfirmBtn" Content="确认" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Click="ConfirmBtn_Click"/>
-        <Button Grid.Row="4" Grid.Column="2" x:Name="ResetBtn" Content="重置" HorizontalAlignment="Right" Margin="0,10,0,0" VerticalAlignment="Top" Click="ResetBtn_Click" />
-
-        <TextBlock x:Name="IDBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,0,0" Text="教练ID：" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox Grid.Row="2" Grid.Column="2" x:Name="IDBox" HorizontalAlignment="Left" Width="200" Margin="0,0,0,0" VerticalAlignment="Top"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,0,0" Text="密码：" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <PasswordBox Grid.Row="3" Grid.Column="2" x:Name="PwdBox" HorizontalAlignment="Left" Width="200" Margin="0,10,0,0" VerticalAlignment="Top"/>
+        <TextBlock Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Margin="0,10,0,0" Text="确认密码：" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <PasswordBox Grid.Row="4" Grid.Column="2" x:Name="ConfirmPwdBox" HorizontalAlignment="Left" Width="200" Margin="0,10,0,0" VerticalAlignment="Top"/>
+        <Button Grid.Row="5" Grid.Column="2" x:Name="ConfirmBtn" Content="确认" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Click="ConfirmBtn_Click"/>
+        <Button Grid.Row="5" Grid.Column="2" x:Name="ResetBtn" Content="重置" HorizontalAlignment="Right" Margin="0,10,0,0" VerticalAlignment="Top" Click="ResetBtn_Click" Height="32" />
 
     </Grid>
 </Page>

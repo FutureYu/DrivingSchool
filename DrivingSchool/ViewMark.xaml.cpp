@@ -37,6 +37,24 @@ ViewMark::ViewMark()
 	}).then([&]()
 	{
 		GetHistory();
+	}).then([&]()
+	{
+		GetName();
+	});
+}
+
+
+void DrivingSchool::ViewMark::GetName()
+{
+	String^ path = IDBlock->Text + ".nam";
+	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+	concurrency::create_task(storageFolder->GetFileAsync(path))
+		.then([&](StorageFile^ file)
+	{
+		return FileIO::ReadTextAsync(file);
+	}).then([&](concurrency::task<String^> previousOperation) {
+		NameBlock->Text = previousOperation.get();
+		PersonPic->DisplayName = previousOperation.get();
 	});
 }
 
@@ -50,7 +68,7 @@ void DrivingSchool::ViewMark::GetMark()
 	{
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
-		MarkBar->Value = wcstol(previousOperation.get()->Data(), NULL, 10);
+		RatingCtrl->Value = wcstol(previousOperation.get()->Data(), NULL, 10);
 	});
 }
 
@@ -66,4 +84,10 @@ void DrivingSchool::ViewMark::GetHistory()
 	}).then([&](concurrency::task<String^> previousOperation) {
 		HistoryBlock->Text = "已有" + previousOperation.get() + "做出评价";
 	});
+}
+
+
+void DrivingSchool::ViewMark::BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	Frame->GoBack();
 }

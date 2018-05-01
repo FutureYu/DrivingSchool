@@ -11,6 +11,7 @@ namespace Windows {
     namespace UI {
         namespace Xaml {
             namespace Controls {
+                ref class Button;
                 ref class TextBlock;
             }
         }
@@ -37,6 +38,7 @@ namespace DrivingSchool
         bool _contentLoaded;
     
     
+        private: ::Windows::UI::Xaml::Controls::Button^ BackButton;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ StudentBlock;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ IDBlock;
     };

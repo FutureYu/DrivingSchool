@@ -81,7 +81,7 @@ void DrivingSchool::ReserveTeacher::GetTeachersTwo()
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
 		long maxTeacher = wcstol(previousOperation.get()->Data(), NULL, 10);
-		GetTeacher(maxTeacher);
+		GetTeacher(200001,maxTeacher);
 	});
 }
 
@@ -97,14 +97,14 @@ void DrivingSchool::ReserveTeacher::GetTeachersThree()
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
 		long maxTeacher = wcstol(previousOperation.get()->Data(), NULL, 10);
-		GetTeacher(maxTeacher);
+		GetTeacher(300001,maxTeacher);
 	});
 }
 
-void DrivingSchool::ReserveTeacher::GetTeacher(long maxTeacher)
+void DrivingSchool::ReserveTeacher::GetTeacher(long start ,long maxTeacher)
 {
 
-	for (long i = 200001; i < maxTeacher; i++)
+	for (long i = start; i < maxTeacher; i++)
 	{
 		String^ path = ref new String(std::to_wstring(i).c_str()) + ".sta";
 		StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;

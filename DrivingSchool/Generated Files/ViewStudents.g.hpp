@@ -32,10 +32,17 @@ void ::DrivingSchool::ViewStudents::Connect(int __connectionId, ::Platform::Obje
     {
     case 1:
         {
-            this->StudentBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ViewStudents::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ViewStudents::BackButton_Click);
         }
         break;
     case 2:
+        {
+            this->StudentBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 3:
         {
             this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
         }

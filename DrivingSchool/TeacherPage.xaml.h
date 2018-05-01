@@ -18,6 +18,7 @@ namespace DrivingSchool
 	public:
 		TeacherPage();
 	private:
+		void GetName();
 		void ViewStudentBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void ViewMark_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 	};

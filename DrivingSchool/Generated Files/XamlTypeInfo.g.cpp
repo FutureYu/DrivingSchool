@@ -13,6 +13,7 @@
 #include "AddTeacherTwo.xaml.h"
 #include "AdminPage.xaml.h"
 #include "ChangePwd.xaml.h"
+#include "ChangeTeacherPwd.xaml.h"
 #include "CheckScore.xaml.h"
 #include "MarkTeacher.xaml.h"
 #include "App.xaml.h"
@@ -32,6 +33,7 @@
 #include "AddTeacherTwo.g.hpp"
 #include "AdminPage.g.hpp"
 #include "ChangePwd.g.hpp"
+#include "ChangeTeacherPwd.g.hpp"
 #include "CheckScore.g.hpp"
 #include "MarkTeacher.g.hpp"
 #include "App.g.hpp"
@@ -208,6 +210,12 @@ const TypeInfo TypeInfos[] =
     0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Metadata,
     TypeInfo_Flags_IsSystemType | TypeInfo_Flags_None,
     //  18
+    L"DrivingSchool.ChangeTeacherPwd", L"",
+    &ActivateType<::DrivingSchool::ChangeTeacherPwd>, nullptr, nullptr, nullptr,
+    17, // Windows.UI.Xaml.Controls.Page
+    0, 0, -1, ::Windows::UI::Xaml::Interop::TypeKind::Custom,
+    TypeInfo_Flags_IsLocalType | TypeInfo_Flags_None,
+    //  19
     L"Windows.UI.Xaml.Controls.UserControl", L"",
     nullptr, nullptr, nullptr, nullptr,
     -1,
@@ -253,13 +261,13 @@ const UINT TypeInfoLookup[] = {
      15,   //  28
      16,   //  29
      18,   //  30
-     18,   //  31
-     18,   //  32
-     18,   //  33
-     18,   //  34
-     18,   //  35
-     18,   //  36
-     19,   //  37
+     19,   //  31
+     19,   //  32
+     19,   //  33
+     19,   //  34
+     19,   //  35
+     19,   //  36
+     20,   //  37
 };
 
 const TypeInfo* GetTypeInfo(::Platform::String^ typeName)

@@ -32,43 +32,43 @@ void ::DrivingSchool::AddTeacherTwo::Connect(int __connectionId, ::Platform::Obj
     {
     case 1:
         {
-            this->NameBox = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+            this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AddTeacherTwo::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AddTeacherTwo::BackButton_Click);
         }
         break;
     case 2:
         {
-            this->PasswordBox = safe_cast<::Windows::UI::Xaml::Controls::PasswordBox^>(__target);
+            this->NameBox = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
         }
         break;
     case 3:
         {
-            this->ConfirmPasswordBox = safe_cast<::Windows::UI::Xaml::Controls::PasswordBox^>(__target);
+            this->PasswordBox = safe_cast<::Windows::UI::Xaml::Controls::PasswordBox^>(__target);
         }
         break;
     case 4:
+        {
+            this->ConfirmPasswordBox = safe_cast<::Windows::UI::Xaml::Controls::PasswordBox^>(__target);
+        }
+        break;
+    case 5:
         {
             this->ConfirmButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
             (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ConfirmButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AddTeacherTwo::*)
                 (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AddTeacherTwo::ConfirmButton_Click);
         }
         break;
-    case 5:
+    case 6:
         {
             this->ResetButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
             (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ResetButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AddTeacherTwo::*)
                 (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AddTeacherTwo::ResetButton_Click);
         }
         break;
-    case 6:
-        {
-            this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
-        }
-        break;
     case 7:
         {
-            this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
-            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::AddTeacherTwo::*)
-                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&AddTeacherTwo::BackButton_Click);
+            this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
         }
         break;
     case 8:

@@ -32,16 +32,36 @@ void ::DrivingSchool::TeacherPage::Connect(int __connectionId, ::Platform::Objec
     {
     case 1:
         {
+            this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+        }
+        break;
+    case 2:
+        {
+            this->PersonPic = safe_cast<::Windows::UI::Xaml::Controls::PersonPicture^>(__target);
+        }
+        break;
+    case 3:
+        {
+            this->GreetingBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 4:
+        {
             this->ViewStudentBtn = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
             (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ViewStudentBtn))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::TeacherPage::*)
                 (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&TeacherPage::ViewStudentBtn_Click);
         }
         break;
-    case 2:
+    case 5:
         {
             this->ViewMark = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
             (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->ViewMark))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::TeacherPage::*)
                 (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&TeacherPage::ViewMark_Click);
+        }
+        break;
+    case 6:
+        {
+            this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
         }
         break;
     }

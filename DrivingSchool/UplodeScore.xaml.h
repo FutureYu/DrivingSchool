@@ -20,6 +20,8 @@ namespace DrivingSchool
 	private:
 		void ConfirmBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void WriteScore();
+		void ChangeTeacher();
+		void ChangeTeacherState(String ^ totalPath);
 		void ResetBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		

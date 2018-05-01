@@ -8,12 +8,33 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:ConnectionId='1' x:Name="UplodeScore" Content="上传成绩" HorizontalAlignment="Left" Margin="91,200,0,0" VerticalAlignment="Top"                          />
-        <Button x:ConnectionId='2' x:Name="AddTeacherTwo" Content="添加二科教练" HorizontalAlignment="Left" Margin="91,250,0,0" VerticalAlignment="Top"                            />
-        <Button x:ConnectionId='3' x:Name="AddTeacherThree" Content="添加三科教练" HorizontalAlignment="Left" Margin="250,250,0,0" VerticalAlignment="Top"                              />
 
-        <Button x:ConnectionId='4' x:Name="EditTeacher" Content="修改教练" HorizontalAlignment="Left" Margin="91,300,0,0" VerticalAlignment="Top"/>
-        <Button x:ConnectionId='5' x:Name="DeleteTeacher" Content="删除教练" HorizontalAlignment="Left" Margin="91,350,0,0" VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:ConnectionId='1' x:Name="BackButton" Style="{StaticResource NavigationBackButtonNormalStyle}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="65" IsEnabled="False"/>
+        <TextBlock Grid.ColumnSpan="6" Grid.Column="1" HorizontalAlignment="Left" Text="管理员菜单" Margin="0,0,0,0" FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="ExtraBold"/>
+        <PersonPicture x:ConnectionId='2' Grid.Row="1" Grid.RowSpan="3" Grid.Column="1" VerticalAlignment="Bottom" Margin="0,0,0,0" HorizontalAlignment="Center" x:Name="PersonPic"/>
+        <TextBlock x:ConnectionId='3' x:Name="GreetingBlock" Grid.Row="5" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" FontSize="20" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="SemiBold" TextAlignment="Center"/>
+
+        <Button x:ConnectionId='4' Grid.Row="2" Grid.Column="2" x:Name="UplodeScore" Content="上传成绩" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top"                          />
+        <Button x:ConnectionId='5' Grid.Row="3" Grid.Column="2" x:Name="AddTeacherTwo" Content="添加二科教练" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top"                            />
+        <Button x:ConnectionId='6' Grid.Row="4" Grid.Column="2" x:Name="AddTeacherThree" Content="添加三科教练" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top"                              />
+        <Button x:ConnectionId='7' Grid.Row="5" Grid.Column="2" x:Name="EditTeacher" Content="修改教练密码" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top"                          />
     </Grid>
 </Page>
 

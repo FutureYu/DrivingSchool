@@ -21,7 +21,7 @@ namespace DrivingSchool
 		void GetProgress();
 		void GetTeachersTwo();
 		void GetTeachersThree();
-		void GetTeacher(long maxTeacher);
+		void GetTeacher(long start, long maxTeacher);
 		void ConfirmBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 		void UpdateTchid();
 		void NavigateToTeacherDetail();

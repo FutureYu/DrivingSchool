@@ -50,8 +50,13 @@ void DrivingSchool::ViewStudents::GetName()
 		}).then([&, i](concurrency::task<String^> previousOperation) {
 			if (previousOperation.get() != "")
 			{
-				StudentBlock->Text += previousOperation.get() + "\n";
+				StudentBlock->Text += "\n" + previousOperation.get();
 			}
 		});
 	}
+}
+
+void DrivingSchool::ViewStudents::BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	Frame->GoBack();
 }

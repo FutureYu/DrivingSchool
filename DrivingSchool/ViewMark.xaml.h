@@ -21,5 +21,6 @@ namespace DrivingSchool
 		void GetName();
 		void GetMark();
 		void GetHistory();
+		void BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 	};
 }

@@ -32,17 +32,34 @@ void ::DrivingSchool::ViewMark::Connect(int __connectionId, ::Platform::Object^ 
     {
     case 1:
         {
-            this->HistoryBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            this->BackButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
+            (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->BackButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::DrivingSchool::ViewMark::*)
+                (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&ViewMark::BackButton_Click);
         }
         break;
     case 2:
         {
-            this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            this->PersonPic = safe_cast<::Windows::UI::Xaml::Controls::PersonPicture^>(__target);
         }
         break;
     case 3:
         {
-            this->MarkBar = safe_cast<::Windows::UI::Xaml::Controls::ProgressBar^>(__target);
+            this->NameBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 4:
+        {
+            this->RatingCtrl = safe_cast<::Windows::UI::Xaml::Controls::RatingControl^>(__target);
+        }
+        break;
+    case 5:
+        {
+            this->HistoryBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
+    case 6:
+        {
+            this->IDBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
         }
         break;
     }

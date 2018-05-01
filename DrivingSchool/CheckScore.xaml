@@ -18,15 +18,12 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Left" Text="查询分数" Margin="0,0,0,0" FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="ExtraBold"/>
         <Button x:Name="BackButton" Style="{StaticResource NavigationBackButtonNormalStyle}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="65" Click="BackButton_Click"/>
 
-        <TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,0,0" Text="您的分数是：" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock Grid.Row="2" Grid.Column="2" x:Name="ScoreBlock" HorizontalAlignment="Left" Margin="0,0,0,0"  TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" x:Name="ScoreBlock" HorizontalAlignment="Center" Text="您的分数是：" Margin="0,0,0,0"  TextWrapping="Wrap" VerticalAlignment="Top"/>
        
         <TextBlock x:Name="IDBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock x:Name="ExamBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>

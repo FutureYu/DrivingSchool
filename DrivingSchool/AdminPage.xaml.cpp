@@ -8,6 +8,7 @@
 #include "UplodeScore.xaml.h"
 #include "AddTeacherTwo.xaml.h"
 #include "AddTeacherThree.xaml.h"
+#include "ChangeTeacherPwd.xaml.h"
 
 using namespace DrivingSchool;
 
@@ -27,6 +28,30 @@ using namespace Windows::UI::Xaml::Navigation;
 AdminPage::AdminPage()
 {
 	InitializeComponent();
+	SYSTEMTIME time;
+	GetLocalTime(&time);
+	String^ greeting;
+	if (time.wHour >= 5 && time.wHour < 9)
+	{
+		greeting = "早上好，管理员！\n我能为你做什么？";
+	}
+	else if (time.wHour >= 9 && time.wHour < 12)
+	{
+		greeting = "上午好，管理员！\n我能为你做什么？";
+	}
+	else if (time.wHour >= 12 && time.wHour < 14)
+	{
+		greeting = "中午好，管理员！\n我能为你做什么？";
+	}
+	else if (time.wHour >= 14 && time.wHour < 18)
+	{
+		greeting = "下午好，管理员！\n我能为你做什么？";
+	}
+	else
+	{
+		greeting = "晚上好，管理员！\n我能为你做什么？";
+	}
+	GreetingBlock->Text = greeting;
 }
 
 
@@ -45,4 +70,10 @@ void DrivingSchool::AdminPage::AddTeacherTwo_Click(Platform::Object^ sender, Win
 void DrivingSchool::AdminPage::AddTeacherThree_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	Frame->Navigate(AddTeacherThree::typeid);
+}
+
+
+void DrivingSchool::AdminPage::EditTeacher_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	Frame->Navigate(ChangeTeacherPwd::typeid);
 }

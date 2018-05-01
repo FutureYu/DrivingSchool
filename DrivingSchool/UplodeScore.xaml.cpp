@@ -28,6 +28,14 @@ UplodeScore::UplodeScore()
 
 void DrivingSchool::UplodeScore::ConfirmBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
+	long score = wcstol(ScoreBox->Text->Data(), NULL, 10);
+	if (score > 100 || score < 0)
+	{
+		MessageDialog msg("上传失败，分数超出范围", "上传失败");
+		ScoreBox->Text = "";
+		msg.ShowAsync();
+		return;
+	}
 	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
 	String^ path = IDBox->Text + ".exm";
 	// 异步任务链：判断用户存在->找到考试编号->读状态
@@ -83,57 +91,95 @@ void DrivingSchool::UplodeScore::WriteScore()
 	FileWR::FileWrite(ExamIDBlock->Text + ".exm", ScoreBox->Text);
 	long score = wcstol(ScoreBox->Text->Data(), NULL, 10);
 	long state = wcstol(StateBlock->Text->Data(), NULL, 10);
+	String^ path = IDBox->Text + ".sta";
 	if (state == 1)
 	{
 		if (score >= 90)
 		{
-			StateBlock->Text = "2";
+			FileWR::FileWrite(path, "2");
 		}
 		else
 		{
-			StateBlock->Text = "0";
+			FileWR::FileWrite(path, "0");
 		}
 	}
 	else if (state == 4)
 	{
 		if (score >= 80)
 		{
-			StateBlock->Text = "5";
+			FileWR::FileWrite(path, "5");
+			ChangeTeacher();
 		}
 		else
 		{
-			StateBlock->Text = "3";
+			FileWR::FileWrite(path, "3");
 		}
 	}
 	else if (state == 7)
 	{
 		if (score >= 90)
 		{
-			StateBlock->Text = "8";
+			FileWR::FileWrite(path, "8");
+			ChangeTeacher();
 		}
 		else
 		{
-			StateBlock->Text = "6";
+			FileWR::FileWrite(path, "6");
 		}
 	}
 	else
 	{
 		if (score >= 90)
 		{
-			StateBlock->Text = "10";
+			FileWR::FileWrite(path, "10");
 		}
 		else
 		{
-			StateBlock->Text = "9";
+			FileWR::FileWrite(path, "9");
 		}
 	}
 
 	// 写状态
-	String^ path = IDBox->Text + ".sta";
-	FileWR::FileWrite(path, StateBlock->Text);
-	MessageDialog msg("上传成功!  考试编号为" + ExamIDBlock->Text + "  考试成绩是" + ScoreBox->Text , "上传成功");
+	MessageDialog msg("上传成功!  考试编号为" + ExamIDBlock->Text + "，考试成绩是" + ScoreBox->Text, "上传成功");
+	IDBox->Text = "";
+	ScoreBox->Text = "";
 	msg.ShowAsync();
 }
+
+// 修改教练时间段学生及学生总数
+void DrivingSchool::UplodeScore::ChangeTeacher()
+{
+	String^ path = IDBox->Text + ".tch";
+	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+	concurrency::create_task(storageFolder->GetFileAsync(path))
+		.then([&](StorageFile^ file)
+	{
+		return FileIO::ReadTextAsync(file);
+	}).then([&](concurrency::task<String^> previousOperation) {
+		String^ timePath = previousOperation.get() + ".stu";
+		FileWR::FileWrite(timePath);
+		String^ totalPath = ref new String(std::to_wstring((wcstol(previousOperation.get()->Data(), NULL, 10) /10)).c_str()) + ".sta";
+		ChangeTeacherState(totalPath);
+	});
+}
+
+// 修改教练时间段学生及学生总数
+void DrivingSchool::UplodeScore::ChangeTeacherState(String^ totalPath)
+{
+	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+	concurrency::create_task(storageFolder->GetFileAsync(totalPath))
+		.then([&](StorageFile^ file)
+	{
+		return FileIO::ReadTextAsync(file);
+	}).then([&](concurrency::task<String^> previousOperation) {
+		TeacherStateBlock->Text = ref new String(std::to_wstring((wcstol(previousOperation.get()->Data(), NULL, 10) - 1)).c_str());
+	}).then([&]()
+	{
+		FileWR::FileWrite(totalPath, TeacherStateBlock->Text);
+	});
+}
+
+
 
 void DrivingSchool::UplodeScore::ResetBtn_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {

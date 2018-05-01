@@ -19,5 +19,6 @@ namespace DrivingSchool
 		ViewStudents();
 	private:
 		void GetName();
+		void BackButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 	};
 }

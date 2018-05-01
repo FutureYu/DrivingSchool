@@ -48,8 +48,9 @@ void DrivingSchool::MarkTeacher::GetTeacher()
 	{
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
-		TeacherBlock->Text = previousOperation.get();
-		TipBlock->Text = "请评价您的编号为" + previousOperation.get() + "的教练！";
+		String^ tchID = ref new String(std::to_wstring(wcstol(previousOperation.get()->Data(), NULL, 10) / 10).c_str());
+		TeacherBlock->Text = tchID;
+		TipBlock->Text = "请评价您的编号为" + tchID + "的教练！";
 	}).then([&]() {
 		GetHistory();
 	});

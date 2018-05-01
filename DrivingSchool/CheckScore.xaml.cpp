@@ -34,7 +34,33 @@ CheckScore::CheckScore()
 		IDBlock->Text = previousOperation.get();
 	}).then([&]()
 	{
-		GetExamId();
+		GetProgress();
+	});
+}
+
+// 获取进度
+void DrivingSchool::CheckScore::GetProgress()
+{
+	String^ path = IDBlock->Text + ".sta";
+	StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+	concurrency::create_task(storageFolder->GetFileAsync(path))
+		.then([&](StorageFile^ file)
+	{
+		return FileIO::ReadTextAsync(file);
+	}).then([&](concurrency::task<String^> previousOperation) {
+		long progress = wcstol(previousOperation.get()->Data(), NULL, 10);
+
+		switch (progress)
+		{
+		case 2:
+		case 5:
+		case 8:
+		case 10:
+			GetExamId(); break;
+		default:
+			ScoreBlock->Text = "您还未参加考试，或成绩尚未上传，请等待！";
+			return;
+		}
 	});
 }
 
@@ -64,15 +90,7 @@ void DrivingSchool::CheckScore::GetScore()
 	{
 		return FileIO::ReadTextAsync(file);
 	}).then([&](concurrency::task<String^> previousOperation) {
-		if (previousOperation.get() == nullptr)
-		{
-			MessageDialog msg("您还未参加考试，或成绩尚未上传，请等待。考试编号为" + IDBlock->Text, "查询失败");
-			msg.ShowAsync();
-		}
-		else
-		{
-			ScoreBlock->Text = previousOperation.get();
-		}
+		ScoreBlock->Text += previousOperation.get();
 	});
 }
 

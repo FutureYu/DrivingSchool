@@ -12,8 +12,8 @@ namespace Windows {
         namespace Xaml {
             namespace Controls {
                 ref class Button;
-                ref class PersonPicture;
-                ref class TextBlock;
+                ref class TextBox;
+                ref class PasswordBox;
             }
         }
     }
@@ -22,7 +22,7 @@ namespace Windows {
 namespace DrivingSchool
 {
     [::Windows::Foundation::Metadata::WebHostHidden]
-    partial ref class AdminPage : public ::Windows::UI::Xaml::Controls::Page, 
+    partial ref class ChangeTeacherPwd : public ::Windows::UI::Xaml::Controls::Page, 
         public ::Windows::UI::Xaml::Markup::IComponentConnector,
         public ::Windows::UI::Xaml::Markup::IComponentConnector2
     {
@@ -40,12 +40,11 @@ namespace DrivingSchool
     
     
         private: ::Windows::UI::Xaml::Controls::Button^ BackButton;
-        private: ::Windows::UI::Xaml::Controls::PersonPicture^ PersonPic;
-        private: ::Windows::UI::Xaml::Controls::TextBlock^ GreetingBlock;
-        private: ::Windows::UI::Xaml::Controls::Button^ UplodeScore;
-        private: ::Windows::UI::Xaml::Controls::Button^ AddTeacherTwo;
-        private: ::Windows::UI::Xaml::Controls::Button^ AddTeacherThree;
-        private: ::Windows::UI::Xaml::Controls::Button^ EditTeacher;
+        private: ::Windows::UI::Xaml::Controls::TextBox^ IDBox;
+        private: ::Windows::UI::Xaml::Controls::PasswordBox^ PwdBox;
+        private: ::Windows::UI::Xaml::Controls::PasswordBox^ ConfirmPwdBox;
+        private: ::Windows::UI::Xaml::Controls::Button^ ConfirmBtn;
+        private: ::Windows::UI::Xaml::Controls::Button^ ResetBtn;
     };
 }
 

@@ -11,8 +11,8 @@ namespace Windows {
     namespace UI {
         namespace Xaml {
             namespace Controls {
-                ref class TextBox;
                 ref class Button;
+                ref class TextBox;
                 ref class TextBlock;
             }
         }
@@ -39,6 +39,7 @@ namespace DrivingSchool
         bool _contentLoaded;
     
     
+        private: ::Windows::UI::Xaml::Controls::Button^ BackButton;
         private: ::Windows::UI::Xaml::Controls::TextBox^ IDBox;
         private: ::Windows::UI::Xaml::Controls::TextBox^ ScoreBox;
         private: ::Windows::UI::Xaml::Controls::Button^ ConfirmBtn;
@@ -46,7 +47,7 @@ namespace DrivingSchool
         private: ::Windows::UI::Xaml::Controls::TextBlock^ isExistBlock;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ ExamIDBlock;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ StateBlock;
-        private: ::Windows::UI::Xaml::Controls::Button^ BackButton;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ TeacherStateBlock;
     };
 }
 
