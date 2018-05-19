@@ -159,6 +159,10 @@ void DrivingSchool::UplodeScore::ChangeTeacher()
 		String^ timePath = previousOperation.get() + ".stu";
 		FileWR::FileWrite(timePath);
 		String^ totalPath = ref new String(std::to_wstring((wcstol(previousOperation.get()->Data(), NULL, 10) /10)).c_str()) + ".sta";
+		//ChangeTeacherState(totalPath);
+		TotalPath->Text = totalPath;
+	}).then([&]() {
+		String^ totalPath = TotalPath->Text;
 		ChangeTeacherState(totalPath);
 	});
 }

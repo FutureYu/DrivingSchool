@@ -37,6 +37,7 @@
         <TextBlock x:Name="ExamIDBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock x:Name="StateBlock" Visibility="Collapsed"  HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock x:Name="TeacherStateBlock" Visibility="Collapsed"  HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TotalPath" Visibility="Collapsed"  HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

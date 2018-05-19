@@ -48,6 +48,7 @@ namespace DrivingSchool
         private: ::Windows::UI::Xaml::Controls::TextBlock^ ExamIDBlock;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ StateBlock;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ TeacherStateBlock;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ TotalPath;
     };
 }
 

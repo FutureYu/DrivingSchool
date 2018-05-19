@@ -81,6 +81,11 @@ void ::DrivingSchool::UplodeScore::Connect(int __connectionId, ::Platform::Objec
             this->TeacherStateBlock = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
         }
         break;
+    case 10:
+        {
+            this->TotalPath = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+        }
+        break;
     }
     _contentLoaded = true;
 }

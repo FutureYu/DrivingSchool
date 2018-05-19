@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="DrivingSchool.TeacherDetail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DrivingSchool"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Left" Text="教师详情" Margin="0,0,0,0" FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="ExtraBold"/>
+        <Button x:ConnectionId='1' x:Name="BackButton" Style="{StaticResource NavigationBackButtonNormalStyle}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="65"                         />
+        <PersonPicture x:ConnectionId='2' Grid.Row="1" Grid.RowSpan="3" Grid.Column="1" VerticalAlignment="Bottom" Margin="0,0,0,0" HorizontalAlignment="Center" x:Name="PersonPic"/>
+        <TextBlock x:ConnectionId='3' Grid.Row="4" Grid.Column="1" x:Name="NameBlock" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <RatingControl x:ConnectionId='4' Grid.Row="5" Grid.Column="1" Margin="0,10,0,0" x:Name="RatingCtrl" IsEnabled="False" VerticalAlignment="Top" IsClearEnabled="False" IsReadOnly="True"/>
+        <TextBlock x:ConnectionId='5' Grid.Row="6" Grid.Column="1" x:Name="HistoryBlock" FontWeight="Light" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:ConnectionId='6' Grid.Row="2" Grid.Column="2" x:Name="TimeOneBtn" Content="时段一" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"                         />
+        <Button x:ConnectionId='7' Grid.Row="3" Grid.Column="2" x:Name="TimeTwoBtn" Content="时段二" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"                         />
+        <Button x:ConnectionId='8' Grid.Row="4" Grid.Column="2" x:Name="TimeThreeBtn" Content="时段三" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"                           />
+        <Button x:ConnectionId='9' Grid.Row="5" Grid.Column="2" x:Name="TimeFourBtn" Content="时段四" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"                          />
+        <Button x:ConnectionId='10' Grid.Row="6" Grid.Column="2" x:Name="TimeFiveBtn" Content="时段五" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"                          />
+
+        <TextBlock x:ConnectionId='11' x:Name="TchIDBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="22,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:ConnectionId='12' x:Name="IDBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="22,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:ConnectionId='13' x:Name="ProgressBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="22,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:ConnectionId='14' x:Name="TchProgressBlock" Visibility="Collapsed" HorizontalAlignment="Left" Margin="22,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>
+
