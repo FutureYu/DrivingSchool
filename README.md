@@ -26,7 +26,7 @@ Microsoft Store地址：https://www.microsoft.com/store/apps/9MWKDRZ9DS97
 
 	4.利用UWP跨平台特性，同时支持PC、手机、HoloLens以及Xbox。
 
-	 5.上架Microsoft Store，方便安装与下载。
+	5.上架Microsoft Store，方便安装与下载。
 
 
 
